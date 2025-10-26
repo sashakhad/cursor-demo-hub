@@ -6,6 +6,7 @@
 - Define light/dark variable sets in `app/globals.css`.
 - Prevent flash-of-wrong-theme with a tiny inline script in `app/layout.tsx` that sets the initial theme before hydration and exposes `data-theme` for tests.
 - Create an accessible `ThemeToggle` component with `data-testid` and proper ARIA, then render it in `app/components/SideBar.tsx` near the site title.
+- Introduce a dedicated `dev-surface` token for accent surfaces that must remain green in light mode but map to a neutral dark surface in dark mode. Use this for sections that currently have green backgrounds so they do not get flattened to cream.
 
 ## Files to change
 
@@ -30,6 +31,7 @@ export default {
         "dev-secondary": "var(--color-dev-secondary)",
         "dev-bg": "var(--color-dev-bg)",
         "dev-card": "var(--color-dev-card)",
+        "dev-surface": "var(--color-dev-surface)",
       },
     },
   },
@@ -45,6 +47,7 @@ export default {
   --color-dev-secondary: rgba(6, 48, 43, 0.6);  /* Muted dark green */
   --color-dev-bg: #fefcf6;           /* Cream background */
   --color-dev-card: #ffffff;         /* White card background */
+  --color-dev-surface: #06302b;      /* Green accent surface (remains green in light) */
 }
 .dark {
   --color-dev-primary: #06302b;      /* KEEP dark green for buttons/active states */
@@ -53,6 +56,7 @@ export default {
   --color-dev-secondary: rgba(231, 244, 241, 0.7);  /* Muted light text */
   --color-dev-bg: #0b1217;           /* Very dark background (near black) */
   --color-dev-card: #111927;         /* Slightly lighter dark for cards */
+  --color-dev-surface: #111927;      /* Neutral dark surface in dark mode */
 }
 ```
 
@@ -60,6 +64,7 @@ export default {
 - `dev-primary` is used for buttons and active states, NOT backgrounds
 - `dev-bg` is the main background color for content areas
 - In dark mode, `dev-primary` should remain dark for button backgrounds
+- Preserve green accent sections in light mode by using `bg-dev-surface` (do NOT replace these with `bg-dev-bg`/cream). In dark mode those same sections should use a neutral dark surface via `bg-dev-surface`.
 
 - app/layout.tsx (apply theme before hydration)
 ```tsx
@@ -148,16 +153,18 @@ import ThemeToggle from "./ThemeToggle";
 ## Critical Implementation Notes
 
 **COMMON MISTAKES TO AVOID:**
-1. **DO NOT use `bg-dev-primary` for main content areas** - Use `bg-dev-bg` instead
+1. **DO NOT use `bg-dev-primary` for main content areas** - Use `bg-dev-bg` for standard content, or `bg-dev-surface` for accent sections that should be green in light mode
 2. **DO NOT use light colors for `dev-primary` in dark mode** - It's for buttons, keep it dark (#06302b)
-3. **DO NOT hardcode `text-white`** - Always use `text-dev-text` for theme compatibility
-4. **VERIFY that FilteredPosts.tsx uses `bg-dev-bg`** not `bg-dev-primary` for the main container
+3. **DO NOT hardcode `text-white`** - Always use `text-dev-text` for theme compatibility, EXCEPT on `bg-dev-surface` where you should use `text-white dark:text-dev-text` for proper contrast across themes
+4. **VERIFY that `FilteredPosts.tsx` (and similar accent sections) use `bg-dev-surface`** instead of `bg-dev-primary` or `bg-dev-bg` so green is preserved in light mode
 
 **CORRECT USAGE:**
 - Main content background: `bg-dev-bg` (cream in light, near-black in dark)
 - Text color: `text-dev-text` (dark green in light, off-white in dark)
 - Button backgrounds: `bg-dev-primary` (dark green in both themes)
 - Links and accents: `text-dev-accent` (dark green in light, teal in dark)
+- Accent surface sections: `bg-dev-surface` (dark green in light, neutral dark in dark)
+- Accent surface text: `text-white dark:text-dev-text`
 
 ## Accessibility & testing
 
@@ -170,10 +177,11 @@ import ThemeToggle from "./ThemeToggle";
 After implementation, verify:
 1. ✅ Light mode: Cream background (#fefcf6) with dark green text (#06302b)
 2. ✅ Dark mode: Near-black background (#0b1217) with light text (#e7f4f1)
-3. ✅ FilteredPosts main container uses `bg-dev-bg` NOT `bg-dev-primary`
+3. ✅ Accent sections (e.g., FilteredPosts main container) use `bg-dev-surface` NOT `bg-dev-primary` or `bg-dev-bg`
 4. ✅ No hardcoded `text-white` - all text uses theme variables
 5. ✅ Buttons keep dark green background (#06302b) in BOTH themes
 6. ✅ Links are dark green in light mode, teal in dark mode
+7. ✅ Green accent surfaces are preserved in light mode (not flattened to cream)
 
 # Contract Alignment with Multi-Theme
 
