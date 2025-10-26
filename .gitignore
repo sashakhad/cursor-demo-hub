@@ -53,5 +53,8 @@ storybook-static
 *.swo
 *~
 
+# cursor
+.cursor/screenshots/
+
 # os
 Thumbs.db
