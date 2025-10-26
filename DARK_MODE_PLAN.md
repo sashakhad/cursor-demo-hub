@@ -5,16 +5,15 @@
 - Add Tailwind dark mode via class strategy and switch the existing `dev-*` palette to CSS variables so components automatically theme without edits.
 - Define light/dark variable sets in `app/globals.css`.
 - Prevent flash-of-wrong-theme with a tiny inline script in `app/layout.tsx` that sets the initial theme before hydration and exposes `data-theme` for tests.
-- Create an accessible `ThemeToggle` component with `data-testid` and proper ARIA, then render it in `app/components/SideBar.tsx` near the site title.
+- Create an accessible `ThemeToggle` component with `data-testid` and proper ARIA, positioned in the top-right corner of the main content panel (always visible on all screen sizes).
 - Introduce a dedicated `dev-surface` token for accent surfaces that must remain green in light mode but map to a neutral dark surface in dark mode. Use this for sections that currently have green backgrounds so they do not get flattened to cream.
 
 ## Files to change
 
 - `tailwind.config.ts`: enable `darkMode: "class"`; map `dev-*` colors to CSS variables.
 - `app/globals.css`: define light/dark CSS variables for `--color-dev-*` and keep existing base/utilities.
-- `app/layout.tsx`: add `suppressHydrationWarning` and an inline `beforeInteractive` script to apply the theme class early; set `data-theme`.
+- `app/layout.tsx`: add `suppressHydrationWarning` and an inline `beforeInteractive` script to apply the theme class early; set `data-theme`; position the ThemeToggle in the top-right of the main content area.
 - `app/components/ThemeToggle.tsx`: new client component.
-- `app/components/SideBar.tsx`: render the toggle in the header area.
 
 ## Key edits (concise)
 
@@ -127,7 +126,7 @@ export default function ThemeToggle() {
       aria-pressed={isDark}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       data-testid="theme-toggle"
-      className="rounded-md p-2 text-dev-text hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-dev-accent"
+      className="fixed top-4 right-4 z-50 rounded-md p-2 text-dev-text hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-dev-accent bg-dev-card shadow-sm"
       title={isDark ? "Light mode" : "Dark mode"}
     >
       <span aria-hidden>{isDark ? "☀️" : "🌙"}</span>
@@ -136,17 +135,14 @@ export default function ThemeToggle() {
 }
 ```
 
-- app/components/SideBar.tsx (render toggle near the title)
+- app/layout.tsx (render toggle in the root layout)
 ```tsx
-import ThemeToggle from "./ThemeToggle";
-// ... inside header block near "Cursor Curious"
-<div className="ml-2 mt-10 flex items-center justify-between gap-3 p-4">
-  <div>
-    <h1 className="text-dev-text">Cursor Curious</h1>
-    <div className="text-base text-dev-secondary">Clean, markdown-powered blogging...</div>
-  </div>
+import ThemeToggle from "./components/ThemeToggle";
+// ... in the body, after the main content wrapper
+<body>
   <ThemeToggle />
-</div>
+  {/* rest of content */}
+</body>
 ```
 
 

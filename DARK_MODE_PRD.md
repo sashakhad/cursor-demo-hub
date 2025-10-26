@@ -54,7 +54,7 @@ Introduce a first-class dark mode and an accessible theme toggle that persists u
 - Subsequent visits: follow last explicit user choice.
 - Persistence: store user choice locally; never require auth.
 - No FOUC: the initial theme appears before content paints.
-- Toggle placement: visible in the primary sidebar/header area on desktop; discoverable on mobile.
+- Toggle placement: fixed in the top-right corner of the main content panel; always visible and accessible on all screen sizes (mobile and desktop).
 - Toggle semantics: a single control that flips between light and dark.
 - Toggle state: communicates current state and next action (e.g., icon + label/title).
 - Coverage: applies to body background, primary/secondary text, links, buttons, inputs, cards/surfaces, dividers/borders, code blocks.
@@ -134,5 +134,4 @@ Introduce a first-class dark mode and an accessible theme toggle that persists u
 ## Open Questions
 
 - Should we offer an explicit "System" option alongside Light/Dark?
-- Preferred toggle placement on small screens (header vs. within sidebar)?
 - Do we want telemetry on theme selections for product insight?
