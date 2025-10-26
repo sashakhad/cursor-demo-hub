@@ -42,16 +42,16 @@ function PostLink({
 
   return (
     <Container variant="post">
-      <div>
+      <div className="w-full">
         <Link
           href={`/posts/${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
         >
           <div className="flex items-center justify-between gap-2 md:gap-5">
-            <h4 className="text-lg leading-tight text-white dark:text-dev-text decoration-white dark:decoration-dev-text hover:underline md:text-xl">
+            <h4 className="text-lg leading-tight text-white dark:text-dev-text decoration-white dark:decoration-dev-text hover:underline md:text-xl flex-1">
               {title}
             </h4>
             <Image
-              className="flex-shrink-0"
+              className="flex-shrink-0 ml-auto"
               src="/arrow-forward.svg"
               alt="arrow"
               width={12}
