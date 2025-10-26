@@ -37,12 +37,12 @@ Define semantic variables for all four themes. Purple and Orange MUST change `--
 }
 
 [data-theme="dark"] {
-  --color-dev-primary: #CBE7E2;
-  --color-dev-accent: #7CD4C2;
-  --color-dev-text: #E7F4F1;
+  --color-dev-primary: #06302B;  /* Keep dark for buttons - same as light */
+  --color-dev-accent: #7CD4C2;   /* Bright teal for accents */
+  --color-dev-text: #E7F4F1;     /* Light text for dark background */
   --color-dev-secondary: rgba(231, 244, 241, 0.7);
-  --color-dev-bg: #0B1217;
-  --color-dev-card: #111927;
+  --color-dev-bg: #0B1217;       /* Very dark background */
+  --color-dev-card: #111927;     /* Slightly lighter dark for cards */
 }
 
 [data-theme="purple"] {

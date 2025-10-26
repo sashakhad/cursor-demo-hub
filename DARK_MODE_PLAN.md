@@ -39,22 +39,27 @@ export default {
 - app/globals.css
 ```css
 :root {
-  --color-dev-primary: #06302b;
-  --color-dev-accent: #06302b;
-  --color-dev-text: #06302b;
-  --color-dev-secondary: rgba(6, 48, 43, 0.6);
-  --color-dev-bg: #fefcf6;
-  --color-dev-card: #ffffff;
+  --color-dev-primary: #06302b;      /* Dark green - for buttons/active states */
+  --color-dev-accent: #06302b;       /* Same as primary in light mode */
+  --color-dev-text: #06302b;         /* Dark green text */
+  --color-dev-secondary: rgba(6, 48, 43, 0.6);  /* Muted dark green */
+  --color-dev-bg: #fefcf6;           /* Cream background */
+  --color-dev-card: #ffffff;         /* White card background */
 }
 .dark {
-  --color-dev-primary: #cbe7e2;
-  --color-dev-accent: #7cd4c2;
-  --color-dev-text: #e7f4f1;
-  --color-dev-secondary: rgba(231, 244, 241, 0.7);
-  --color-dev-bg: #0b1217; /* near slate-950 */
-  --color-dev-card: #111927; /* near slate-900 */
+  --color-dev-primary: #06302b;      /* KEEP dark green for buttons/active states */
+  --color-dev-accent: #7cd4c2;       /* Bright teal for links/highlights */
+  --color-dev-text: #e7f4f1;         /* Very light text for readability */
+  --color-dev-secondary: rgba(231, 244, 241, 0.7);  /* Muted light text */
+  --color-dev-bg: #0b1217;           /* Very dark background (near black) */
+  --color-dev-card: #111927;         /* Slightly lighter dark for cards */
 }
 ```
+
+**IMPORTANT**: 
+- `dev-primary` is used for buttons and active states, NOT backgrounds
+- `dev-bg` is the main background color for content areas
+- In dark mode, `dev-primary` should remain dark for button backgrounds
 
 - app/layout.tsx (apply theme before hydration)
 ```tsx
@@ -140,11 +145,35 @@ import ThemeToggle from "./ThemeToggle";
 ```
 
 
+## Critical Implementation Notes
+
+**COMMON MISTAKES TO AVOID:**
+1. **DO NOT use `bg-dev-primary` for main content areas** - Use `bg-dev-bg` instead
+2. **DO NOT use light colors for `dev-primary` in dark mode** - It's for buttons, keep it dark (#06302b)
+3. **DO NOT hardcode `text-white`** - Always use `text-dev-text` for theme compatibility
+4. **VERIFY that FilteredPosts.tsx uses `bg-dev-bg`** not `bg-dev-primary` for the main container
+
+**CORRECT USAGE:**
+- Main content background: `bg-dev-bg` (cream in light, near-black in dark)
+- Text color: `text-dev-text` (dark green in light, off-white in dark)
+- Button backgrounds: `bg-dev-primary` (dark green in both themes)
+- Links and accents: `text-dev-accent` (dark green in light, teal in dark)
+
 ## Accessibility & testing
 
 - Uses a semantic button with `aria-pressed`, focus ring, keyboard support, and clear labels.
 - Persistent preference via `localStorage`; respects system preference on first visit.
 - E2E-friendly: toggle has `data-testid="theme-toggle"`; current theme is on `html[data-theme]`.
+
+## Verification Checklist
+
+After implementation, verify:
+1. ✅ Light mode: Cream background (#fefcf6) with dark green text (#06302b)
+2. ✅ Dark mode: Near-black background (#0b1217) with light text (#e7f4f1)
+3. ✅ FilteredPosts main container uses `bg-dev-bg` NOT `bg-dev-primary`
+4. ✅ No hardcoded `text-white` - all text uses theme variables
+5. ✅ Buttons keep dark green background (#06302b) in BOTH themes
+6. ✅ Links are dark green in light mode, teal in dark mode
 
 # Contract Alignment with Multi-Theme
 
