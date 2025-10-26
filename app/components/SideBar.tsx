@@ -60,7 +60,7 @@ const Sidebar = ({ groupedPosts }: SidebarProps) => {
         )}
 
         <div className="ml-2 mt-10 flex flex-col gap-3 p-4">
-          <h1 className="text-dev-text">Developer Blog</h1>
+          <h1 className="text-dev-text">Cursor Curious</h1>
           <div className="text-base text-dev-secondary">
             Clean, markdown-powered blogging for developers who love to write.
           </div>
