@@ -1,7 +1,7 @@
-# Four Themes and Simple Theme Dropdown — PRD
+# Four Themes with Properly Styled Dropdown Selector — PRD
 
 ## Overview
-Simplify theming to four standalone themes: Light, Dark, Purple, and Orange. Replace the previous mode+accent matrix with a single dropdown that selects exactly one theme. Maintain a token-based design and deliver a flicker-free, accessible experience.
+Implement four distinct, cohesive themes: Light (green), Dark (teal), Purple, and Orange. Replace the binary toggle with a **properly styled, compact dropdown selector** that looks professional and fits the design. Each theme must be a complete color system, not just accent color variations.
 
 ## Objectives
 - Reduce complexity to a single axis (theme).
@@ -14,11 +14,17 @@ Simplify theming to four standalone themes: Light, Dark, Purple, and Orange. Rep
 
 ## Proposed Direction (To-Be)
 - Four standalone themes: Light, Dark, Purple, Orange.
-- Single dropdown labeled “Theme” that selects one theme.
+- **Properly styled dropdown selector** with:
+  - Small, appropriate text size (`text-sm` or `text-base`)
+  - Compact padding (`px-2 py-1`)
+  - Theme-aware styling (borders, background)
+  - Professional appearance that fits the sidebar
+- Each theme provides a complete, cohesive color experience.
 - Persist selection locally and apply before first paint.
 
 ## In Scope
-- Four themes and a single dropdown selector.
+- Four complete themes with comprehensive color systems.
+- Properly styled dropdown selector with compact sizing.
 - Persistence and early initialization (no FOUC).
 - E2E-friendly attributes and root data attribute.
 
@@ -37,16 +43,22 @@ Simplify theming to four standalone themes: Light, Dark, Purple, and Orange. Rep
 - Default theme: Light.
 - Persistence: localStorage key `theme` set to one of `light|dark|purple|orange`.
 - No FOUC: apply the selected theme before initial paint.
-- Control: native select preferred; accessible listbox acceptable.
+- **UI Control: Properly styled `<select>` dropdown** with:
+  - Small text size (`text-sm` class - REQUIRED)
+  - Compact padding (`px-2 py-1` - REQUIRED)
+  - Theme-aware colors (use `dev-*` variables)
+  - Professional appearance
+  - **MUST NOT have huge text or excessive padding**
 - Testing exposure:
   - data-testid="theme-selector" on the control.
   - `html[data-theme]` equals the selected theme.
 
 ## Accessibility Requirements
-- Native select semantics or WAI-ARIA compliant listbox.
-- Keyboard: Tab to focus, Arrow keys to navigate, Enter/Space to select, Esc to close (if custom listbox).
+- Native `<select>` element with proper semantics.
+- Keyboard: Tab to focus, Arrow keys to navigate options, Enter to select.
 - Visible focus ring with sufficient contrast.
-- Minimum 44×44 px tap target.
+- aria-label for screen readers.
+- Compact but accessible sizing.
 
 ## Visual/Theming Requirements
 - Semantic tokens: accent, text-primary, text-secondary, background, card, border-subtle.
