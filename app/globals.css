@@ -50,15 +50,20 @@
   }
   
   .prose blockquote {
-    @apply border-l-4 border-dev-accent/60 bg-dev-accent/5 pl-4 italic text-dev-secondary rounded-r-lg my-4;
+    @apply border-l-4 border-dev-accent pl-4 italic text-dev-secondary rounded-r-lg my-4;
+    border-left-color: color-mix(in srgb, var(--color-dev-accent) 60%, transparent);
+    background-color: color-mix(in srgb, var(--color-dev-accent) 5%, transparent);
   }
   
   .prose code {
-    @apply bg-dev-accent/10 px-2 py-1 rounded text-sm font-mono text-dev-text;
+    @apply px-2 py-1 rounded text-sm font-mono text-dev-text;
+    background-color: color-mix(in srgb, var(--color-dev-accent) 10%, transparent);
   }
   
   .prose pre {
-    @apply bg-dev-accent/5 border border-dev-accent/20 p-4 rounded-lg overflow-x-auto my-4;
+    @apply p-4 rounded-lg overflow-x-auto my-4;
+    background-color: color-mix(in srgb, var(--color-dev-accent) 5%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-dev-accent) 20%, transparent);
   }
   
   .prose pre code {
