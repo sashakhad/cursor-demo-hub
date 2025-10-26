@@ -1,9 +1,18 @@
 # Dark Mode + Accessible Theme Toggle
 
-## What we’ll do
+## ⚠️ CRITICAL REQUIREMENT: PRESERVE THE GREEN THEME
+**The blog currently has a beautiful green/cream color scheme in light mode. This MUST be preserved exactly as-is. Only add dark mode support without changing ANY light mode colors.**
 
-- Add Tailwind dark mode via class strategy and switch the existing `dev-*` palette to CSS variables so components automatically theme without edits.
-- Define light/dark variable sets in `app/globals.css`.
+Current Light Mode Colors (DO NOT CHANGE):
+- Background: Cream (#FEFCF6)
+- Text: Dark Green (#06302B)
+- Accents: Dark Green (#06302B)
+- Secondary: Muted Green (rgba(6, 48, 43, 0.6))
+
+## What we'll do
+
+- Add Tailwind dark mode via class strategy, keeping ALL existing colors intact.
+- Add dark mode CSS variables WITHOUT modifying the existing `:root` variables.
 - Prevent flash-of-wrong-theme with a tiny inline script in `app/layout.tsx` that sets the initial theme before hydration and exposes `data-theme` for tests.
 - Create an accessible `ThemeToggle` component with `data-testid` and proper ARIA, then render it in `app/components/SideBar.tsx` near the site title.
 
@@ -17,13 +26,17 @@
 
 ## Key edits (concise)
 
+### CRITICAL: PRESERVE THE ORIGINAL GREEN THEME IN LIGHT MODE
+**The blog currently has a beautiful green/cream color scheme. DO NOT change or remove these colors when implementing dark mode!**
+
 - tailwind.config.ts
 ```ts
 export default {
-  darkMode: "class",
+  darkMode: "class",  // ADD this line
   theme: {
     extend: {
       colors: {
+        // DO NOT CHANGE THESE - they map to CSS variables
         "dev-primary": "var(--color-dev-primary)",
         "dev-accent": "var(--color-dev-accent)",
         "dev-text": "var(--color-dev-text)",
@@ -38,28 +51,41 @@ export default {
 
 - app/globals.css
 ```css
+/* CRITICAL: Keep ALL existing styles, just add/modify these CSS variables */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  --color-dev-primary: #06302b;      /* Dark green - for buttons/active states */
-  --color-dev-accent: #06302b;       /* Same as primary in light mode */
-  --color-dev-text: #06302b;         /* Dark green text */
-  --color-dev-secondary: rgba(6, 48, 43, 0.6);  /* Muted dark green */
-  --color-dev-bg: #fefcf6;           /* Cream background */
-  --color-dev-card: #ffffff;         /* White card background */
+  /* LIGHT MODE - PRESERVE THE GREEN THEME */
+  --color-dev-primary: #06302B;      /* Dark green - KEEP THIS */
+  --color-dev-accent: #06302B;       /* Dark green - KEEP THIS */
+  --color-dev-text: #06302B;         /* Dark green text - KEEP THIS */
+  --color-dev-secondary: rgba(6, 48, 43, 0.6);  /* Muted green - KEEP THIS */
+  --color-dev-bg: #FEFCF6;           /* Cream background - KEEP THIS */
+  --color-dev-card: #FFFFFF;         /* White cards - KEEP THIS */
 }
+
 .dark {
-  --color-dev-primary: #06302b;      /* KEEP dark green for buttons/active states */
-  --color-dev-accent: #7cd4c2;       /* Bright teal for links/highlights */
-  --color-dev-text: #e7f4f1;         /* Very light text for readability */
+  /* DARK MODE - New colors for dark theme only */
+  --color-dev-primary: #06302B;      /* Keep dark for buttons */
+  --color-dev-accent: #7CD4C2;       /* Teal for links/highlights */
+  --color-dev-text: #E7F4F1;         /* Light text for dark bg */
   --color-dev-secondary: rgba(231, 244, 241, 0.7);  /* Muted light text */
-  --color-dev-bg: #0b1217;           /* Very dark background (near black) */
-  --color-dev-card: #111927;         /* Slightly lighter dark for cards */
+  --color-dev-bg: #0B1217;           /* Very dark background */
+  --color-dev-card: #111927;         /* Dark card background */
 }
+
+/* KEEP ALL EXISTING @layer base AND @layer components STYLES */
 ```
 
-**IMPORTANT**: 
+**IMPORTANT WARNINGS**: 
+- DO NOT remove or change the green colors in light mode
+- DO NOT change color values to generic colors like gray/slate
+- DO NOT remove existing Tailwind classes that use `dev-*` colors
+- ONLY add the `.dark` class variables, don't modify `:root`
 - `dev-primary` is used for buttons and active states, NOT backgrounds
 - `dev-bg` is the main background color for content areas
-- In dark mode, `dev-primary` should remain dark for button backgrounds
 
 - app/layout.tsx (apply theme before hydration)
 ```tsx
@@ -168,12 +194,27 @@ import ThemeToggle from "./ThemeToggle";
 ## Verification Checklist
 
 After implementation, verify:
-1. ✅ Light mode: Cream background (#fefcf6) with dark green text (#06302b)
-2. ✅ Dark mode: Near-black background (#0b1217) with light text (#e7f4f1)
-3. ✅ FilteredPosts main container uses `bg-dev-bg` NOT `bg-dev-primary`
-4. ✅ No hardcoded `text-white` - all text uses theme variables
-5. ✅ Buttons keep dark green background (#06302b) in BOTH themes
-6. ✅ Links are dark green in light mode, teal in dark mode
+
+### Light Mode MUST Have:
+1. ✅ **Cream background** (#FEFCF6) - NOT white, NOT gray
+2. ✅ **Dark green text** (#06302B) - NOT black, NOT gray
+3. ✅ **Dark green links** (#06302B) - NOT blue, NOT generic colors
+4. ✅ **Green-tinted code blocks** - Using color-mix with green accent
+5. ✅ **Original green theme fully preserved** - Should look EXACTLY like before
+
+### Dark Mode Should Have:
+1. ✅ Near-black background (#0B1217)
+2. ✅ Light text (#E7F4F1)
+3. ✅ Teal accent for links (#7CD4C2)
+4. ✅ Dark card backgrounds (#111927)
+5. ✅ Good contrast for readability
+
+### Common Mistakes to Check:
+1. ❌ Light mode lost its green theme (turned gray/generic)
+2. ❌ FilteredPosts using `bg-dev-primary` instead of `bg-dev-bg`
+3. ❌ Hardcoded `text-white` instead of `text-dev-text`
+4. ❌ CSS variables in `:root` were changed or removed
+5. ❌ Existing styles in @layer base/components were deleted
 
 # Contract Alignment with Multi-Theme
 
