@@ -129,29 +129,45 @@ function FilteredPosts({ allPostsData }: FilteredPostsProps): JSX.Element {
       )}
 
       {!isDateFilter && !isTextFilter && (
-        <div className="mt-4 flex gap-2">
+        <div className="mt-4 flex gap-2 items-center">
           {currentPage > 1 && (
-            <PaginationButton onClick={() => setCurrentPage(currentPage - 1)}>
+            <span 
+              onClick={() => setCurrentPage(currentPage - 1)}
+              className="text-white cursor-pointer hover:text-white/70"
+            >
               &laquo;
-            </PaginationButton>
+            </span>
           )}
 
-          {pageNumbers.map((pageNumber) => (
-            <PaginationButton
-              key={pageNumber}
-              onClick={() => setCurrentPage(pageNumber)}
-              className={
-                currentPage === pageNumber ? "border border-white" : ""
-              }
-            >
-              {pageNumber}
-            </PaginationButton>
-          ))}
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => {
+            const isInVisibleRange = pageNumber >= startPage && pageNumber <= endPage;
+            
+            if (isInVisibleRange) {
+              return (
+                <PaginationButton
+                  key={pageNumber}
+                  onClick={() => setCurrentPage(pageNumber)}
+                  isActive={currentPage === pageNumber}
+                >
+                  {pageNumber}
+                </PaginationButton>
+              );
+            } else {
+              return (
+                <span key={pageNumber} className="text-white">
+                  {pageNumber}
+                </span>
+              );
+            }
+          })}
 
           {currentPage < totalPages && (
-            <PaginationButton onClick={() => setCurrentPage(currentPage + 1)}>
+            <span 
+              onClick={() => setCurrentPage(currentPage + 1)}
+              className="text-white cursor-pointer hover:text-white/70"
+            >
               &raquo;
-            </PaginationButton>
+            </span>
           )}
         </div>
       )}
