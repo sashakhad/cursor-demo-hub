@@ -17,12 +17,12 @@ Extend the existing dark mode toggle system to support four distinct themes: Lig
 - Use `text-sm` for small text (NOT default/large text)
 - Use `px-2 py-1` for compact padding
 - Style with theme variables for consistency
-- Should fit nicely in the sidebar next to the title
+- Fixed in the top-right corner (always visible on all screen sizes)
 
 ```tsx
-// CORRECT - Compact, professional dropdown
+// CORRECT - Compact, professional dropdown with fixed positioning
 <select 
-  className="text-sm rounded-md border border-dev-secondary bg-dev-bg px-2 py-1 text-dev-text focus:outline-none focus-visible:ring-2 focus-visible:ring-dev-accent cursor-pointer hover:border-dev-accent transition-colors"
+  className="fixed top-4 right-4 z-50 text-sm rounded-md border border-dev-secondary bg-dev-card px-2 py-1 text-dev-text focus:outline-none focus-visible:ring-2 focus-visible:ring-dev-accent cursor-pointer hover:border-dev-accent transition-colors shadow-sm"
 >
   <option value="light">☀️ Light</option>
   <option value="dark">🌙 Dark</option>
@@ -34,8 +34,8 @@ Extend the existing dark mode toggle system to support four distinct themes: Lig
 **DO NOT create a dropdown that:**
 - Has huge text (missing `text-sm` class)
 - Has excessive padding
-- Looks out of place in the sidebar
 - Doesn't use theme variables for styling
+- Isn't fixed in the top-right corner
 
 ### 2. Comprehensive Theme Colors
 
@@ -87,7 +87,7 @@ Each theme must be a complete color system:
 
 ### 1. Replace app/components/ThemeToggle.tsx with app/components/ThemeSelector.tsx
 
-**DELETE** the ThemeToggle component and **CREATE** ThemeSelector:
+**DELETE** the ThemeToggle component and **CREATE** ThemeSelector (positioned in top-right corner):
 
 ```tsx
 "use client";
@@ -120,7 +120,7 @@ export default function ThemeSelector() {
       <select 
         data-testid="theme-selector" 
         defaultValue="light" 
-        className="text-sm rounded-md border border-dev-secondary bg-dev-bg px-2 py-1 text-dev-text focus:outline-none focus-visible:ring-2 focus-visible:ring-dev-accent"
+        className="fixed top-4 right-4 z-50 text-sm rounded-md border border-dev-secondary bg-dev-card px-2 py-1 text-dev-text focus:outline-none focus-visible:ring-2 focus-visible:ring-dev-accent shadow-sm"
         disabled
       >
         <option value="light">☀️ Light</option>
@@ -137,7 +137,7 @@ export default function ThemeSelector() {
       value={theme} 
       onChange={handleChange} 
       aria-label="Select theme" 
-      className="text-sm rounded-md border border-dev-secondary bg-dev-bg px-2 py-1 text-dev-text focus:outline-none focus-visible:ring-2 focus-visible:ring-dev-accent cursor-pointer hover:border-dev-accent transition-colors"
+      className="fixed top-4 right-4 z-50 text-sm rounded-md border border-dev-secondary bg-dev-card px-2 py-1 text-dev-text focus:outline-none focus-visible:ring-2 focus-visible:ring-dev-accent cursor-pointer hover:border-dev-accent transition-colors shadow-sm"
     >
       <option value="light">☀️ Light</option>
       <option value="dark">🌙 Dark</option>
@@ -148,16 +148,16 @@ export default function ThemeSelector() {
 }
 ```
 
-### 2. Update app/components/SideBar.tsx
+### 2. Update app/layout.tsx
 
-Replace the ThemeToggle import and usage:
+Replace the ThemeToggle import and usage in the root layout:
 
 ```tsx
 // Change this:
-import ThemeToggle from "./ThemeToggle";
+import ThemeToggle from "./components/ThemeToggle";
 
 // To this:
-import ThemeSelector from "./ThemeSelector";
+import ThemeSelector from "./components/ThemeSelector";
 
 // And in the JSX, change:
 <ThemeToggle />
@@ -165,6 +165,8 @@ import ThemeSelector from "./ThemeSelector";
 // To:
 <ThemeSelector />
 ```
+
+The selector should be rendered directly in the body, not in the sidebar.
 
 ### 3. Update app/globals.css
 
@@ -205,32 +207,37 @@ The existing script should work but update to handle all themes:
 ## Critical Styling Requirements
 
 ### MUST HAVE:
-1. **Small text**: Use `text-sm` class on the select
-2. **Compact padding**: Use `px-2 py-1` (not `px-3 py-2`)
-3. **Theme variables**: Use `border-dev-secondary`, `bg-dev-bg`, `text-dev-text`
-4. **Hover state**: Add `hover:border-dev-accent transition-colors`
-5. **Focus ring**: Include focus-visible styles
-6. **Cursor pointer**: Show it's interactive
+1. **Fixed positioning**: Use `fixed top-4 right-4 z-50` for top-right corner
+2. **Small text**: Use `text-sm` class on the select
+3. **Compact padding**: Use `px-2 py-1` (not `px-3 py-2`)
+4. **Theme variables**: Use `border-dev-secondary`, `bg-dev-card`, `text-dev-text`
+5. **Hover state**: Add `hover:border-dev-accent transition-colors`
+6. **Focus ring**: Include focus-visible styles
+7. **Cursor pointer**: Show it's interactive
+8. **Shadow**: Use `shadow-sm` for better visibility
 
 ### MUST AVOID:
-1. **Large text**: Do NOT omit text size class (will inherit large text)
-2. **Excessive padding**: Do NOT use `px-3 py-2` or larger
-3. **Fixed colors**: Do NOT hardcode colors like `border-gray-300`
-4. **Too wide**: Do NOT set large min-width
+1. **Sidebar placement**: Do NOT put in sidebar (will disappear on small screens)
+2. **Large text**: Do NOT omit text size class (will inherit large text)
+3. **Excessive padding**: Do NOT use `px-3 py-2` or larger
+4. **Fixed colors**: Do NOT hardcode colors like `border-gray-300`
+5. **Too wide**: Do NOT set large min-width
 
 ## Common Implementation Mistakes to Avoid
 
-1. **Forgetting `text-sm`** - Results in huge text in the dropdown
-2. **Using large padding** - Makes dropdown too bulky
-3. **Not updating imports** - Forgetting to change from ThemeToggle to ThemeSelector
-4. **Only changing accents** - Each theme needs complete color system
-5. **Not testing the dropdown appearance** - Always verify it looks professional
+1. **Putting in sidebar** - Selector disappears on mobile; must be fixed in top-right
+2. **Forgetting `text-sm`** - Results in huge text in the dropdown
+3. **Using large padding** - Makes dropdown too bulky
+4. **Not updating imports in layout.tsx** - Forgetting to change from ThemeToggle to ThemeSelector
+5. **Only changing accents** - Each theme needs complete color system
+6. **Not testing the dropdown appearance** - Always verify it looks professional and is always visible
 
 ## Verification Checklist
 
+✅ Dropdown is fixed in top-right corner (`fixed top-4 right-4 z-50`)
 ✅ Dropdown has small, appropriate text (`text-sm` class present)
 ✅ Dropdown has compact padding (`px-2 py-1`)
-✅ Dropdown fits nicely in sidebar (not too large)
+✅ Dropdown is visible on all screen sizes (mobile, tablet, desktop)
 ✅ Light theme keeps original green colors
 ✅ Purple theme has purple background AND text
 ✅ Orange theme has orange background AND text

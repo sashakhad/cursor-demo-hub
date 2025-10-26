@@ -18,7 +18,8 @@ Implement four distinct, cohesive themes: Light (green), Dark (teal), Purple, an
   - Small, appropriate text size (`text-sm` or `text-base`)
   - Compact padding (`px-2 py-1`)
   - Theme-aware styling (borders, background)
-  - Professional appearance that fits the sidebar
+  - Fixed in the top-right corner (always visible on all screen sizes)
+  - Professional appearance with subtle shadow for visibility
 - Each theme provides a complete, cohesive color experience.
 - Persist selection locally and apply before first paint.
 
@@ -44,11 +45,13 @@ Implement four distinct, cohesive themes: Light (green), Dark (teal), Purple, an
 - Persistence: localStorage key `theme` set to one of `light|dark|purple|orange`.
 - No FOUC: apply the selected theme before initial paint.
 - **UI Control: Properly styled `<select>` dropdown** with:
+  - Fixed positioning in top-right corner (`fixed top-4 right-4 z-50` - REQUIRED)
   - Small text size (`text-sm` class - REQUIRED)
   - Compact padding (`px-2 py-1` - REQUIRED)
   - Theme-aware colors (use `dev-*` variables)
-  - Professional appearance
-  - **MUST NOT have huge text or excessive padding**
+  - Professional appearance with subtle shadow
+  - Always visible on all screen sizes (mobile, tablet, desktop)
+  - **MUST NOT have huge text, excessive padding, or be placed in sidebar**
 - Testing exposure:
   - data-testid="theme-selector" on the control.
   - `html[data-theme]` equals the selected theme.
