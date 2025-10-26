@@ -67,38 +67,27 @@ const PostContent = ({ postData, formattedDate }: { postData: PostData; formatte
   </article>
 );
 
+const NavLink = ({ post, direction }: { post: PostData; direction: 'prev' | 'next' }) => {
+  const isPrev = direction === 'prev';
+  const slug = post.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  
+  return (
+    <Link href={`/posts/${slug}`} className="flex-1 max-w-[45%]">
+      <div className={`text-dev-text hover:text-dev-accent ${isPrev ? 'text-left' : 'text-right'}`}>
+        <div className={`flex items-center gap-2 ${isPrev ? '' : 'justify-end'}`}>
+          {isPrev && <span className="flex-shrink-0">←</span>}
+          <span className="truncate">{post.title}</span>
+          {!isPrev && <span className="flex-shrink-0">→</span>}
+        </div>
+      </div>
+    </Link>
+  );
+};
+
 const PostNavigation = ({ prevPost, nextPost }: { prevPost: PostData | null; nextPost: PostData | null }) => (
   <div className="flex w-full justify-between items-start mt-10 gap-8">
-    {prevPost ? (
-      <Link
-        href={`/posts/${prevPost.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-        className="flex-1 max-w-[45%]"
-      >
-        <div className="text-dev-text hover:text-dev-accent text-left">
-          <div className="flex items-center gap-2">
-            <span className="flex-shrink-0">←</span>
-            <span className="truncate">{prevPost.title}</span>
-          </div>
-        </div>
-      </Link>
-    ) : (
-      <div className="flex-1 max-w-[45%]" />
-    )}
-    {nextPost ? (
-      <Link
-        href={`/posts/${nextPost.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-        className="flex-1 max-w-[45%]"
-      >
-        <div className="text-dev-text hover:text-dev-accent text-right">
-          <div className="flex items-center gap-2 justify-end">
-            <span className="truncate">{nextPost.title}</span>
-            <span className="flex-shrink-0">→</span>
-          </div>
-        </div>
-      </Link>
-    ) : (
-      <div className="flex-1 max-w-[45%]" />
-    )}
+    {prevPost ? <NavLink post={prevPost} direction="prev" /> : <div className="flex-1 max-w-[45%]" />}
+    {nextPost ? <NavLink post={nextPost} direction="next" /> : <div className="flex-1 max-w-[45%]" />}
   </div>
 );
 
