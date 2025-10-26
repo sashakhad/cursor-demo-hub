@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useFilter } from "@/app/context/FilterContext";
 import { PostData } from "@/lib/posts";
+import Input from "./Input";
+import Button from "./Button";
 
 interface SidebarProps {
   groupedPosts: { [year: string]: { [month: string]: PostData[] } };
@@ -66,19 +68,18 @@ const Sidebar = ({ groupedPosts }: SidebarProps) => {
           </div>
         </div>
         <div className="flex items-center p-4">
-          <input
-            type="text"
+          <Input
             value={inputValue}
             onChange={handleInputChange}
-            className="flex-grow rounded-lg border border-dev-secondary/30 bg-dev-card p-4 text-base text-dev-text placeholder-dev-secondary"
             placeholder="search posts, tags, keywords..."
           />
-          <button
+          <Button
             onClick={handleFilterSubmit}
-            className="ml-2 block rounded-lg bg-dev-accent p-4 text-base text-white md:hidden"
+            variant="primary"
+            className="ml-2 block md:hidden"
           >
             Search
-          </button>
+          </Button>
         </div>
 
         <div className="mt-6 p-4">
@@ -100,11 +101,12 @@ const Sidebar = ({ groupedPosts }: SidebarProps) => {
                     return (
                       <button
                         key={month}
-                        className={`block px-4 py-2 text-base text-dev-text ${
+                        className={`block px-4 py-2 text-base ${
                           isSelected
-                            ? "rounded-md bg-dev-accent/20"
-                            : "hover:underline"
+                            ? "rounded-md text-dev-text"
+                            : "text-dev-text hover:underline"
                         }`}
+                        style={isSelected ? { backgroundColor: 'rgba(6, 48, 43, 0.2)' } : undefined}
                         onClick={() => handleMonthClick(year, month)}
                       >
                         {month}
