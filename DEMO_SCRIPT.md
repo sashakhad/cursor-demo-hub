@@ -28,7 +28,7 @@
 - **Deep Link:** [Implement Dark Mode](cursor://anysphere.cursor-deeplink/prompt?text=Implement%20dark%20mode%20and%20add%20a%20theme%20toggle.%20Make%20sure%20the%20toggle%20follows%20accessibility%20best%20practices%20and%20is%20easily%20selectable%20with%20a%20test-id%20for%20e2e%20testing.)
 - **Prompt Text:**
   ```
-  Implement dark mode and add a theme toggle. Make sure the toggle follows accessibility best practices and is easily selectable with a test-id for e2e testing.
+  Implement dark mode and add a theme toggle. Follow the the @DARK_MODE_PRD and @DARK_MODE_PLAN
   ```
 - Watch multiple implementations happen simultaneously
 - Click on the different model buttons in the chat to view the different implementations 
@@ -40,11 +40,11 @@
 ### 3. Browser - Extend Feature with Themes
 - Open a new agent tab
 - **Task:** Add orange and purple theme options
-- **Deep Link:** [Add Themes](cursor://anysphere.cursor-deeplink/prompt?text=Add%20orange%20and%20purple%20theme%20options%20to%20the%20theme%20system.%20Convert%20the%20dark%20mode%20toggle%20to%20a%20dropdown%20where%20I%20can%20select%20the%20themes.)
+- **Deep Link:** [Add Themes](cursor://anysphere.cursor-deeplink/prompt?text=Add%20orange%20and%20purple%20theme%20options%20to%20the%20theme%20system.%20Follow%20the%20instructions%20in%20%40MULTI_THEME_PRD%20and%20%40MULTI_THEME_PLAN)
 
 - **Prompt Text:**
   ```
-  Add orange and purple theme options to the theme system. Convert the dark mode toggle to a dropdown where I can select the themes.
+  Add orange and purple theme options to the theme system. Follow the instructions in @MULTI_THEME_PRD and @MULTI_THEME_PLAN
   ```
 - IMPORTANT: Click the Globe icon in the chat and select the browser tab
 - Run the prompt to demonstrate the theme updates in real time via the browser
