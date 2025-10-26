@@ -25,7 +25,7 @@
 - Click on the toggle at the bottom left underneath chat window, select Worktree
 - Select 3-4 models to run in parallel
 - **Task:** Implement dark mode
-- **Deep Link:** [Implement Dark Mode](cursor://anysphere.cursor-deeplink/prompt?text=Implement%20dark%20mode%20and%20add%20a%20theme%20toggle.%20Make%20sure%20the%20toggle%20follows%20accessibility%20best%20practices%20and%20is%20easily%20selectable%20with%20a%20test-id%20for%20e2e%20testing.)
+- **Deep Link:** [Implement Dark Mode](cursor://anysphere.cursor-deeplink/prompt?text=Implement%20dark%20mode%20and%20add%20a%20theme%20toggle.%20Follow%20the%20the%20%40DARK_MODE_PRD%20and%20%40DARK_MODE_PLAN)
 - **Prompt Text:**
   ```
   Implement dark mode and add a theme toggle. Follow the the @DARK_MODE_PRD and @DARK_MODE_PLAN

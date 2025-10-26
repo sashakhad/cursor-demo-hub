@@ -67,10 +67,10 @@ import Script from "next/script";
         try {
           var stored = localStorage.getItem('theme');
           var mql = window.matchMedia('(prefers-color-scheme: dark)');
-          var isDark = stored ? stored === 'dark' : mql.matches;
+          var theme = stored || (mql.matches ? 'dark' : 'light');
           var root = document.documentElement;
-          root.classList.toggle('dark', isDark);
-          root.setAttribute('data-theme', isDark ? 'dark' : 'light');
+          root.setAttribute('data-theme', theme);
+          root.classList.toggle('dark', theme === 'dark');
         } catch(e) {}
       })();
     `}</Script>
@@ -145,3 +145,14 @@ import ThemeToggle from "./ThemeToggle";
 - Uses a semantic button with `aria-pressed`, focus ring, keyboard support, and clear labels.
 - Persistent preference via `localStorage`; respects system preference on first visit.
 - E2E-friendly: toggle has `data-testid="theme-toggle"`; current theme is on `html[data-theme]`.
+
+# Contract Alignment with Multi-Theme
+
+- Root element: `html`
+- Always set `data-theme` to `light` or `dark`.
+- Only set the `dark` class when `data-theme === 'dark'`.
+- Keep Tailwind `darkMode: 'class'` and CSS variables driven by `[data-theme]`.
+
+Acceptance checks:
+- On first visit: if system prefers dark, `html[data-theme="dark"].dark` is present; else `html[data-theme="light"]` and no `dark` class.
+- Toggling persists to localStorage and round-trips on reload without FOUC.
