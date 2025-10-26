@@ -5,6 +5,7 @@ import { useFilter } from "@/app/context/FilterContext";
 import { PostData } from "@/lib/posts";
 import Input from "./Input";
 import Button from "./Button";
+import ThemeToggle from "./ThemeToggle";
 
 interface SidebarProps {
   groupedPosts: { [year: string]: { [month: string]: PostData[] } };
@@ -42,21 +43,21 @@ const Sidebar = ({ groupedPosts }: SidebarProps) => {
     <>
       {/* Mobile Toggle Button */}
       <button
-        className="fixed left-4 top-4 z-40 text-2xl md:hidden text-dev-text"
+        className="fixed left-4 top-4 z-40 text-2xl md:hidden text-theme"
         onClick={toggleSidebar}
       >
         {isSidebarOpen ? "" : "☰"}
       </button>
 
       <div
-        className={`fixed inset-y-0 left-0 z-30 w-full transform bg-dev-bg p-0 text-4xl text-dev-text transition-transform duration-300 ease-in-out md:static md:w-1/3 md:transform-none ${
+        className={`fixed inset-y-0 left-0 z-30 w-full transform bg-theme p-0 text-4xl text-theme transition-transform duration-300 ease-in-out md:static md:w-1/3 md:transform-none ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
         }`}
       >
         {/* Close Button for Mobile */}
         {isSidebarOpen && (
           <button
-            className="absolute right-4 top-4 text-2xl md:hidden text-dev-text"
+            className="absolute right-4 top-4 text-2xl md:hidden text-theme"
             onClick={toggleSidebar}
           >
             ✕
@@ -64,9 +65,14 @@ const Sidebar = ({ groupedPosts }: SidebarProps) => {
         )}
 
         <div className="ml-2 mt-10 flex flex-col gap-3 p-4">
-          <h1 className="text-dev-text">Cursor Curious</h1>
-          <div className="text-base text-dev-secondary">
-            Clean, markdown-powered blogging for developers who love to write.
+          <div className="flex items-start justify-between">
+            <div className="flex flex-col gap-3">
+              <h1 className="text-theme">Cursor Curious</h1>
+              <div className="text-base text-theme-secondary">
+                Clean, markdown-powered blogging for developers who love to write.
+              </div>
+            </div>
+            <ThemeToggle />
           </div>
         </div>
         <div className="flex items-center p-4">
@@ -88,7 +94,7 @@ const Sidebar = ({ groupedPosts }: SidebarProps) => {
           {Object.keys(groupedPosts).map((year) => (
             <div key={year} className="mb-2">
               <button
-                className="flex items-center gap-2 text-2xl font-semibold text-dev-text"
+                className="flex items-center gap-2 text-2xl font-semibold text-theme"
                 onClick={() =>
                   setExpandedYear(expandedYear === year ? null : year)
                 }
@@ -105,10 +111,9 @@ const Sidebar = ({ groupedPosts }: SidebarProps) => {
                         key={month}
                         className={`block px-4 py-2 text-base ${
                           isSelected
-                            ? "rounded-md text-dev-text"
-                            : "text-dev-text hover:underline"
+                            ? "rounded-md text-theme bg-theme-accent bg-opacity-20"
+                            : "text-theme hover:underline"
                         }`}
-                        style={isSelected ? { backgroundColor: 'rgba(6, 48, 43, 0.2)' } : undefined}
                         onClick={() => handleMonthClick(year, month)}
                       >
                         {month}

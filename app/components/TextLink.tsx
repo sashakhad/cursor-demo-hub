@@ -11,7 +11,7 @@ function TextLink({ onClick, children, variant = "default", className = "" }: Te
   const variantStyles = {
     default: "text-white cursor-pointer transition-colors hover:opacity-70",
     underline: "text-white cursor-pointer underline hover:font-semibold",
-    dev: "text-dev-text cursor-pointer hover:underline",
+    dev: "text-theme cursor-pointer hover:underline",
   };
 
   return (

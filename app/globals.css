@@ -7,9 +7,36 @@
   --color-dev-primary: #06302B;
 }
 
+[data-theme="dark"] {
+  --color-dev-accent: #3b82f6;
+  --color-dev-primary: #1a1a1a;
+}
+
+[data-theme="orange"] {
+  --color-dev-accent: #ea580c;
+  --color-dev-primary: #fff7ed;
+}
+
+[data-theme="purple"] {
+  --color-dev-accent: #9333ea;
+  --color-dev-primary: #faf5ff;
+}
+
 @layer base {
   body {
     @apply bg-dev-bg text-dev-text;
+  }
+  
+  [data-theme="dark"] body {
+    @apply bg-dev-bg-dark text-dev-text-dark;
+  }
+  
+  [data-theme="orange"] body {
+    @apply bg-orange-50 text-orange-950;
+  }
+  
+  [data-theme="purple"] body {
+    @apply bg-purple-50 text-purple-950;
   }
   
   p {
@@ -18,6 +45,18 @@
   
   a {
     @apply font-medium no-underline text-dev-accent hover:underline;
+  }
+  
+  [data-theme="dark"] a {
+    @apply text-dev-accent-dark;
+  }
+  
+  [data-theme="orange"] a {
+    @apply text-orange-600 hover:text-orange-700;
+  }
+  
+  [data-theme="purple"] a {
+    @apply text-purple-600 hover:text-purple-700;
   }
   
   ul {
@@ -30,6 +69,178 @@
   
   li {
     @apply text-lg leading-relaxed;
+  }
+}
+
+@layer utilities {
+  /* Theme-aware text colors */
+  .text-theme {
+    @apply text-dev-text;
+  }
+  
+  [data-theme="dark"] .text-theme {
+    @apply text-dev-text-dark;
+  }
+  
+  [data-theme="orange"] .text-theme {
+    @apply text-orange-950;
+  }
+  
+  [data-theme="purple"] .text-theme {
+    @apply text-purple-950;
+  }
+  
+  /* Theme-aware card backgrounds */
+  .bg-theme-card {
+    @apply bg-dev-card;
+  }
+  
+  [data-theme="dark"] .bg-theme-card {
+    @apply bg-dev-card-dark;
+  }
+  
+  [data-theme="orange"] .bg-theme-card {
+    @apply bg-orange-100;
+  }
+  
+  [data-theme="purple"] .bg-theme-card {
+    @apply bg-purple-100;
+  }
+  
+  /* Theme-aware hover states */
+  .hover-theme-card:hover {
+    @apply bg-dev-card;
+  }
+  
+  [data-theme="dark"] .hover-theme-card:hover {
+    @apply bg-dev-card-dark;
+  }
+  
+  [data-theme="orange"] .hover-theme-card:hover {
+    @apply bg-orange-100;
+  }
+  
+  [data-theme="purple"] .hover-theme-card:hover {
+    @apply bg-purple-100;
+  }
+  
+  /* Theme-aware secondary text */
+  .text-theme-secondary {
+    @apply text-dev-secondary;
+  }
+  
+  [data-theme="dark"] .text-theme-secondary {
+    @apply text-dev-secondary-dark;
+  }
+  
+  [data-theme="orange"] .text-theme-secondary {
+    @apply text-orange-700;
+  }
+  
+  [data-theme="purple"] .text-theme-secondary {
+    @apply text-purple-700;
+  }
+  
+  /* Theme-aware accent backgrounds */
+  .bg-theme-accent {
+    @apply bg-dev-accent;
+  }
+  
+  [data-theme="dark"] .bg-theme-accent {
+    @apply bg-dev-accent-dark;
+  }
+  
+  [data-theme="orange"] .bg-theme-accent {
+    @apply bg-orange-600;
+  }
+  
+  [data-theme="purple"] .bg-theme-accent {
+    @apply bg-purple-600;
+  }
+  
+  /* Theme-aware background */
+  .bg-theme {
+    @apply bg-dev-bg;
+  }
+  
+  [data-theme="dark"] .bg-theme {
+    @apply bg-dev-bg-dark;
+  }
+  
+  [data-theme="orange"] .bg-theme {
+    @apply bg-orange-50;
+  }
+  
+  [data-theme="purple"] .bg-theme {
+    @apply bg-purple-50;
+  }
+  
+  /* Theme-aware main content background */
+  .bg-theme-main {
+    @apply bg-dev-primary;
+  }
+  
+  [data-theme="dark"] .bg-theme-main {
+    @apply bg-dev-bg-dark;
+  }
+  
+  [data-theme="orange"] .bg-theme-main {
+    @apply bg-orange-100;
+  }
+  
+  [data-theme="purple"] .bg-theme-main {
+    @apply bg-purple-100;
+  }
+  
+  /* Theme-aware white text (for content areas) */
+  .text-theme-content {
+    @apply text-white;
+  }
+  
+  [data-theme="dark"] .text-theme-content {
+    @apply text-white;
+  }
+  
+  [data-theme="orange"] .text-theme-content {
+    @apply text-orange-950;
+  }
+  
+  [data-theme="purple"] .text-theme-content {
+    @apply text-purple-950;
+  }
+  
+  /* Theme-aware decoration color */
+  .decoration-theme-content {
+    @apply decoration-white;
+  }
+  
+  [data-theme="dark"] .decoration-theme-content {
+    @apply decoration-white;
+  }
+  
+  [data-theme="orange"] .decoration-theme-content {
+    @apply decoration-orange-950;
+  }
+  
+  [data-theme="purple"] .decoration-theme-content {
+    @apply decoration-purple-950;
+  }
+  
+  /* Theme-aware post card background */
+  .bg-theme-post {
+    @apply bg-white;
+  }
+  
+  [data-theme="dark"] .bg-theme-post {
+    @apply bg-dev-card-dark;
+  }
+  
+  [data-theme="orange"] .bg-theme-post {
+    @apply bg-orange-200;
+  }
+  
+  [data-theme="purple"] .bg-theme-post {
+    @apply bg-purple-200;
   }
 }
 
@@ -60,9 +271,42 @@
     background-color: color-mix(in srgb, var(--color-dev-accent) 5%, transparent);
   }
   
+  [data-theme="dark"] .prose blockquote {
+    @apply border-dev-accent-dark text-dev-secondary-dark;
+    border-left-color: color-mix(in srgb, var(--color-dev-accent-dark) 60%, transparent);
+    background-color: color-mix(in srgb, var(--color-dev-accent-dark) 5%, transparent);
+  }
+  
+  [data-theme="orange"] .prose blockquote {
+    @apply border-orange-600 text-orange-700;
+    border-left-color: color-mix(in srgb, #ea580c 60%, transparent);
+    background-color: color-mix(in srgb, #ea580c 5%, transparent);
+  }
+  
+  [data-theme="purple"] .prose blockquote {
+    @apply border-purple-600 text-purple-700;
+    border-left-color: color-mix(in srgb, #9333ea 60%, transparent);
+    background-color: color-mix(in srgb, #9333ea 5%, transparent);
+  }
+  
   .prose code {
     @apply px-2 py-1 rounded text-sm font-mono text-dev-text;
     background-color: color-mix(in srgb, var(--color-dev-accent) 10%, transparent);
+  }
+  
+  [data-theme="dark"] .prose code {
+    @apply text-dev-text-dark;
+    background-color: color-mix(in srgb, var(--color-dev-accent-dark) 10%, transparent);
+  }
+  
+  [data-theme="orange"] .prose code {
+    @apply text-orange-950;
+    background-color: color-mix(in srgb, #ea580c 10%, transparent);
+  }
+  
+  [data-theme="purple"] .prose code {
+    @apply text-purple-950;
+    background-color: color-mix(in srgb, #9333ea 10%, transparent);
   }
   
   .prose pre {
@@ -71,12 +315,66 @@
     border: 1px solid color-mix(in srgb, var(--color-dev-accent) 20%, transparent);
   }
   
+  [data-theme="dark"] .prose pre {
+    background-color: color-mix(in srgb, var(--color-dev-accent-dark) 5%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-dev-accent-dark) 20%, transparent);
+  }
+  
+  [data-theme="orange"] .prose pre {
+    background-color: color-mix(in srgb, #ea580c 5%, transparent);
+    border: 1px solid color-mix(in srgb, #ea580c 20%, transparent);
+  }
+  
+  [data-theme="purple"] .prose pre {
+    background-color: color-mix(in srgb, #9333ea 5%, transparent);
+    border: 1px solid color-mix(in srgb, #9333ea 20%, transparent);
+  }
+  
   .prose pre code {
     @apply bg-transparent p-0 text-dev-text;
   }
   
+  [data-theme="dark"] .prose pre code {
+    @apply text-dev-text-dark;
+  }
+  
+  [data-theme="orange"] .prose pre code {
+    @apply text-orange-950;
+  }
+  
+  [data-theme="purple"] .prose pre code {
+    @apply text-purple-950;
+  }
+  
   .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
     @apply font-bold text-dev-text mb-4 mt-8;
+  }
+  
+  [data-theme="dark"] .prose h1,
+  [data-theme="dark"] .prose h2,
+  [data-theme="dark"] .prose h3,
+  [data-theme="dark"] .prose h4,
+  [data-theme="dark"] .prose h5,
+  [data-theme="dark"] .prose h6 {
+    @apply text-dev-text-dark;
+  }
+  
+  [data-theme="orange"] .prose h1,
+  [data-theme="orange"] .prose h2,
+  [data-theme="orange"] .prose h3,
+  [data-theme="orange"] .prose h4,
+  [data-theme="orange"] .prose h5,
+  [data-theme="orange"] .prose h6 {
+    @apply text-orange-950;
+  }
+  
+  [data-theme="purple"] .prose h1,
+  [data-theme="purple"] .prose h2,
+  [data-theme="purple"] .prose h3,
+  [data-theme="purple"] .prose h4,
+  [data-theme="purple"] .prose h5,
+  [data-theme="purple"] .prose h6 {
+    @apply text-purple-950;
   }
   
   .prose h1 {

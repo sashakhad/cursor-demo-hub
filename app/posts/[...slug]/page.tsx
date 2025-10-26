@@ -44,15 +44,15 @@ const BackLink = () => (
 const PostContent = ({ postData, formattedDate }: { postData: PostData; formattedDate: string }) => (
   <article className="w-full">
     <div className="mb-5 flex flex-col">
-      <h1 className="mb-3 text-3xl lg:text-4xl text-dev-text">{postData.title}</h1>
+      <h1 className="mb-3 text-3xl lg:text-4xl text-theme">{postData.title}</h1>
     </div>
     <hr className="my-5" style={{ borderColor: 'rgba(6, 48, 43, 0.3)' }} />
     <div
-      className="flex flex-col gap-5 text-dev-text prose max-w-none"
+      className="flex flex-col gap-5 text-theme prose max-w-none"
       dangerouslySetInnerHTML={{ __html: postData.contentHtml || "" }}
     />
     <hr className="my-5" style={{ borderColor: 'rgba(6, 48, 43, 0.3)' }} />
-    <div className="text-dev-secondary">
+    <div className="text-theme-secondary">
       <p className="text-lg">{formattedDate}</p>
       {postData.tags && postData.tags.length > 0 && (
         <div className="flex flex-wrap gap-2 mt-3">
@@ -73,7 +73,7 @@ const NavLink = ({ post, direction }: { post: PostData; direction: 'prev' | 'nex
   
   return (
     <Link href={`/posts/${slug}`} className="flex-1 max-w-[45%]">
-      <div className={`text-dev-text hover:text-dev-accent ${isPrev ? 'text-left' : 'text-right'}`}>
+      <div className={`text-theme hover:text-dev-accent ${isPrev ? 'text-left' : 'text-right'}`}>
         <div className={`flex items-center gap-2 ${isPrev ? '' : 'justify-end'}`}>
           {isPrev && <span className="flex-shrink-0">←</span>}
           <span className="truncate">{post.title}</span>
