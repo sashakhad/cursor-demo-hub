@@ -28,7 +28,7 @@ interface ProcessedPostData extends IndexedPost {
 function FilteredPosts({ allPostsData }: FilteredPostsProps): JSX.Element {
   const { filter, setFilter } = useFilter();
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 10;
+  const postsPerPage = 4;
   const maxPageButtons = 5;
 
   // Pre-process all posts data once with search index
