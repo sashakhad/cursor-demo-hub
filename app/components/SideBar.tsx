@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { useFilter } from "@/app/context/FilterContext";
 import { PostData } from "@/lib/posts";
