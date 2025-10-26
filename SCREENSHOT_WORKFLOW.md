@@ -22,10 +22,14 @@ Use the browser tools to navigate your app and capture screenshots:
 
 **Example workflow:**
 - Navigate to `http://localhost:3000`
+- **Important:** Since theme preference is saved in localStorage, explicitly select light mode if it's not already active
 - Take screenshot: `theme-light.png`
-- Change theme (using the theme selector)
+- Change theme to dark mode (using the theme selector)
 - Take screenshot: `theme-dark.png`
-- Repeat for all variations
+- Change theme to purple mode
+- Take screenshot: `theme-purple.png`
+- Change theme to orange mode
+- Take screenshot: `theme-orange.png`
 
 ### 2. Save Screenshots Locally
 
@@ -79,6 +83,8 @@ https://github.com/<owner>/<repo>/blob/<branch-name>/<image-path>?raw=true
 
 ![Light Theme](https://github.com/sashakhad/cursor-2.0-demo-repo/blob/demo-run-2/theme-light.png?raw=true)
 ![Dark Theme](https://github.com/sashakhad/cursor-2.0-demo-repo/blob/demo-run-2/theme-dark.png?raw=true)
+![Purple Theme](https://github.com/sashakhad/cursor-2.0-demo-repo/blob/demo-run-2/theme-purple.png?raw=true)
+![Orange Theme](https://github.com/sashakhad/cursor-2.0-demo-repo/blob/demo-run-2/theme-orange.png?raw=true)
 ```
 
 ### Using GitHub CLI
@@ -95,17 +101,25 @@ gh pr create \
 
 ![Light Theme](https://github.com/sashakhad/cursor-2.0-demo-repo/blob/demo-run-2/theme-light.png?raw=true)
 ![Dark Theme](https://github.com/sashakhad/cursor-2.0-demo-repo/blob/demo-run-2/theme-dark.png?raw=true)
+![Purple Theme](https://github.com/sashakhad/cursor-2.0-demo-repo/blob/demo-run-2/theme-purple.png?raw=true)
+![Orange Theme](https://github.com/sashakhad/cursor-2.0-demo-repo/blob/demo-run-2/theme-orange.png?raw=true)
 EOF
 )"
 ```
 
 ## Important Notes
 
+### ⚠️ Theme Persistence
+- The theme preference is saved in localStorage and persists across page loads
+- **Always explicitly select the theme you want** before taking a screenshot
+- Don't assume the page loads in a specific theme state
+
 ### ✅ DO:
 - Commit screenshots to the same branch as your PR
 - Use absolute GitHub blob URLs with `?raw=true` parameter
 - Include the branch name in the URL path
 - Reference committed files (not uncommitted changes)
+- Explicitly set each theme before capturing its screenshot
 
 ### ❌ DON'T:
 - Use relative paths (they won't work in PR descriptions)
