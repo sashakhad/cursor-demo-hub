@@ -55,12 +55,28 @@
 - Show how to review local diffs without switching files
 - Highlight: Faster and easier code review
 
-### 5. Voice Mode
+### 5. Browser Screenshots & PR with Images
+- Open a new agent tab
+- **Task:** Take screenshots of all themes and create a PR with inline images
+- **Deep Link:** [Screenshots & PR](cursor://anysphere.cursor-deeplink/prompt?text=Take%20screenshots%20of%20all%20four%20themes%20using%20browser%20automation%2C%20commit%20them%2C%20and%20create%20a%20PR%20with%20the%20screenshots%20displaying%20inline.%20Follow%20%40SCREENSHOT_WORKFLOW)
+- **Prompt Text:**
+  ```
+  Take screenshots of all four themes using browser automation, commit them, and create a PR with the screenshots displaying inline. Follow @SCREENSHOT_WORKFLOW
+  ```
+- The agent will:
+  1. Capture screenshots of each theme using browser automation
+  2. Save them to the project directory
+  3. Commit them to the current branch
+  4. Create a PR with properly formatted image URLs
+- **Show:** Images displaying inline in the GitHub PR description
+- Highlight: Programmatic screenshot workflow without manual drag-and-drop
+
+### 6. Voice Mode
 - Use voice to quickly adjust code
 - Demonstrate: "Turn speech into prompts instantly"
 - Show iteration speed improvement
 
-### 6. Commit & PR
+### 7. Commit & PR
 - Use custom slash command `/create-pr` to create a pull request
 - Open up GH, see the generated commit
 
@@ -69,6 +85,7 @@
 - ✅ Worktrees
 - ✅ Built-in Browser
 - ✅ Diff View
+- ✅ Browser Screenshots & PR Images
 - ✅ Voice Mode
 - ✅ Composer (the intelligent coding model)
 - ✅ Custom Slash Commands (`/commit`, `/create-pr`)
