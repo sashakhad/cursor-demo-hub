@@ -37,10 +37,11 @@
 - Open up a new agent, select only Composer
 - Use custom slash command `/commit` to commit the dark mode implementation
 
-### 3. Extend Feature with Themes
+### 3. Browser - Extend Feature with Themes
 - Open a new agent tab
 - **Task:** Add orange and purple theme options
-- **Deep Link:** [Add Themes](cursor://anysphere.cursor-deeplink/prompt?text=Add%20orange%20and%20purple%20theme%20options%20to%20the%20theme%20system)
+- **Deep Link:** [Add Themes](cursor://anysphere.cursor-deeplink/prompt?text=Add%20orange%20and%20purple%20theme%20options%20to%20the%20theme%20system.%20Convert%20the%20dark%20mode%20toggle%20to%20a%20dropdown%20where%20I%20can%20select%20the%20themes.)
+
 - **Prompt Text:**
   ```
   Add orange and purple theme options to the theme system. Convert the dark mode toggle to a dropdown where I can select the themes.
