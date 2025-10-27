@@ -58,10 +58,10 @@
 ### 5. Browser Screenshots & PR with Images
 - Open a new agent tab
 - **Task:** Take screenshots of all themes and create a PR with inline images
-- **Deep Link:** [Screenshots & PR](cursor://anysphere.cursor-deeplink/prompt?text=Take%20screenshots%20of%20all%20four%20themes%20using%20browser%20automation%2C%20commit%20them%2C%20and%20create%20a%20PR%20with%20the%20screenshots%20displaying%20inline.%20Follow%20%40SCREENSHOT_WORKFLOW)
+- **Deep Link:** [Screenshots & PR](cursor://anysphere.cursor-deeplink/prompt?text=Take%20screenshots%20of%20all%20four%20themes%20using%20browser%20automation%2C%20commit%20them%2C%20and%20create%20a%20PR%20with%20the%20screenshots%20displaying%20inline.%20Follow%20%40SCREENSHOT_WORKFLOW%20and%20use%20%40Browser.%20Follow%20guidelines%20in%20%2Fcreate-pr)
 - **Prompt Text:**
   ```
-  Take screenshots of all four themes using browser automation, commit them, and create a PR with the screenshots displaying inline. Follow @SCREENSHOT_WORKFLOW
+  Take screenshots of all four themes using browser automation, commit them, and create a PR with the screenshots displaying inline. Follow @SCREENSHOT_WORKFLOW and use @Browser. Follow guidelines in /create-pr
   ```
 - The agent will:
   1. Capture screenshots of each theme using browser automation
