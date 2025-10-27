@@ -47,7 +47,7 @@ function PostLink({
           href={`/posts/${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
         >
           <div className="flex items-center justify-between gap-2 md:gap-5">
-            <h4 className="text-lg leading-tight text-white decoration-white hover:underline md:text-xl">
+            <h4 className="text-lg leading-tight text-white dark:text-dev-text decoration-white dark:decoration-dev-text hover:underline md:text-xl">
               {title}
             </h4>
             <Image
@@ -60,10 +60,10 @@ function PostLink({
           </div>
         </Link>
       </div>
-      <div className="text-xs text-white md:text-sm">
+      <div className="text-xs text-white dark:text-dev-text md:text-sm">
         {formattedDate} {readingTime ? `• ${readingTime} min read` : ""}
       </div>
-      <div className="flex flex-wrap gap-1 text-xs text-white md:gap-2 md:text-sm">
+      <div className="flex flex-wrap gap-1 text-xs text-white dark:text-dev-text md:gap-2 md:text-sm">
         {tags &&
           tags.map((tag, index) => (
             <TextLink

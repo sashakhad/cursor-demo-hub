@@ -12,8 +12,8 @@ function Input({ value, onChange, placeholder = "", className = "" }: InputProps
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      className={`flex-grow rounded-lg bg-dev-card p-4 text-base text-dev-text placeholder-dev-secondary ${className}`}
-      style={{ border: '1px solid rgba(6, 48, 43, 0.3)' }}
+      className={`flex-grow rounded-lg bg-dev-card p-4 text-base text-dev-text placeholder-dev-secondary border ${className}`}
+      style={{ borderColor: 'color-mix(in srgb, var(--color-dev-text) 30%, transparent)' }}
     />
   );
 }

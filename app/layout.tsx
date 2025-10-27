@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { EB_Garamond } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
+import ThemeSelector from "./components/ThemeSelector";
 
 const ebGaramond = EB_Garamond({ subsets: ["latin"] });
 
@@ -15,8 +17,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={ebGaramond.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script id="theme-init" strategy="beforeInteractive">{`
+          (function(){
+            try {
+              var stored = localStorage.getItem('theme');
+              var theme = stored || 'light';
+              var root = document.documentElement;
+              root.setAttribute('data-theme', theme);
+              root.classList.toggle('dark', theme === 'dark');
+            } catch(e) {}
+          })();
+        `}</Script>
+      </head>
+      <body className={ebGaramond.className}>
+        <ThemeSelector />
+        {children}
+      </body>
     </html>
   );
 }
