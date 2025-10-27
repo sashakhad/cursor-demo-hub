@@ -4,10 +4,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { format } from "date-fns";
 
-interface PostProps {
-  params: { slug: string[] };
-}
-
 export async function generateStaticParams() {
   const paths = getAllPostIds();
   return paths.map((post) => ({

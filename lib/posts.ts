@@ -79,6 +79,9 @@ export function getPostsData(): { sortedPosts: PostData[]; groupedPosts: { [year
   
   sortedPosts.forEach((post) => {
     const [year, month] = post.date.split(".");
+    if (!year || !month) {
+      return;
+    }
     const monthName = new Date(parseInt(year), parseInt(month) - 1).toLocaleString("default", { month: "long" });
     
     if (!groupedPosts[year]) {
@@ -122,7 +125,9 @@ export async function getPostData(titleSlug: string): Promise<PostData | null> {
       post.title.toLowerCase().replace(/[^a-z0-9]+/g, "-") === titleSlug,
   );
 
-  if (!post) return null;
+  if (!post) {
+    return null;
+  }
 
   const fullPath = path.join(postsDirectory, `${post.id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
