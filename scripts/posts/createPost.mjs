@@ -4,13 +4,13 @@ import { getCurrentDateInfo } from "../../lib/utils/date-utils.mjs";
 import { getPostsDir } from "../../lib/utils/path-utils.mjs";
 import { logSuccess, logInfo } from "../../lib/utils/logging.mjs";
 
-const { year, month, day, monthStr, dayStr } = getCurrentDateInfo();
+const { year, monthStr, dayStr } = getCurrentDateInfo();
 
 const postDir = path.join(getPostsDir(), `${year}`, `${monthStr}`);
 const baseFilename = `${year}-${monthStr}-${dayStr}`;
 
 // Function to generate default content
-const generateDefaultContent = (filename) => {
+const generateDefaultContent = () => {
   return `---
 title: "New Post on ${year}-${monthStr}-${dayStr}"
 date: "${year}.${monthStr}.${dayStr}"
@@ -52,8 +52,7 @@ const getAvailableFilename = (baseDir, baseName) => {
 
 // Create the new post with the next available number
 const postPath = getAvailableFilename(postDir, baseFilename);
-const actualFilename = path.basename(postPath, ".md");
-const defaultContent = generateDefaultContent(actualFilename);
+const defaultContent = generateDefaultContent();
 
 // Create the new markdown file with default content
 fs.writeFileSync(postPath, defaultContent, "utf8");
