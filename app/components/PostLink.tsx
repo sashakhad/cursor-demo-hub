@@ -10,13 +10,13 @@ import TextLink from "./TextLink";
 interface PostLinkProps {
   title: string;
   date: string;
-  id: string;
+  _id: string;
   tags: string[];
   readingTime: number | undefined;
 }
 
 function PostLink({
-  id,
+  _id,
   title,
   date,
   tags,

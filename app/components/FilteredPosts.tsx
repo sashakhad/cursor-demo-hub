@@ -7,7 +7,6 @@ import { PostData } from "@/lib/posts";
 import {
   buildPostSearchIndex,
   searchPosts,
-  IndexedPost,
 } from "@/lib/searchIndex";
 import PaginationButton from "@/app/components/PaginationButton";
 import Container from "@/app/components/Container";
@@ -16,15 +15,6 @@ import { parse, format } from "date-fns";
 
 interface FilteredPostsProps {
   allPostsData: PostData[];
-}
-
-// Pre-process posts data for efficient filtering
-interface ProcessedPostData extends IndexedPost {
-  normalizedTitle: string;
-  normalizedTags: string;
-  parsedDate: Date;
-  year: string;
-  month: string;
 }
 
 function FilteredPosts({ allPostsData }: FilteredPostsProps) {
@@ -82,10 +72,6 @@ function FilteredPosts({ allPostsData }: FilteredPostsProps) {
 
   const startPage = Math.max(1, currentPage - Math.floor(maxPageButtons / 2));
   const endPage = Math.min(totalPages, startPage + maxPageButtons - 1);
-  const pageNumbers = Array.from(
-    { length: endPage - startPage + 1 },
-    (_, i) => startPage + i,
-  );
 
   function clearFilter() {
     setFilter("");
@@ -119,7 +105,7 @@ function FilteredPosts({ allPostsData }: FilteredPostsProps) {
       {paginatedPosts.map(({ id, title, date, tags, readingTime }) => (
         <PostLink
           key={id}
-          id={id}
+          _id={id}
           title={title}
           date={date}
           tags={tags}

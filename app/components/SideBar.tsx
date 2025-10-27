@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useFilter } from "@/app/context/FilterContext";
 import { PostData } from "@/lib/posts";
 import Input from "./Input";
@@ -96,7 +96,7 @@ const Sidebar = ({ groupedPosts }: SidebarProps) => {
                 {expandedYear === year ? "▾" : "▸"}{" "}
                 <div className="text-base">{year}</div>
               </button>
-              {expandedYear === year && (
+              {expandedYear === year && groupedPosts[year] && (
                 <div className="pl-4">
                   {Object.keys(groupedPosts[year]).map((month) => {
                     const isSelected = filter === `date:${year}-${month}`;

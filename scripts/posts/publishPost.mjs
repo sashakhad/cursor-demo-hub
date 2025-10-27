@@ -10,7 +10,7 @@ try {
     execSync("git diff --cached --exit-code", { stdio: "pipe" });
     logInfo("No changes to commit.");
     process.exit(0);
-  } catch (error) {
+  } catch {
     // There are changes to commit, continue
   }
   
