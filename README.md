@@ -30,6 +30,35 @@ pnpm run dev
 pnpm run build
 ```
 
+## GitHub CLI Setup
+
+### Install GitHub CLI
+
+**macOS:**
+```bash
+brew install gh
+```
+
+### Authenticate
+
+```bash
+gh auth login
+```
+
+### Clone This Repository
+
+```bash
+gh repo clone anysphere/TAM-Cursor-Demos
+cd TAM-Cursor-Demos
+```
+
+### Alternative: Clone via Git
+
+```bash
+git clone https://github.com/anysphere/TAM-Cursor-Demos.git
+cd TAM-Cursor-Demos
+```
+
 ## Project Structure
 
 ```
