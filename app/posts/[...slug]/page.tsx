@@ -4,10 +4,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { format } from "date-fns";
 
-interface PostProps {
-  params: { slug: string[] };
-}
-
 export async function generateStaticParams() {
   const paths = getAllPostIds();
   return paths.map((post) => ({
@@ -46,12 +42,12 @@ const PostContent = ({ postData, formattedDate }: { postData: PostData; formatte
     <div className="mb-5 flex flex-col">
       <h1 className="mb-3 text-3xl lg:text-4xl text-dev-text">{postData.title}</h1>
     </div>
-    <hr className="my-5" style={{ borderColor: 'rgba(6, 48, 43, 0.3)' }} />
+    <hr className="my-5 border-dev-secondary" />
     <div
       className="flex flex-col gap-5 text-dev-text prose max-w-none"
       dangerouslySetInnerHTML={{ __html: postData.contentHtml || "" }}
     />
-    <hr className="my-5" style={{ borderColor: 'rgba(6, 48, 43, 0.3)' }} />
+    <hr className="my-5 border-dev-secondary" />
     <div className="text-dev-secondary">
       <p className="text-lg">{formattedDate}</p>
       {postData.tags && postData.tags.length > 0 && (

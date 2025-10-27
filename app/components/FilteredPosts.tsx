@@ -7,7 +7,6 @@ import { PostData } from "@/lib/posts";
 import {
   buildPostSearchIndex,
   searchPosts,
-  IndexedPost,
 } from "@/lib/searchIndex";
 import PaginationButton from "@/app/components/PaginationButton";
 import Container from "@/app/components/Container";
@@ -16,15 +15,6 @@ import { parse, format } from "date-fns";
 
 interface FilteredPostsProps {
   allPostsData: PostData[];
-}
-
-// Pre-process posts data for efficient filtering
-interface ProcessedPostData extends IndexedPost {
-  normalizedTitle: string;
-  normalizedTags: string;
-  parsedDate: Date;
-  year: string;
-  month: string;
 }
 
 function FilteredPosts({ allPostsData }: FilteredPostsProps) {
@@ -82,10 +72,6 @@ function FilteredPosts({ allPostsData }: FilteredPostsProps) {
 
   const startPage = Math.max(1, currentPage - Math.floor(maxPageButtons / 2));
   const endPage = Math.min(totalPages, startPage + maxPageButtons - 1);
-  const pageNumbers = Array.from(
-    { length: endPage - startPage + 1 },
-    (_, i) => startPage + i,
-  );
 
   function clearFilter() {
     setFilter("");
@@ -93,13 +79,13 @@ function FilteredPosts({ allPostsData }: FilteredPostsProps) {
   }
 
   return (
-    <div className="flex w-full flex-col items-center justify-start gap-5 overflow-auto bg-dev-primary p-4 pt-10 md:w-2/3">
+    <div className="flex w-full flex-col items-center justify-start gap-5 overflow-auto bg-dev-surface p-4 pt-10 md:w-2/3">
       {filteredPosts.length > 0 && !!filter.length && (
         <Container variant="content">
           <TextLink onClick={clearFilter}>
             ← Back to all posts
           </TextLink>
-          <div className="text-3xl text-white">
+          <div className="text-3xl text-white dark:text-dev-text">
             {isDateFilter ? (
               <>
                 {`${filteredPosts.length} ${
@@ -127,7 +113,7 @@ function FilteredPosts({ allPostsData }: FilteredPostsProps) {
         />
       ))}
       {filteredPosts.length === 0 && (
-        <div className="text-2xl text-white">{`No posts found for "${filter}"`}</div>
+        <div className="text-2xl text-white dark:text-dev-text">{`No posts found for "${filter}"`}</div>
       )}
 
       {!isDateFilter && !isTextFilter && (
@@ -153,7 +139,7 @@ function FilteredPosts({ allPostsData }: FilteredPostsProps) {
               );
             } else {
               return (
-                <span key={pageNumber} className="text-white">
+                <span key={pageNumber} className="text-white dark:text-dev-text">
                   {pageNumber}
                 </span>
               );

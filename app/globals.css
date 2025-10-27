@@ -2,9 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --color-dev-accent: #06302B;
+/* Light Theme - Keep Original Green Identity */
+[data-theme="light"] {
   --color-dev-primary: #06302B;
+  --color-dev-accent: #06302B;
+  --color-dev-text: #06302B;
+  --color-dev-secondary: rgba(6, 48, 43, 0.6);
+  --color-dev-bg: #FEFCF6;
+  --color-dev-card: #FFFFFF;
+  --color-dev-surface: #06302B;
+}
+
+/* Dark Theme - Already exists, keep as is */
+[data-theme="dark"] {
+  --color-dev-primary: #06302B;
+  --color-dev-accent: #7CD4C2;
+  --color-dev-text: #E7F4F1;
+  --color-dev-secondary: rgba(231, 244, 241, 0.7);
+  --color-dev-bg: #0B1217;
+  --color-dev-card: #111927;
+  --color-dev-surface: #111927;
+}
+
+/* Purple Theme - Complete Purple Experience */
+[data-theme="purple"] {
+  --color-dev-primary: #7C3AED;
+  --color-dev-accent: #7C3AED;
+  --color-dev-text: #06302B;
+  --color-dev-secondary: rgba(6, 48, 43, 0.6);
+  --color-dev-bg: #FEFCF6;
+  --color-dev-card: #FFFFFF;
+  --color-dev-surface: #7C3AED;
+}
+
+/* Orange Theme - Complete Orange Experience */
+[data-theme="orange"] {
+  --color-dev-primary: #C2410C;
+  --color-dev-accent: #C2410C;
+  --color-dev-text: #06302B;
+  --color-dev-secondary: rgba(6, 48, 43, 0.6);
+  --color-dev-bg: #FEFCF6;
+  --color-dev-card: #FFFFFF;
+  --color-dev-surface: #C2410C;
 }
 
 @layer base {
