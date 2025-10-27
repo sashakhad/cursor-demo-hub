@@ -5,8 +5,7 @@ interface DividerProps {
 function Divider({ className = "" }: DividerProps) {
   return (
     <div 
-      className={`w-full pb-5 ${className}`}
-      style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.1)' }}
+      className={`w-full pb-5 border-b border-white/10 dark:border-dev-text/10 ${className}`}
     />
   );
 }
