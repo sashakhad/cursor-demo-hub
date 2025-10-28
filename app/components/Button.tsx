@@ -12,7 +12,7 @@ function Button({ onClick, children, variant = "primary", className = "" }: Butt
   
   const variantStyles = {
     primary: "bg-dev-accent text-white hover:opacity-90",
-    secondary: "text-dev-text hover:underline",
+    secondary: "bg-white text-dev-primary hover:bg-opacity-90 shadow-md",
     pagination: "text-white hover:bg-white hover:text-dev-primary",
     "pagination-active": "bg-dev-primary text-white border border-white",
   };

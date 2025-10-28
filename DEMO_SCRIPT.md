@@ -32,6 +32,11 @@
   Add a sticky bottom banner visible on all pages that says "Made with love ❤️ from Cursor" linking to https://cursor.com. 
   ```
 
+- **Deep Link (Surprise me button):** [Surprise me button](cursor://anysphere.cursor-deeplink/prompt?text=Add%20a%20%22Surprise%20me%22%20button%20that%20opens%20a%20random%20post.%20Use%20our%20button%20component%20with%20the%20secondary%20variant%20and%20place%20it%20at%20the%20top%20right.)
+- **Prompt Text (Surprise me button):**
+  ```
+  Add a "Surprise me" button that opens a random post. Use our button component with the secondary variant and place it at the top right.
+  ```
 - **Deep Link (Scroll-to-top):** [Scroll-to-top button](cursor://anysphere.cursor-deeplink/prompt?text=Add%20a%20scroll-to-top%20button%20fixed%20at%20the%20bottom-right%20of%20the%20page.)
 - **Prompt Text (Scroll-to-top):**
   ```
