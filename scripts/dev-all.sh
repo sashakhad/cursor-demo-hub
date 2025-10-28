@@ -2,7 +2,12 @@
 set -euo pipefail
 
 BASE_PORT="${1:-3000}"
-mapfile -t WTS < <(git worktree list --porcelain | awk '/^worktree / {print $2}')
+
+# Use portable approach instead of mapfile (bash 4+ only)
+WTS=()
+while IFS= read -r line; do
+  WTS+=("$line")
+done < <(git worktree list --porcelain | awk '/^worktree / {print $2}')
 
 pids=()
 
