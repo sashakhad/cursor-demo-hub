@@ -10,12 +10,12 @@
 ## Demo Flow
 
 ### 0. Setup Dev Environment
-- **Open Terminal** - Press Shift+Command+P, type "terminal", select "Terminal: Create New Terminal"
-- **Start Dev Server** - Run `pnpm run dev` in the terminal
-- **Open Browser** - Navigate to the local development URL (typically http://localhost:3000)
+- Use the `/start-app` command to automatically:
+  - Clean any processes running on ports 3000-3009
+  - Start the development server in the background
+  - Open the application in Chrome at http://localhost:3000
 - Explain that this is a blog application we built
 - Show the current state before we make changes
-- **Note:** WIP - Working on making this process terminal-free if desired
 
 ### 1. Agent View (Start)
 - **Start in Normal Editor View** - Begin demonstration in standard editor interface
