@@ -50,6 +50,9 @@
 - Add a banner at the bottom that says Made with love :heart-emoji: from Cursor, with a link to the Cursor website; banner should be sticky and immediately visible
 - Add a scroll to the top button at the bottom right of the page
 
+### 2.5. Reset - Clean Workspace
+- Use custom slash command `/reset` to clean the workspace
+
 ### 3. Best of N - Implement Dark Mode
 - Click on the toggle at the bottom left underneath chat window, select Worktree
 - Select 3-4 models to run in parallel
@@ -118,7 +121,7 @@
 - ✅ Browser Screenshots & PR Images
 - ✅ Voice Mode
 - ✅ Composer (the intelligent coding model)
-- ✅ Custom Slash Commands (`/commit`, `/create-pr`)
+- ✅ Custom Slash Commands (`/commit`, `/create-pr`, `/reset`)
 
 ---
 
