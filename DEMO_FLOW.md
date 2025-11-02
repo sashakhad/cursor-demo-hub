@@ -16,7 +16,7 @@ Show the current blog application and explain what we'll be building
 ## 3. Parallel Agents (Worktrees)
 Select Worktree mode at bottom left
 
-- [Create Sticky Bottom Banner](cursor://anysphere.cursor-deeplink/prompt?text=Add%20a%20sticky%20bottom%20banner%20visible%20on%20all%20pages%20that%20says%20%22Made%20with%20love%20%E2%9D%A4%EF%B8%8F%20from%20Cursor%22%20linking%20to%20https%3A%2F%2Fcursor.com.)
+- [Create Sticky Bottom Banner](cursor://anysphere.cursor-deeplink/prompt?text=Add%20a%20sticky%20bottom%20banner%20visible%20on%20all%20pages%20that%20says%20%22Made%20with%20love%20%E2%9D%A4%EF%B8%8F%20from%20Cursor%22%20linking%20to%20https%3A%2F%2Fcursor.com.%20Use%20the%20cream%20background%20%28bg-dev-bg%29%20with%20dark%20text%20%28text-dev-text%29%20for%20visibility%2C%20and%20add%20a%20subtle%20top%20border.)
 
 - [Add Surprise Me Button](cursor://anysphere.cursor-deeplink/prompt?text=Add%20a%20%22Surprise%20me%22%20button%20that%20opens%20a%20random%20post.%20Use%20our%20button%20component%20with%20the%20secondary%20variant%20and%20place%20it%20at%20the%20top%20right.)
 

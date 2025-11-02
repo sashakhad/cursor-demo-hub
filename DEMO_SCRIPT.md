@@ -29,10 +29,10 @@
 - Click on the toggle at the bottom left underneath chat window, select Worktree
 
 - **Task:** Implement multiple front-end features at once and create PRs
-- **Deep Link (Banner):** [Sticky bottom banner](cursor://anysphere.cursor-deeplink/prompt?text=Add%20a%20sticky%20bottom%20banner%20that%20says%20Made%20with%20love%20%3Aheart-emoji%3A%20from%20Cursor%2C%20linking%20to%20https%3A%2F%2Fcursor.com%2C%20and%20it%20should%20be%20sticky%20and%20immediately%20visible.)
+- **Deep Link (Banner):** [Sticky bottom banner](cursor://anysphere.cursor-deeplink/prompt?text=Add%20a%20sticky%20bottom%20banner%20that%20says%20Made%20with%20love%20%3Aheart-emoji%3A%20from%20Cursor%2C%20linking%20to%20https%3A%2F%2Fcursor.com%2C%20and%20it%20should%20be%20sticky%20and%20immediately%20visible.%20Use%20the%20cream%20background%20%28bg-dev-bg%29%20with%20dark%20text%20%28text-dev-text%29%20for%20visibility%2C%20and%20add%20a%20subtle%20top%20border.)
 - **Prompt Text (Banner):**
   ```
-  Add a sticky bottom banner visible on all pages that says "Made with love ❤️ from Cursor" linking to https://cursor.com. 
+  Add a sticky bottom banner visible on all pages that says "Made with love ❤️ from Cursor" linking to https://cursor.com. Use the cream background (bg-dev-bg) with dark text (text-dev-text) for visibility, and add a subtle top border.
   ```
 
 - **Deep Link (Surprise me button):** [Surprise me button](cursor://anysphere.cursor-deeplink/prompt?text=Add%20a%20%22Surprise%20me%22%20button%20that%20opens%20a%20random%20post.%20Use%20our%20button%20component%20with%20the%20secondary%20variant%20and%20place%20it%20at%20the%20top%20right.)
@@ -50,7 +50,7 @@
 - Highlight: Parallel implementations and comparison
 - **Note:** Setup details TBD and WIP — still iterating on this workflow
 
-- Add a banner at the bottom that says Made with love :heart-emoji: from Cursor, with a link to the Cursor website; banner should be sticky and immediately visible
+- Add a banner at the bottom that says Made with love :heart-emoji: from Cursor, with a link to the Cursor website; banner should be sticky and immediately visible, using cream background with dark text for visibility
 - Add a scroll to the top button at the bottom right of the page
 
 ### 3.5. Reset - Clean Workspace
