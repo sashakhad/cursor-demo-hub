@@ -22,6 +22,8 @@ Select Worktree mode at bottom left
 
 - [Add Scroll-to-Top Button](cursor://anysphere.cursor-deeplink/prompt?text=Add%20a%20scroll-to-top%20button%20fixed%20at%20the%20bottom-right%20that%20appears%20after%20scrolling%20and%20returns%20to%20top%20on%20click.)
 
+Create PR for the changes.
+
 ### 3.5. Reset
 Use custom slash command `/reset` to clean workspace
 
