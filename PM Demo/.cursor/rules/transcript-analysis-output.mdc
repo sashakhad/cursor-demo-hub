@@ -1,0 +1,56 @@
+---
+description: Rules for running transcript analysis commands to ensure single-file outputs in organized date-stamped folders
+globs:
+alwaysApply: false
+---
+
+# Transcript Analysis Commands - Output Rules
+
+When executing analysis commands from `.cursor/commands/` on company transcripts:
+
+## Output Constraints
+
+1. **Single File Output**
+   - Create EXACTLY ONE markdown file per command
+   - File naming: `{command-number}-{command-name}.md`
+   - Example: `01-competitive-insights.md`
+
+2. **Output Location**
+   - All outputs go in: `analysis/transcript-analysis-{YYYY-MM-DD}/`
+   - Use current date for folder name
+   - Example: `analysis/transcript-analysis-2025-10-30/`
+
+3. **Prohibited Actions**
+   - ❌ Do NOT create multiple files per command
+   - ❌ Do NOT create intermediate files
+   - ❌ Do NOT create separate folders per company
+   - ❌ Do NOT create backup or draft files
+   - ❌ Do NOT create summary files outside the main output
+
+4. **File Structure**
+   - Include all deliverables in the single output file
+   - Use markdown headers to organize sections
+   - Keep the structure defined in the command template
+
+## Execution Pattern
+
+```
+Command: 01-competitive-insights.md
+Input:   notes/transcripts/company-transcripts/*.md
+Output:  analysis/transcript-analysis-2025-10-30/01-competitive-insights.md
+```
+
+## Before Starting
+
+1. Check if output folder exists; create it if needed
+2. Confirm you're writing to the correct single file
+3. Process all transcripts in one pass
+4. Write complete analysis to the single output file
+
+## Quality Checks
+
+- ✅ One markdown file created
+- ✅ File contains all required sections from command template
+- ✅ Evidence quotes include proper citations
+- ✅ No additional files created
+- ✅ Output folder matches pattern: `transcript-analysis-{date}`

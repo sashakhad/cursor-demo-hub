@@ -1,0 +1,178 @@
+{
+  "vendor_totals": [
+    {
+      "vendor_hit": "Cognism",
+      "total_issues": 162
+    },
+    {
+      "vendor_hit": "Vendor_A",
+      "total_issues": 2903
+    },
+    {
+      "vendor_hit": "Vendor_B",
+      "total_issues": 2322
+    },
+    {
+      "vendor_hit": "Vendor_C",
+      "total_issues": 2177
+    },
+    {
+      "vendor_hit": "Vendor_D",
+      "total_issues": 1061
+    },
+    {
+      "vendor_hit": "Vendor_E",
+      "total_issues": 975
+    }
+  ],
+  "vendor_metrics": [
+    {
+      "vendor_hit": "Cognism",
+      "days_since_profile_update_mean": 22.59,
+      "days_since_profile_update_median": 23.0,
+      "days_since_profile_update_max": 30,
+      "email_bounced_sum": 44,
+      "phone_invalid_sum": 12,
+      "total_issues": 162,
+      "email_bounce_rate": 27.16,
+      "phone_invalid_rate": 7.41
+    },
+    {
+      "vendor_hit": "Vendor_A",
+      "days_since_profile_update_mean": 85.04,
+      "days_since_profile_update_median": 85.0,
+      "days_since_profile_update_max": 100,
+      "email_bounced_sum": 752,
+      "phone_invalid_sum": 204,
+      "total_issues": 2903,
+      "email_bounce_rate": 25.9,
+      "phone_invalid_rate": 7.03
+    },
+    {
+      "vendor_hit": "Vendor_B",
+      "days_since_profile_update_mean": 134.86,
+      "days_since_profile_update_median": 135.0,
+      "days_since_profile_update_max": 150,
+      "email_bounced_sum": 689,
+      "phone_invalid_sum": 103,
+      "total_issues": 2322,
+      "email_bounce_rate": 29.67,
+      "phone_invalid_rate": 4.44
+    },
+    {
+      "vendor_hit": "Vendor_C",
+      "days_since_profile_update_mean": 94.86,
+      "days_since_profile_update_median": 95.0,
+      "days_since_profile_update_max": 110,
+      "email_bounced_sum": 543,
+      "phone_invalid_sum": 151,
+      "total_issues": 2177,
+      "email_bounce_rate": 24.94,
+      "phone_invalid_rate": 6.94
+    },
+    {
+      "vendor_hit": "Vendor_D",
+      "days_since_profile_update_mean": 174.77,
+      "days_since_profile_update_median": 174.0,
+      "days_since_profile_update_max": 200,
+      "email_bounced_sum": 365,
+      "phone_invalid_sum": 114,
+      "total_issues": 1061,
+      "email_bounce_rate": 34.4,
+      "phone_invalid_rate": 10.74
+    },
+    {
+      "vendor_hit": "Vendor_E",
+      "days_since_profile_update_mean": 109.79,
+      "days_since_profile_update_median": 109.0,
+      "days_since_profile_update_max": 125,
+      "email_bounced_sum": 233,
+      "phone_invalid_sum": 57,
+      "total_issues": 975,
+      "email_bounce_rate": 23.9,
+      "phone_invalid_rate": 5.85
+    }
+  ],
+  "vendor_quality_scores": [
+    {
+      "vendor_hit": "Cognism",
+      "total_issues": 162,
+      "avg_staleness": 22.59,
+      "email_bounce_rate": 27.16,
+      "phone_invalid_rate": 7.41,
+      "staleness_score": 12.93,
+      "contact_error_score": 17.28,
+      "volume_score": 5.58,
+      "quality_score": 13.2
+    },
+    {
+      "vendor_hit": "Vendor_E",
+      "total_issues": 975,
+      "avg_staleness": 109.79,
+      "email_bounce_rate": 23.9,
+      "phone_invalid_rate": 5.85,
+      "staleness_score": 62.82,
+      "contact_error_score": 14.88,
+      "volume_score": 33.59,
+      "quality_score": 37.8
+    },
+    {
+      "vendor_hit": "Vendor_C",
+      "total_issues": 2177,
+      "avg_staleness": 94.86,
+      "email_bounce_rate": 24.94,
+      "phone_invalid_rate": 6.94,
+      "staleness_score": 54.28,
+      "contact_error_score": 15.94,
+      "volume_score": 74.99,
+      "quality_score": 43.09
+    },
+    {
+      "vendor_hit": "Vendor_A",
+      "total_issues": 2903,
+      "avg_staleness": 85.04,
+      "email_bounce_rate": 25.9,
+      "phone_invalid_rate": 7.03,
+      "staleness_score": 48.66,
+      "contact_error_score": 16.46,
+      "volume_score": 100.0,
+      "quality_score": 46.05
+    },
+    {
+      "vendor_hit": "Vendor_B",
+      "total_issues": 2322,
+      "avg_staleness": 134.86,
+      "email_bounce_rate": 29.67,
+      "phone_invalid_rate": 4.44,
+      "staleness_score": 77.16,
+      "contact_error_score": 17.06,
+      "volume_score": 79.99,
+      "quality_score": 53.69
+    },
+    {
+      "vendor_hit": "Vendor_D",
+      "total_issues": 1061,
+      "avg_staleness": 174.77,
+      "email_bounce_rate": 34.4,
+      "phone_invalid_rate": 10.74,
+      "staleness_score": 100.0,
+      "contact_error_score": 22.57,
+      "volume_score": 36.55,
+      "quality_score": 56.34
+    }
+  ],
+  "recommended_waterfall": {
+    "position_1": "Cognism",
+    "position_2": "Vendor_E",
+    "position_3": "Vendor_C",
+    "position_4": "Vendor_A",
+    "position_5": "Vendor_B",
+    "position_6": "Vendor_D"
+  },
+  "summary_stats": {
+    "total_issues": 9600,
+    "avg_staleness_days": 110.69385416666667,
+    "critical_issue_rate": 31.46875,
+    "date_range": "2024-04-01 07:20:03 to 2024-09-28 15:47:31"
+  }
+}

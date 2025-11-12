@@ -1,0 +1,88 @@
+{
+  "analysis_date": "2025-10-14T13:35:15.902333",
+  "summary": {
+    "cognism_issues": 162,
+    "cognism_pct_of_total": 1.6875,
+    "cognism_staleness_days": 22.59259259259259,
+    "others_staleness_days": 112.20608179699089,
+    "staleness_improvement_pct": 79.86509088387179,
+    "cognism_email_bounce_rate": 27.160493827160494,
+    "others_email_bounce_rate": 27.357490993854633,
+    "cognism_phone_invalid_rate": 7.4074074074074066,
+    "others_phone_invalid_rate": 6.664547573638482
+  },
+  "issue_type_comparison": {
+    "cognism": {
+      "stale_employment": 64,
+      "invalid_email": 44,
+      "outdated_title": 31,
+      "wrong_phone": 12,
+      "stale_location": 11
+    },
+    "others": {
+      "stale_employment": 5014,
+      "invalid_email": 2336,
+      "outdated_title": 1156,
+      "wrong_phone": 629,
+      "stale_location": 303
+    }
+  },
+  "regional_performance": [
+    {
+      "candidate_region": "EMEA",
+      "report_id": 42,
+      "days_since_profile_update": 22.69,
+      "email_bounced": 8,
+      "phone_invalid": 6,
+      "email_bounce_rate": 19.05,
+      "phone_invalid_rate": 14.29
+    },
+    {
+      "candidate_region": "NAMER",
+      "report_id": 120,
+      "days_since_profile_update": 22.56,
+      "email_bounced": 36,
+      "phone_invalid": 6,
+      "email_bounce_rate": 30.0,
+      "phone_invalid_rate": 5.0
+    }
+  ],
+  "monthly_trend": [
+    {
+      "month": "2024-06",
+      "report_id": 30,
+      "days_since_profile_update": 23.43,
+      "email_bounced": 10,
+      "phone_invalid": 0,
+      "email_bounce_rate": 33.33,
+      "phone_invalid_rate": 0.0
+    },
+    {
+      "month": "2024-07",
+      "report_id": 21,
+      "days_since_profile_update": 22.52,
+      "email_bounced": 2,
+      "phone_invalid": 4,
+      "email_bounce_rate": 9.52,
+      "phone_invalid_rate": 19.05
+    },
+    {
+      "month": "2024-08",
+      "report_id": 37,
+      "days_since_profile_update": 21.95,
+      "email_bounced": 12,
+      "phone_invalid": 2,
+      "email_bounce_rate": 32.43,
+      "phone_invalid_rate": 5.41
+    },
+    {
+      "month": "2024-09",
+      "report_id": 74,
+      "days_since_profile_update": 22.59,
+      "email_bounced": 20,
+      "phone_invalid": 6,
+      "email_bounce_rate": 27.03,
+      "phone_invalid_rate": 8.11
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+
+> frontend@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.5.4 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://169.254.179.39:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 643ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1104ms
+ GET / 200 in 1286ms
+ GET / 200 in 54ms
+ ✓ Compiled /favicon.ico in 87ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 333ms
