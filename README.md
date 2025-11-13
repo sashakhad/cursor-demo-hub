@@ -227,10 +227,19 @@ The blog uses system fonts by default. To add custom fonts:
 
 Key components you can customize:
 
+- `app/components/Navbar.tsx` - Top navigation bar with menu items (includes Motorola link)
 - `app/components/SideBar.tsx` - Navigation and search
 - `app/components/PostLink.tsx` - Post preview cards
 - `app/components/FilteredPosts.tsx` - Post listing and pagination
 - `app/globals.css` - Global styles and markdown formatting
+
+### Navigation Bar
+
+The website includes a top navigation bar (`Navbar.tsx`) that appears on all pages. The navbar currently includes:
+
+- **Motorola** - Links to `/motorola` page
+
+To add or modify navbar items, edit the `navbarItems` array in `app/components/Navbar.tsx`.
 
 ## Deployment
 
@@ -255,10 +264,10 @@ Output directory: `.next`
 
 ```
 ├── app/                    # Next.js app directory
-│   ├── components/         # React components
+│   ├── components/         # React components (Navbar, SideBar, etc.)
 │   ├── context/           # React context providers
 │   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
+│   ├── layout.tsx         # Root layout (includes Navbar)
 │   └── page.tsx           # Home page
 ├── lib/                   # Utility libraries
 │   ├── posts.ts          # Post processing logic
