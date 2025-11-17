@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useFilter } from "@/app/context/FilterContext";
 import { PostData } from "@/lib/posts";
 import Input from "./Input";
@@ -68,6 +69,12 @@ const Sidebar = ({ groupedPosts }: SidebarProps) => {
           <div className="text-base text-dev-secondary">
             Clean, markdown-powered blogging for developers who love to write.
           </div>
+          <Link
+            href="/cursor-best-practices"
+            className="text-base text-dev-accent hover:text-dev-text hover:underline mt-2"
+          >
+            Cursor Best Practices →
+          </Link>
         </div>
         <div className="flex items-center p-4">
           <Input
