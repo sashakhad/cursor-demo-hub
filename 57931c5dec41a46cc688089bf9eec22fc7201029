@@ -1,6 +1,6 @@
 version: 1
 conversationId: 8a8947bf-b9b0-4879-9925-89c62fdc115f
-title: Implement dark mode and add a theme toggle. Follow the
+title: Dark mode and theme toggle
 model: claude-4-opus
 mode: agent
 updatedAt: 1765568607217
