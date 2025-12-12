@@ -1,0 +1,15 @@
+version: 1
+conversationId: dc056637-5675-4831-8f53-8cc5781ee402
+title: Implement dark mode and add a theme toggle. Follow the
+model: composer-1
+mode: agent
+updatedAt: 1765568607105
+tldr: The user requested to implement dark mode and add a theme toggle feature.
+  The implementation should follow the guidelines outlined in the @DARK_MODE_PRD
+  and @DARK_MODE_PLAN documents.
+overview: The user's intent is to introduce a dark mode feature along with a
+  theme toggle. The implementation should adhere to the specifications detailed
+  in the provided @DARK_MODE_PRD and @DARK_MODE_PLAN documents. This indicates a
+  clear set of requirements and a predefined approach for the development of
+  this feature.
+bullets: []
