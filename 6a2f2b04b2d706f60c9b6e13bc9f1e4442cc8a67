@@ -4,12 +4,12 @@ title: Surprise me button feature
 model: composer-1
 mode: agent
 updatedAt: 1765568282258
-tldr: The user wants to add a "Surprise me" button to the application. This
-  button should open a random post and be styled using the existing secondary
-  button component, placed at the top right of the page.
-overview: The user intends to add a new "Surprise me" feature to the
-  application. This feature will be implemented as a button that, when clicked,
-  will navigate the user to a random post. The button should utilize the
-  existing button component with its secondary styling variant and be positioned
-  at the top right of the interface for prominent visibility and ease of access.
+tldr: The user requested a "Surprise me" button to open a random post. This
+  button should use the existing button component with the secondary variant and
+  be placed at the top right of the page.
+overview: The user wants to add a new "Surprise me" feature to the application.
+  This feature will be triggered by a button that, when clicked, will display a
+  random post. The button needs to be styled using the existing button component
+  with its secondary variant and positioned in the top right corner of the
+  interface for prominent visibility.
 bullets: []
