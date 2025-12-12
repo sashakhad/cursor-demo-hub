@@ -4,17 +4,19 @@ title: Surprise me button feature
 model: composer-1
 mode: agent
 updatedAt: 1765568393692
-tldr: The user wanted a "Surprise me" button to open a random post. The button
-  was added to the FilteredPosts component, but there were several issues with
-   and  imports, which were eventually resolved.
-overview: The user wanted to add a "Surprise me" button to the
-  component. This button, styled with the secondary variant, needed to open a
-  random post when clicked. The initial implementation involved using
-   from  for programmatic navigation. However, a
-  module resolution error led to a temporary pivot to .
-  The user then reverted this change, leading to a  because
-   was not imported and the  constant was not declared. The
-  final solution involved correctly importing  and the
-  component, and declaring the  constant, allowing  to
-  function as intended for navigating to random posts.
+tldr: The user wanted to add a "Surprise me" button that navigates to a random
+  post. The assistant implemented it using , but faced several errors
+  due to missing imports and module resolution issues, eventually leading to a
+  fix that correctly re-introduces the  import and hook.
+overview: The user wanted to enhance the application with a "Surprise me" button
+  that would direct them to a random blog post. The assistant integrated a new
+  button into the  component, leveraging existing  and
+  post data utilities. The initial approach used  for navigation.
+  However, the process was iterative, encountering and resolving issues such as
+  missing  imports and a module resolution error with
+  . The assistant initially tried  as a
+  workaround, but the user's subsequent revert indicated a preference for
+  , leading the assistant to re-implement the  solution
+  correctly. The outcome is a functional "Surprise me" button that navigates to
+  a random post.
 bullets: []
