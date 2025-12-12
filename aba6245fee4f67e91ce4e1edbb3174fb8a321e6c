@@ -1,0 +1,10 @@
+AI Notes:
+
+app/components/ThemeToggle.tsx: +1-6[0],+7[1],+8-10[0],+11-14[1],+15-16[0],+17-28[1],+29-33[0],+34[1],+35-38[2],+39[0],+40[2],+41-43[0],+44-45[2],+46[0],+47-48[3],+49-52[0]
+
+Conversations:
+
+[0]: 884cc61c-c18f-4235-8b2f-09f334189c53; Dark mode and theme toggle; gpt-5.2; composer;
+[1]: 8a8947bf-b9b0-4879-9925-89c62fdc115f; Dark mode and theme toggle; claude-4-opus; composer;
+[2]: dc056637-5675-4831-8f53-8cc5781ee402; Dark mode and theme toggle; composer-1; composer;
+[3]: f108247c-935c-4b52-8ae9-4ad6973bc9c2; Dark mode and theme toggle; claude-4.5-opus-high-thinking,composer-1,claude-4.5-sonnet-thinking,gpt-5.2,claude-4-opus; composer;
