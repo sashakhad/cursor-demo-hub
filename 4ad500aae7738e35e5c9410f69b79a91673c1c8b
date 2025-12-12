@@ -4,12 +4,11 @@ title: Chat reset
 model: composer-1
 mode: agent
 updatedAt: 1765567122125
-tldr: The user requested to reset their Git repository to a clean state. The
-  assistant successfully executed the reset script, confirmed the repository was
-  clean, and informed the user it was ready for the next demo step.
-overview: The user initiated a repository reset to ensure a clean working
-  environment for subsequent demo steps. The assistant followed the
-  instructions, first running the 🔄 Resetting repository to clean state...
+tldr: The user requested to reset the Git repository to a clean state. The
+  assistant successfully executed the reset script, confirmed the clean status,
+  and informed the user that the repository is ready for the next demo step.
+overview: The user initiated a repository reset to ensure a clean working state
+  for subsequent demo steps. The assistant executed the 🔄 Resetting repository to clean state...
 📌 Current branch: demo-1
 🧹 Resetting to HEAD (discarding local changes)...
 HEAD is now at e927b90 update demo flow doc
@@ -17,11 +16,10 @@ HEAD is now at e927b90 update demo flow doc
 
 ✅ Reset complete! Current status:
 
-💡 Repository is now in a clean state, ready for the next demo step. script which stashes
-  changes, hard resets, and removes untracked files. After the script completed,
-  the assistant verified the On branch demo-1
-nothing to commit, working tree clean to confirm the repository was indeed
-  clean, on the  branch, and free of any uncommitted changes or
-  untracked files. The user was then informed that the repository was
-  successfully reset and ready for the next phase of the demo.
+💡 Repository is now in a clean state, ready for the next demo step.
+  script, which performed a hard reset, removed untracked files, and stashed any
+  uncommitted changes. After the script ran, the assistant verified the
+  repository status, confirming it was clean and on the  branch. The
+  user was then informed that the repository was successfully reset and ready
+  for the next part of the demo, with all previous artifacts removed.
 bullets: []
