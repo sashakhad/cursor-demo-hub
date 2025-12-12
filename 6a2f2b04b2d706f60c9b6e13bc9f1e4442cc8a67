@@ -1,0 +1,15 @@
+version: 1
+conversationId: 03e7fa5d-d167-403b-afea-b5c0859ddaef
+title: null
+model: composer-1
+mode: agent
+updatedAt: 1765568282258
+tldr: The user wants to add a "Surprise me" button to the application. This
+  button should open a random post and be styled using the existing secondary
+  button component, placed at the top right of the page.
+overview: The user intends to add a new "Surprise me" feature to the
+  application. This feature will be implemented as a button that, when clicked,
+  will navigate the user to a random post. The button should utilize the
+  existing button component with its secondary styling variant and be positioned
+  at the top right of the interface for prominent visibility and ease of access.
+bullets: []
