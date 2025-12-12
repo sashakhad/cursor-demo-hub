@@ -4,17 +4,17 @@ title: Surprise me button feature
 model: composer-1
 mode: agent
 updatedAt: 1765568372510
-tldr: The user wanted a "Surprise me" button to open a random post. The button
-  was implemented in FilteredPosts.tsx using useRouter for navigation, but this
-  caused a runtime error. The plan is to switch to window.location.href to fix
-  the navigation issue.
-overview: The user wanted to add a "Surprise me" button to the application that
-  would open a random post. The button was implemented in the FilteredPosts
-  component, using the existing Button component with a secondary variant and
-  positioned at the top right. The initial approach for navigation involved
-  using useRouter from next/navigation to programmatically redirect to a random
-  post's URL. However, this led to a runtime error indicating a module
-  instantiation issue with next/navigation. To resolve this, the plan is to
-  switch to using window.location.href for client-side navigation to the random
-  post.
+tldr: "The user encountered a server-side rendering error with  from
+   in a client component. The fix involved dynamically
+  importing the  component with  to ensure it's only
+  rendered on the client."
+overview: "The user wanted to add a 'Surprise me' button to open a random post.
+  The button was implemented in the  component, which was
+  correctly marked as a client component using 'use client'. However, a runtime
+  error occurred during server-side rendering, indicating that the
+   module was being instantiated on the server, leading to a
+  'module factory is not available' error. To fix this, the
+  component was dynamically imported in  with . This
+  ensures that the component, and thus its dependency on , is only
+  processed and rendered on the client side, resolving the SSR error."
 bullets: []
