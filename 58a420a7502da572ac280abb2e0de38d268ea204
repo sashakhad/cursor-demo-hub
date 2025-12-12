@@ -4,35 +4,15 @@ title: Chat reset
 model: composer-1
 mode: agent
 updatedAt: 1765568486633
-tldr: The user requested to reset the Git repository to a clean state. The
-  🔄 Resetting repository to clean state...
-📌 Current branch: demo-1
-🧹 Resetting to HEAD (discarding local changes)...
-HEAD is now at e927b90 update demo flow doc
-🗑️  Removing untracked files and directories...
-
-✅ Reset complete! Current status:
-
-💡 Repository is now in a clean state, ready for the next demo step. script was executed, which successfully cleaned the
-  repository by stashing changes, performing a hard reset, and removing
-  untracked files. The On branch demo-1
-nothing to commit, working tree clean command confirmed the repository is now
-  clean and ready for the next demo step.
-overview: The user initiated a repository reset to ensure a clean working state
-  for subsequent demo steps. The 🔄 Resetting repository to clean state...
-📌 Current branch: demo-1
-🧹 Resetting to HEAD (discarding local changes)...
-HEAD is now at e927b90 update demo flow doc
-🗑️  Removing untracked files and directories...
-
-✅ Reset complete! Current status:
-
-💡 Repository is now in a clean state, ready for the next demo step. script was automatically
-  executed, which performed a series of actions including stashing any
-  uncommitted changes, hard resetting the repository to HEAD, and removing all
-  untracked files and directories. This process successfully cleaned the
-  repository, as confirmed by a subsequent On branch demo-1
-nothing to commit, working tree clean check. The reset ensures
-  that no lingering changes or artifacts from previous worktree experiments
-  interfere with the upcoming demo steps.
+tldr: The user requested to reset their Git repository to a clean state using
+  the  command. This action is intended to remove all artifacts from
+  previous demo steps, ensuring a fresh environment for subsequent stages of the
+  demo workflow.
+overview: The user's intent was to thoroughly clean their Git repository to
+  ensure no lingering changes or artifacts from prior demo steps would interfere
+  with upcoming ones. They used a predefined  command, which executes a
+  script to stash current changes, perform a hard reset, and remove all
+  untracked files. This approach guarantees a pristine working directory,
+  crucial for maintaining consistency and predictability throughout a demo
+  workflow.
 bullets: []
