@@ -1,0 +1,15 @@
+version: 1
+conversationId: 884cc61c-c18f-4235-8b2f-09f334189c53
+title: Implement dark mode and add a theme toggle. Follow the
+model: gpt-5.2
+mode: agent
+updatedAt: 1765568607333
+tldr: The user requested to implement dark mode and add a theme toggle feature.
+  The implementation should follow the guidelines outlined in the @DARK_MODE_PRD
+  and @DARK_MODE_PLAN documents.
+overview: The user's intent is to introduce a dark mode feature along with a
+  theme toggle. The implementation should adhere to the specifications detailed
+  in the provided @DARK_MODE_PRD and @DARK_MODE_PLAN documents. This indicates a
+  clear set of requirements and a predefined approach for the development of
+  this feature.
+bullets: []
