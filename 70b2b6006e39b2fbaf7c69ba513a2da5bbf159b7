@@ -4,12 +4,10 @@ title: Dark mode and theme toggle
 model: claude-4.5-opus-high-thinking,composer-1,claude-4.5-sonnet-thinking,gpt-5.2,claude-4-opus
 mode: agent
 updatedAt: 1765568606903
-tldr: The user requested to implement dark mode and add a theme toggle feature.
-  The implementation should follow the guidelines outlined in the @DARK_MODE_PRD
-  and @DARK_MODE_PLAN documents.
+tldr: The user requested to implement dark mode and add a theme toggle feature,
+  following the guidelines provided in the @DARK_MODE_PRD and @DARK_MODE_PLAN
+  documents.
 overview: The user's intent is to introduce a dark mode feature along with a
-  theme toggle. The implementation should adhere to the specifications detailed
-  in the provided @DARK_MODE_PRD and @DARK_MODE_PLAN documents. This indicates a
-  clear set of requirements and a predefined approach for the development of
-  this feature.
+  theme toggle. The implementation should adhere to the specifications outlined
+  in the @DARK_MODE_PRD and @DARK_MODE_PLAN documents.
 bullets: []
