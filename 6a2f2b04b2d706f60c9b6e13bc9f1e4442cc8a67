@@ -4,19 +4,21 @@ title: Surprise me button feature
 model: composer-1
 mode: agent
 updatedAt: 1765568393692
-tldr: The user wanted a "Surprise me" button to open a random post. The
-  assistant implemented this using a custom button component and Next.js router,
-  debugging several import and module resolution issues along the way.
-overview: The user wanted to enhance the application by adding a "Surprise me"
-  button. This button, styled with a secondary variant and placed at the top
-  right of the posts list, needed to navigate to a randomly selected post. The
-  assistant identified the  component as the appropriate place
-  for this feature. The initial approach involved using Next.js  for
-  programmatic navigation. However, this led to several debugging cycles due to
-  missing imports and a module resolution error with . The assistant
-  temporarily switched to  to bypass the module issue, but
-  the user reverted this change, prompting the assistant to re-implement
-   and ensure all necessary imports were correctly in place. The
-  final outcome is a functional "Surprise me" button that directs users to a
-  random post.
+tldr: The user wanted a 'Surprise me' button to open a random post. The
+  assistant implemented it, but faced several errors related to  and
+  module imports, including user-reverted changes, before finally addressing the
+  issues.
+overview: The user's intent was to add a 'Surprise me' button to the application
+  that, when clicked, would navigate to a random blog post. The button needed to
+  use the existing  component with a secondary variant and be positioned
+  at the top right of the posts list. The assistant implemented the button and
+  its functionality, which involved importing  from
+  and creating a handler to select a random post and navigate to its slug.
+  However, the process was iterative, involving debugging a  due
+  to missing  imports, then a module instantiation error with
+  . The assistant attempted to resolve the latter by switching
+  to  for navigation. The user then reverted some of these
+  fixes, leading to a re-introduction of the , which the
+  assistant was in the process of addressing by re-adding the necessary
+   and  imports.
 bullets: []
