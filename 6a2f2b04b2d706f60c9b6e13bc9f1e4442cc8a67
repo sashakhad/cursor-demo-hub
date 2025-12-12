@@ -3,19 +3,19 @@ conversationId: 03e7fa5d-d167-403b-afea-b5c0859ddaef
 title: Surprise me button feature
 model: composer-1
 mode: agent
-updatedAt: 1765568350781
-tldr: The user requested a "Surprise me" button to open a random post. The
-  button was implemented in the  component, using the
-  component with a secondary variant and positioned at the top right. The
-  conversation is now at a point where the user is reporting an issue with the
-  button's implementation.
-overview: The user's intent was to enhance the post browsing experience by
-  adding a "Surprise me" button. The approach involved identifying the correct
-  component () to place the button, understanding the
-  existing post routing mechanism, and integrating the  component with a
-  random post selection logic. The button was successfully added, positioned,
-  and wired up to navigate to a random post, with no linting errors reported.
-  The conversation is now at a point where the user is reporting an issue with
-  the button's implementation, specifically at line 91 of
-  .
+updatedAt: 1765568372510
+tldr: The user encountered a runtime error where the  hook was being
+  instantiated on the server. The fix involved marking the
+  component as a client component, as it was directly rendering ,
+  which uses client-side hooks.
+overview: The user wanted to add a "Surprise me" button to the application. This
+  button, when clicked, would navigate to a random blog post. The implementation
+  involved modifying the  component to include the button, a
+  click handler, and the  hook for navigation. However, a runtime
+  error occurred because  was being instantiated on the server side,
+  even though  was marked as a client component. The root cause
+  was that , which imports and renders , was a
+  server component. The fix involved adding  to ,
+  ensuring that both  and  are rendered on the
+  client side, thus resolving the  instantiation error.
 bullets: []
