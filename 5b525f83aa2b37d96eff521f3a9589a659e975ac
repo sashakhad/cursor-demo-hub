@@ -1,0 +1,8 @@
+AI Notes:
+
+app/layout.tsx: +3[0],+5[1],+20-36[0] -18-19[0]
+
+Conversations:
+
+[0]: 884cc61c-c18f-4235-8b2f-09f334189c53; Dark mode and theme toggle; gpt-5.2; composer;
+[1]: f108247c-935c-4b52-8ae9-4ad6973bc9c2; Dark mode and theme toggle; claude-4.5-opus-high-thinking,composer-1,claude-4.5-sonnet-thinking,gpt-5.2,claude-4-opus; composer;
