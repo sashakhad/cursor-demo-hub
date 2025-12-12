@@ -4,19 +4,18 @@ title: Surprise me button feature
 model: composer-1
 mode: agent
 updatedAt: 1765568406940
-tldr: The user wanted a "Surprise me" button to open a random post. The
-  implementation faced persistent issues with  from
-  , leading to a switch to  for
-  navigation.
-overview: The user requested a "Surprise me" button to be added to the main
-  posts display. This button, styled with the secondary variant, needed to be
-  placed at the top right and, when clicked, navigate to a random post. The
-  initial implementation used  from  for this
-  purpose. However, this approach encountered a  due to missing
-  imports, and subsequently, a persistent module factory error related to
-  . Despite attempts to re-add the necessary imports and
-  declarations, the  issue persisted. To resolve the navigation
-  problem and ensure functionality, the implementation was modified to use
-   for redirecting to a random post, effectively bypassing
-  the  module resolution error.
+tldr: The user wanted a 'Surprise me' button to open a random post. After
+  several attempts to use  which caused module resolution errors, the
+  final implementation uses  for navigation.
+overview: The user's intent was to add a 'Surprise me' button that would
+  navigate to a random blog post. The button was to be placed at the top right
+  of the posts list and use the existing  component with a secondary
+  variant. The initial approach involved using  from
+   for programmatic navigation. However, this led to recurring
+  module resolution errors, specifically with Turbopack in Next.js 15. After
+  several attempts to fix the  import and usage, the decision was
+  made to switch to  for navigation, which successfully
+  bypassed the module resolution issues. The final outcome is a functional
+  'Surprise me' button that randomly selects a post and redirects the user to
+  it.
 bullets: []
