@@ -1,6 +1,6 @@
 version: 1
 conversationId: 0c8ff4b3-176b-40f8-a201-ff01ee479872
-title: null
+title: Scroll-to-top button implementation
 model: composer-1
 mode: agent
 updatedAt: 1765568295656
