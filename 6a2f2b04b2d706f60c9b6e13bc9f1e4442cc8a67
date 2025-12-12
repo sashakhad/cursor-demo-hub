@@ -4,17 +4,16 @@ title: Surprise me button feature
 model: composer-1
 mode: agent
 updatedAt: 1765568372510
-tldr: The user wanted a "Surprise me" button to open a random post. The button
-  was implemented in FilteredPosts.tsx using useRouter for navigation, but this
-  caused a runtime error. The plan is to switch to window.location.href to fix
-  the navigation issue.
-overview: The user wanted to add a "Surprise me" button to the application that
-  would open a random post. The button was implemented in the FilteredPosts
-  component, using the existing Button component with a secondary variant and
-  positioned at the top right. The initial approach for navigation involved
-  using useRouter from next/navigation to programmatically redirect to a random
-  post's URL. However, this led to a runtime error indicating a module
-  instantiation issue with next/navigation. To resolve this, the plan is to
-  switch to using window.location.href for client-side navigation to the random
-  post.
+tldr: The user wanted a 'Surprise me' button to open a random post. The button
+  was added to the FilteredPosts component, and after an issue with ,
+  navigation was implemented using .
+overview: The user's intent was to add a 'Surprise me' button to the application
+  that would navigate to a random blog post. The assistant identified the
+   component as the appropriate location for this button. The
+  initial approach involved using Next.js's  for navigation, but this
+  led to a runtime error related to module instantiation. To resolve this, the
+  navigation method was changed to , which successfully
+  allowed the button to redirect to a random post. The button was styled using
+  the existing  component with a secondary variant and positioned at the
+  top right of the posts list.
 bullets: []
