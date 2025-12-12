@@ -1,0 +1,13 @@
+version: 1
+conversationId: 8a8947bf-b9b0-4879-9925-89c62fdc115f
+title: Implement dark mode and add a theme toggle. Follow the
+model: claude-4-opus
+mode: agent
+updatedAt: 1765568607217
+tldr: The user requested to implement dark mode and add a theme toggle feature,
+  following the guidelines provided in the @DARK_MODE_PRD and @DARK_MODE_PLAN
+  documents.
+overview: The user's intent is to introduce a dark mode feature along with a
+  theme toggle. The implementation should adhere to the specifications outlined
+  in the @DARK_MODE_PRD and @DARK_MODE_PLAN documents.
+bullets: []
