@@ -4,16 +4,12 @@ title: Dark mode and theme toggle
 model: gpt-5.2
 mode: agent
 updatedAt: 1765568607333
-tldr: The user requested to implement dark mode and a theme toggle in the
-  application, following the provided PRD and plan documents. The assistant has
-  read these documents and is preparing to implement the feature.
-overview: The user initiated a request to implement a dark mode feature and a
-  theme toggle. The assistant's approach involves thoroughly reviewing the
-  provided  and  documents to understand
-  the requirements and design. Following this, the assistant plans to examine
-  the current styling setup, including , , and
-  relevant layout/sidebar components, to ensure seamless integration. The
-  ultimate goal is to implement a persisted light/dark theme toggle according to
-  the specifications and verify its functionality end-to-end in the development
-  environment.
+tldr: The user requested to implement dark mode and add a theme toggle feature.
+  The implementation should follow the guidelines outlined in the @DARK_MODE_PRD
+  and @DARK_MODE_PLAN documents.
+overview: The user's intent is to introduce a dark mode feature along with a
+  theme toggle. The implementation should adhere to the specifications detailed
+  in the provided @DARK_MODE_PRD and @DARK_MODE_PLAN documents. This indicates a
+  clear set of requirements and a predefined approach for the development of
+  this feature.
 bullets: []
