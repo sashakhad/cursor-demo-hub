@@ -1,0 +1,16 @@
+AI Notes:
+
+app/components/Button.tsx: +16-17[0] -16-17[1]
+app/components/Divider.tsx: +8[0] -8-9[1]
+app/components/FilteredPosts.tsx: +82[2],+88[2],+116[2],+142[2] -82[2],-88[2],-116[2],-142[2]
+app/components/Input.tsx: +15[0] -15-16[1]
+app/components/PostLink.tsx: +50[3],+63[1],+66[1] -50[1],-63[1],-66[1]
+app/components/SideBar.tsx: +108[0] -108[3],-111[3]
+app/components/TextLink.tsx: +12-13[2] -12-13[2]
+
+Conversations:
+
+[0]: dc056637-5675-4831-8f53-8cc5781ee402; Dark mode and theme toggle; composer-1; composer;
+[1]: f108247c-935c-4b52-8ae9-4ad6973bc9c2; Dark mode and theme toggle; claude-4.5-opus-high-thinking,composer-1,claude-4.5-sonnet-thinking,gpt-5.2,claude-4-opus; composer;
+[2]: 8a8947bf-b9b0-4879-9925-89c62fdc115f; Dark mode and theme toggle; claude-4-opus; composer;
+[3]: 40217cb0-1a19-4995-a068-fdb68fcc6555; Dark mode and theme toggle; claude-4.5-sonnet-thinking; composer;
