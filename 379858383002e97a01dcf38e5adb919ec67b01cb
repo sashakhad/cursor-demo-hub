@@ -1,0 +1,11 @@
+AI Notes:
+
+app/globals.css: +6[0],+8-14[0],+15[1],+17-18[2],+19[3],+20[2],+21-22[3]
+tailwind.config.ts: +4[3],+13-19[3] -12-17[3]
+
+Conversations:
+
+[0]: 0506b156-c9f0-48dd-b1a8-36e098ed8e7e; Orange and purple theme options; composer-1; composer;
+[1]: 8a8947bf-b9b0-4879-9925-89c62fdc115f; Dark mode and theme toggle; claude-4-opus; composer;
+[2]: dc056637-5675-4831-8f53-8cc5781ee402; Dark mode and theme toggle; composer-1; composer;
+[3]: 884cc61c-c18f-4235-8b2f-09f334189c53; Dark mode and theme toggle; gpt-5.2; composer;
