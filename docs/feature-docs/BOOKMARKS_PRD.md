@@ -11,6 +11,22 @@ Allow readers to save posts to a personal "Saved" collection that persists acros
 - Persist saved posts locally so they survive page refreshes and browser restarts.
 - Keep the experience lightweight — no account or sign-in required.
 
+---
+
+## ⚠️ CRITICAL IMPLEMENTATION NOTES
+
+**READ THESE BEFORE IMPLEMENTING:**
+
+1. **Client Components**: Any component using React hooks (`useState`, `useEffect`, `useContext`) MUST have `"use client"` at the top. This includes `PostLink.tsx` which uses `useState`.
+
+2. **BookmarkButton Placement**: The bookmark button MUST be placed OUTSIDE any `<Link>` wrapper. If placed inside a Link, clicks will navigate instead of toggling the bookmark.
+
+3. **Empty States Need Navigation**: When showing an empty state (e.g., "No saved posts"), ALWAYS include a "Back to all posts" link so users can navigate away.
+
+4. **Context Provider Location**: The `BookmarkProvider` should wrap the app at the layout level (`layout.tsx`), not inside individual pages.
+
+---
+
 ## Current State (As-Is)
 
 - Users browse posts chronologically or via search/filter.
