@@ -85,14 +85,6 @@ Select 3-4 models in Worktree mode
 
 - [Implement Dark Mode](cursor://anysphere.cursor-deeplink/prompt?text=Implement%20dark%20mode%20and%20add%20a%20theme%20toggle.%20Follow%20the%20the%20%40DARK_MODE_PRD%20and%20%40DARK_MODE_PLAN)
 
-### 5.5. [Judging](https://forum.cursor.com/t/cursor-2-2-multi-agent-judging/145826)
-
-> After all parallel agents finish, Cursor evaluates each solution and picks a winner. The selected agent gets a comment explaining why it was chosen.
->
-> This helps when you're exploring different approaches to the same problem. Instead of manually comparing outputs, you get a recommendation with reasoning.
->
-> Judging only happens after all parallel agents have completed.
-
 ## 6. Review Changes
 Click "Review Changes" at top right, then `/commit`
 
@@ -100,7 +92,11 @@ Click "Review Changes" at top right, then `/commit`
 
 - [Screenshots and PR](cursor://anysphere.cursor-deeplink/prompt?text=Take%20screenshots%20of%20light%20and%20dark%20mode%20using%20browser%20automation%2C%20commit%20them%2C%20and%20create%20a%20PR%20with%20the%20screenshots%20displaying%20inline.%20Follow%20%40SCREENSHOT_WORKFLOW%20and%20use%20%40Browser.%20Follow%20guidelines%20in%20%2Fcreate-pr)
 
-## 8. [Debug Mode](https://cursor.com/docs/agent/modes#debug)
+---
+
+## Supplementary
+
+### [Debug Mode](https://cursor.com/docs/agent/modes#debug)
 
 > Debug Mode helps you find root causes and fix tricky bugs that are hard to reproduce or understand.
 >
@@ -121,9 +117,13 @@ Switch to Debug Mode, then:
 
 - [Debug Invalid Date Error](cursor://anysphere.cursor-deeplink/prompt?text=When%20I%20click%20on%20a%20blog%20post%2C%20the%20page%20crashes%20with%20an%20Invalid%20Date%20error.%20Help%20me%20debug%20this.)
 
----
+### [Best of N Judge](https://forum.cursor.com/t/cursor-2-2-multi-agent-judging/145826)
 
-## Optional
+> Run a prompt across multiple models, then Cursor judges and picks the best solution.
+
+Select Worktree mode, choose 3-4 models, then:
+
+- [Add Back to Home Link](cursor://anysphere.cursor-deeplink/prompt?text=Add%20a%20%22Back%20to%20Home%22%20link%20at%20the%20top%20of%20each%20blog%20post%20page.)
 
 ### [Bugbot](https://cursor.com/docs/bugbot#bugbot)
 
