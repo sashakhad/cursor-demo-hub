@@ -1,6 +1,6 @@
 # Start App
 
-Start the development server and open the application in Chrome.
+Start the development server and open the application in Cursor's built-in browser.
 
 ## Task
 
@@ -19,9 +19,9 @@ Start the development server and open the application in Chrome.
    - Use the `browser_wait_for` tool with the `time` parameter set to 3-5 seconds
    - This ensures the server is ready before attempting to navigate
 
-4. **Open Chrome and navigate to the app**:
-   - Use the browser navigation tool to navigate to `http://localhost:3000`
-   - This will open Chrome automatically and load the application
+4. **Open Cursor's browser and navigate to the app**:
+   - Use the `browser_navigate` tool to navigate to `http://localhost:3000`
+   - This will open Cursor's built-in browser panel and load the application
 
 ## Notes
 
@@ -29,4 +29,5 @@ Start the development server and open the application in Chrome.
 - The server runs in the background, so it will continue running after the command completes
 - Ports are cleaned before starting to ensure the server always starts on port 3000
 - If you need to stop the server manually, use Ctrl+C in the terminal or kill the process on port 3000
+- Cursor's built-in browser allows direct interaction with the agent for testing and debugging
 
