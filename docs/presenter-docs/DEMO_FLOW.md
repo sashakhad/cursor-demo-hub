@@ -29,7 +29,7 @@ Open the Design Sidebar to modify styles visually:
    - Change alignment to right
    - Click Apply
 
-2. **Change Post Title to Peach**
+2. **Change Color of Post Title**
    - Click on a post title
    - Change text color to `dev-peach`
    - Click Apply
