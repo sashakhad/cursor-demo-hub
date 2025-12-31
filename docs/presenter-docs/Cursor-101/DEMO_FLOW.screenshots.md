@@ -15,20 +15,24 @@ Before starting the demo:
 
 ---
 
-## 1. [Layout Walkthrough](../Features/Layout-Walkthrough/Layout-Walkthrough.screenshots.md)
+## 1. Layout Walkthrough
 
-> Cursor is an IDE forked from VS Code, now fully built out with AI-native features. Understanding the layout helps you navigate efficiently.
+> Cursor is an IDE (Integrated Development Environment) forked from VS Code, now fully built out with AI-native features.
+>
+> Understanding the layout helps you navigate efficiently and customize your workspace for different tasks.
 
-### Key Areas
+### Overview
 
-| Area | Location | Purpose |
-|------|----------|---------|
-| File Explorer | Left sidebar | Navigate project files |
-| Editor | Center | View and edit code |
-| Terminal | Bottom panel | Run commands |
-| Agent Panel | Right sidebar | AI chat and agent interactions |
+Cursor extends VS Code with AI-powered panels and features. The main areas include:
 
-### Demo Flow
+- **File Explorer** (left sidebar) - Navigate your project files
+- **Editor** (center) - View and edit code
+- **Terminal** (bottom panel) - Run commands
+- **Agent Panel** (right sidebar) - AI chat and agent interactions
+
+### Demo
+
+#### Opening the Layout
 
 **When you first open Cursor, you'll see an empty editor:**
 
@@ -75,8 +79,9 @@ Before starting the demo:
 ### What to Highlight
 
 - Familiar VS Code experience with AI enhancements
-- Customizable panel arrangement for different workflows
-- Agent panel is always accessible via `Cmd+L`
+- Customizable panel arrangement
+- Quick layout switching for different workflows
+- Integrated terminal for running commands alongside AI
 
 ### Tips
 
@@ -86,29 +91,21 @@ Before starting the demo:
 
 ---
 
-## 2. [Tab + Quick Edit](../Features/Tab-Quick-Edit/Tab-Quick-Edit.screenshots.md)
+## 2. Tab + Quick Edit (Cmd+K)
 
-> Tab provides context-aware, multi-line code suggestions as you type. Quick Edit (Cmd+K) lets you edit code using natural language.
+> Cursor Tab provides context-aware, multi-line code suggestions as you type. It can modify multiple lines at once, add import statements when missing, and predict your next editing location within or across files.
+>
+> Inline Edit (Cmd+K) lets you edit code or generate new code directly within your editor using natural language. With code selected, it edits that specific code; without a selection, it generates new code at your cursor position.
 
-### How Tab Works
+**Docs:** [Tab Overview](https://docs.cursor.com/tab/overview) | [Inline Edit](https://docs.cursor.com/en/inline-edit/overview)
 
-Cursor indexes your entire codebase to understand:
-- Your project's conventions and patterns
-- Existing components and utilities
-- Import structures and dependencies
+### Tab Autocomplete
 
-**Tab is a specialized Cursor model for autocompletion.** The more you use it, the better it becomes as you inject intent by accepting (`Tab`) or rejecting (`Escape`) suggestions.
+#### Overview
 
-### Tab Capabilities
+Tab predicts what you want to write next and suggests complete code blocks. The more you use it, the more it learns your style.
 
-| Capability | Description |
-|------------|-------------|
-| **Multi-line edits** | Modify multiple lines at once |
-| **Auto-imports** | Add import statements when missing |
-| **Cross-file jumps** | Jump within and across files for coordinated edits |
-| **Contextual awareness** | Suggestions based on recent changes, linter errors, and accepted edits |
-
-### 2a. Tab Autocomplete Demo
+#### Demo
 
 **Open an empty component file like `Footer.tsx`:**
 
@@ -150,9 +147,22 @@ Cursor indexes your entire codebase to understand:
 
 ![Tab adapts to changes](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/758272fe-d046-455f-8a09-201519f74d26/ascreenshot_7314e537bfaf46008773362c88c4b62a_text_export.jpeg)
 
-### 2b. Quick Edit (Cmd+K)
+#### What to Highlight
 
-**Select code and press Cmd+K to open the quick edit panel:**
+- Contextual awareness—knows what file you're in
+- Uses your existing components and patterns
+- Gets smarter the more you use it
+- Feels like "reading your mind" for power users
+
+### Quick Edit (Cmd+K)
+
+#### Overview
+
+Select code and press `Cmd+K` to make targeted edits using natural language. Only the selected section is modified.
+
+#### Demo
+
+**Select a section of code you want to edit and press Cmd+K to open the quick edit panel:**
 
 ![Quick edit prompt](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/825f8951-69cb-4831-9b85-ab60c8653ed3/ascreenshot_62c96380a4014cefb6e90ec6067bb135_text_export.jpeg)
 
@@ -164,36 +174,41 @@ Cursor indexes your entire codebase to understand:
 
 ![View the diff](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/6ab10cad-cd6b-4c6f-8d5e-0f118fe073a0/ascreenshot_a04a01e5a22a4b8fb7b5cad0baa7a6a6_text_export.jpeg)
 
-### What to Highlight
+#### What to Highlight
 
-- **Codebase understanding:** Tab uses full codebase context to understand conventions
-- **Learns your style:** The more you use it, the more it adapts to your preferences
-- **Feels like mind-reading:** Power users report Tab predicting exactly what they want
-- **Quick Edit is surgical:** Only changes what you select
-- **Both work inline:** No context switching—stay in your editor
+- Surgical edits—only changes what you select
+- Natural language instructions
+- Preview changes before accepting
+- Great for refactoring specific sections
 
 ### Best Practices
 
 - **Tab:** Start with hints in comments or partial code to guide suggestions
-- **Accept/Reject signals:** Each `Tab` accept or `Escape` reject teaches the model your preferences
 - **Quick Edit:** Be specific about what you want changed
 - **Combine them:** Use Tab for building, Quick Edit for refining
 
-> **Reset:** Use [/reset](cursor://anysphere.cursor-deeplink/prompt?text=%2Freset) before moving to Agent Chat
-
 ---
 
-## 3. [Agent Chat](../Features/Agent-Chat/Agent-Chat.screenshots.md)
+## 3. Agent Chat
 
-> Agent Chat is the command center for agentic workflows. An agent can read, write, and execute code across your entire codebase.
+> Agent Chat is the command center for agentic workflows within Cursor. An agent is a large language model (LLM) with access to tool calls—in this case, the ability to make changes directly to your codebase.
 
----
+**Docs:** [Agent Chat](https://docs.cursor.com/chat/overview)
 
-### 3.1 Agent Configuration
+### Overview
 
-> Configure the agent before starting work—choose your mode, model, and how you'll provide context.
+This demo covers all the key configurations and features of Agent Chat.
 
-#### Agent Modes
+### 3.1 Agent Modes
+
+> Cursor provides different modes optimized for different tasks. Choose the right mode for your workflow.
+
+| Mode | Use Case |
+|------|----------|
+| **Agent** | Execute code changes across your codebase (default) |
+| **Plan** | Create editable implementation plans for complex features |
+| **Debug** | Find, test, and resolve difficult bugs |
+| **Ask** | Learn about the codebase without making changes (read-only) |
 
 **Click the mode dropdown to see available options:**
 
@@ -203,7 +218,15 @@ Cursor indexes your entire codebase to understand:
 
 ![Mode options](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/24d857cc-a885-40bf-ba6b-2d8793af7c4b/ascreenshot_56883a28a241433180502a3952fb7b3a_text_export.jpeg)
 
-#### Model Selection
+### 3.2 Model Selection
+
+> You have full control over which model to use. Choose based on your task complexity and speed requirements.
+
+- **Composer 1**: Cursor's own coding model, optimized for speed
+- **Auto**: Let Cursor smartly select the best model for each task
+- **Frontier models**: Claude, GPT-4, Gemini, and more
+
+#### Quick Selection
 
 **Click the model selector:**
 
@@ -211,27 +234,52 @@ Cursor indexes your entire codebase to understand:
 
 **Choose from available models:**
 
-![Model options](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/89c572df-f8be-484a-a05c-6c722a9c0539/ascreenshot_d3bcce33e0d54c3cabb7268919fad54d_text_export.jpeg)
+![Model options with descriptions](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/89c572df-f8be-484a-a05c-6c722a9c0539/ascreenshot_d3bcce33e0d54c3cabb7268919fad54d_text_export.jpeg)
 
-**Model Settings:** For more control, configure models in **Cursor Settings > Models**:
+**Model categories and Auto selection:**
 
-**Open Cursor menu > Cursor Settings:**
+![Model categories](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/3da6ac1a-f444-4b03-9e94-0b95f12c9ab7/ascreenshot_eee78fef1c3344a0bdf230df0b36cdc5_text_export.jpeg)
 
-![Cursor Settings menu](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/9fc7edd9-d4b6-4e87-be84-fa0c06dfceb1/ascreenshot_34d9bf59b9d04dd784eaf08ad0ff2015_text_export.jpeg)
+#### Model Settings
+
+For more control, configure models in **Cursor Settings > Models**:
+
+1. Open **Cursor** menu > **Cursor Settings**
+2. Navigate to **Models**
+3. Click **View All Models** to see all available options
+4. Enable or disable models based on your needs
+
+**Open Cursor Settings:**
+
+![Cursor menu](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/7b291b90-32be-4bd6-8618-a0f5a9affcb8/ascreenshot_cb1a5f2a68494d81b7277e098814dde8_text_export.jpeg)
+
+**Click Cursor Settings:**
+
+![Cursor Settings option](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/9fc7edd9-d4b6-4e87-be84-fa0c06dfceb1/ascreenshot_34d9bf59b9d04dd784eaf08ad0ff2015_text_export.jpeg)
 
 **Navigate to Models section:**
 
-![Models section](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/00606a1d-0e47-4212-9c90-265a8fc7d00a/ascreenshot_d341792453f14ca289414b02b071cd7b_text_export.jpeg)
+![Models section](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/80c8b2a3-f69e-4ad4-8a13-292cd2715a01/ascreenshot_d64d1b6eb0a14506a3946b92b68dca16_text_export.jpeg)
 
 **Click View All Models:**
 
-![View All Models](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/d7a25fd5-0ed0-4e36-817a-2ddc2aa0aff8/ascreenshot_77fc6dc3e4db465a886736a5edb053c0_text_export.jpeg)
+![View All Models button](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/d7a25fd5-0ed0-4e36-817a-2ddc2aa0aff8/ascreenshot_77fc6dc3e4db465a886736a5edb053c0_text_export.jpeg)
 
 **Enable or disable models:**
 
-![Toggle models](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/0d849348-fdca-4e56-bd33-48c10ea6a23a/ascreenshot_d5aed38462d34f5a80062a9373f9a2cb_text_export.jpeg)
+![Model list with toggles](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/0d849348-fdca-4e56-bd33-48c10ea6a23a/ascreenshot_d5aed38462d34f5a80062a9373f9a2cb_text_export.jpeg)
 
-#### Adding Context
+### 3.3 Adding Context
+
+> Provide the agent with relevant context so it can make informed decisions.
+
+Use the **Add Context** button (or type `@`) to include:
+
+- **Files** – Specific files to reference or modify
+- **Folders** – Entire directories for broader context
+- **Docs** – Up-to-date documentation from popular libraries
+- **Terminal** – Terminal output for debugging errors
+- **Past Chats** – Reference previous conversations
 
 **Click the Add Context button:**
 
@@ -245,7 +293,9 @@ Cursor indexes your entire codebase to understand:
 
 ![Context types expanded](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/e346e9f7-5a4b-4b48-b333-eac11960993a/ascreenshot_b7deefa673cb4831a1eb898512a4185b_text_export.jpeg)
 
-#### Image Upload
+### 3.4 Image Upload
+
+> Upload images as reference for the agent—mockups, screenshots, or error messages.
 
 **Click the image upload button:**
 
@@ -255,7 +305,9 @@ Cursor indexes your entire codebase to understand:
 
 ![Image in chat](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/be6d42f0-5ed2-4e36-8f40-0cf25fd7f64d/ascreenshot_11b8cb27c4934c7d93b4aabc9ea12cad_text_export.jpeg)
 
-#### Voice Input
+### 3.5 Voice Input
+
+> Speak your prompts instead of typing for faster iteration.
 
 **Click the microphone button to record:**
 
@@ -265,7 +317,9 @@ Cursor indexes your entire codebase to understand:
 
 ![Voice recording active](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/26a55931-a92b-44cc-ab12-fb56147a8e0c/ascreenshot_da89b13272b2487f876a44c048dded9e_text_export.jpeg)
 
-#### Execution Mode
+### 3.6 Execution Mode
+
+> Choose where your agent runs based on your needs.
 
 | Mode | Description |
 |------|-------------|
@@ -285,32 +339,13 @@ Cursor indexes your entire codebase to understand:
 
 ![Worktree mode](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/28f433df-7fd8-4269-9659-74b5516afe49/ascreenshot_28dadbe1e9844a5db280ad8d0bee9835_text_export.jpeg)
 
-#### Context Window Management
+### 3.7 Starting the Server
 
-**View context usage indicator:**
-
-![Context window indicator](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/45163e8f-520f-4c3b-9aab-4718fb1c421b/ascreenshot_05d0a5248eed4ecaa2704da84a1b3861_text_export.jpeg)
-
-As conversations grow, the context window fills up. When it reaches capacity:
-1. Cursor summarizes the conversation
-2. Resets with the summary as context
-3. Continues the task seamlessly
-
-**Best Practice:** Use atomic tasks—one focused task per agent. Start new agents for new tasks.
-
-**Start a new agent:**
-
-![New agent button](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/a75bb952-ba21-41d0-b802-3b82a31cd4ee/ascreenshot_ba3d9f1fc8964fad943056efc7434309_text_export.jpeg)
-
----
-
-### 3.2 Working with the Agent
-
-> Now that the agent is configured, walk through common workflows and code changes.
-
-#### Starting the Server
+> Let the agent handle common tasks like starting your development server.
 
 - [Start the development server](cursor://anysphere.cursor-deeplink/prompt?text=Start%20the%20server)
+
+The agent will inspect your project configuration and run the appropriate command.
 
 **Agent requests permission to run terminal command:**
 
@@ -318,11 +353,11 @@ As conversations grow, the context window fills up. When it reaches capacity:
 
 **Terminal command options:**
 
-![Terminal options](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/0c9f3f5c-dd57-43dd-95e9-4e67fba3954a/ascreenshot_f19cefe3fb1c44ec97ee1dc21856b2a1_text_export.jpeg)
+![Terminal options - Ask, Sandbox, Run Everything](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/0c9f3f5c-dd57-43dd-95e9-4e67fba3954a/ascreenshot_f19cefe3fb1c44ec97ee1dc21856b2a1_text_export.jpeg)
 
 **Configure default terminal permissions in Cursor Settings > Agents:**
 
-![Cursor Settings menu](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/9a95eaca-1cf9-4b41-b01d-977506c4df40/ascreenshot_6e963106273142eeabd809e378260338_text_export.jpeg)
+![Cursor Settings menu](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/9a95eaca-1cf9-4b41-b01d-977506c4df40/ascreenshot_6e963106273142eeacd809e378260338_text_export.jpeg)
 
 ![Agent settings](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/5b4eb62d-c16b-4ef6-99fb-b04e829b31f1/ascreenshot_6496d08355d94ca88afafc86af48ed24_text_export.jpeg)
 
@@ -332,9 +367,11 @@ As conversations grow, the context window fills up. When it reaches capacity:
 
 ![App running in browser](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/05c83c5e-c1a0-4713-a9c5-ccdb11343cc3/ascreenshot_cf3e83aae81444d9a0f760427e61ad19_text_export.jpeg)
 
-#### Making Code Changes
+### 3.8 Making Code Changes
 
-- [Change sidebar color to blue](cursor://anysphere.cursor-deeplink/prompt?text=Change%20the%20background%20color%20of%20the%20sidebar%20to%20blue%20%40SideBar.tsx)
+> Reference specific files when asking for changes to help the agent find the right code immediately.
+
+- [Change sidebar background to blue](cursor://anysphere.cursor-deeplink/prompt?text=Change%20the%20background%20color%20of%20the%20sidebar%20to%20blue%20%40SideBar.tsx)
 
 **Reference a file in your prompt:**
 
@@ -346,7 +383,7 @@ As conversations grow, the context window fills up. When it reaches capacity:
 
 **Review changes with the diff view:**
 
-![Review changes](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/ccf2ced0-63da-48b8-b826-26b3023ee30f/ascreenshot_135dfd31a6ca4536baaa3d6dc37548d6_text_export.jpeg)
+![Review changes button](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/ccf2ced0-63da-48b8-b826-26b3023ee30f/ascreenshot_135dfd31a6ca4536baaa3d6dc37548d6_text_export.jpeg)
 
 **Diff view showing changes:**
 
@@ -356,9 +393,14 @@ As conversations grow, the context window fills up. When it reaches capacity:
 
 ![Undo changes](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/ff1e8f4e-251c-4af1-907f-49813c556212/ascreenshot_248d76266b5e4ee480bd26a6ce4c6223_text_export.jpeg)
 
-#### Fixing Bugs from Terminal Output
+### 3.9 Fixing Bugs from Terminal Output
 
-**Step 1:** Introduce a bug (for demo purposes) with [/introduce-runtime-bug](cursor://anysphere.cursor-deeplink/prompt?text=%2Fintroduce-runtime-bug)
+> Quickly fix bugs by piping terminal errors directly into the agent.
+
+**Step 1:** Introduce a bug (for demo purposes)
+- Use [/introduce-runtime-bug](cursor://anysphere.cursor-deeplink/prompt?text=%2Fintroduce-runtime-bug) slash command
+
+**Step 2:** View the error
 
 **Error displayed in browser:**
 
@@ -372,11 +414,13 @@ As conversations grow, the context window fills up. When it reaches capacity:
 
 ![Select terminal](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/6290c97c-9468-43c4-bcb1-88585427587f/ascreenshot_2f359fc3c0d1431897aaa3e636f88f85_text_export.jpeg)
 
-**Select the error text and press Cmd+L:**
+**Step 3:** Send error to agent
+
+**Select the error text:**
 
 ![Select error text](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/72da8eb3-ff19-431a-83de-51a05b19282e/ascreenshot_d11e8c63b5134b95adc98bfcfcd235e7_text_export.jpeg)
 
-**Error added to chat context:**
+**Error added to chat context (Cmd+L):**
 
 ![Error in chat context](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/0547a575-9759-4472-a058-ee4a049a1379/ascreenshot_23f593b414c64e7cab596f12fb69c08f_text_export.jpeg)
 
@@ -388,9 +432,13 @@ As conversations grow, the context window fills up. When it reaches capacity:
 
 ![Submit fix request](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/b4235ec0-5c4e-4d46-b536-0ad7bab78dcc/ascreenshot_0052089e24ff4cc4986cad50dfac470c_text_export.jpeg)
 
-#### Using Documentation
+### 3.10 Using Documentation
 
-**Built-in Docs:**
+> Reference up-to-date library documentation so the agent uses current APIs and patterns.
+
+#### Built-in Docs
+
+Popular libraries are pre-indexed. Type `@docs` and search:
 
 - [Add validation with Zod](cursor://anysphere.cursor-deeplink/prompt?text=Add%20validation%20to%20my%20search%20input%20using%20%40Zod.%20Limit%20to%20100%20characters%20and%20block%20special%20characters.)
 
@@ -402,7 +450,7 @@ As conversations grow, the context window fills up. When it reaches capacity:
 
 ![Select Zod docs](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/7e292d12-1e4c-4f41-b7ee-85ae1cb96a15/ascreenshot_8ce804d338334971865d3c8c87c04021_text_export.jpeg)
 
-**Adding Custom Docs:**
+#### Adding Custom Docs
 
 1. Click **Add Context** > **Docs**
 2. Scroll to bottom, click **Add new doc**
@@ -429,7 +477,14 @@ As conversations grow, the context window fills up. When it reaches capacity:
 
 ![Docs indexed](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/6ba9464b-b265-4d94-a9b9-712d88524a61/ascreenshot_88fcd841431942a88c06226f2257fc5a_text_export.jpeg)
 
-#### Git Diff Context
+### 3.11 Git Diff Context
+
+> Review changes against your main branch and generate commit messages.
+
+Use `@Git (Diff with Main Branch)` to:
+- Understand what your feature branch changed
+- Generate commit messages based on actual changes
+- Get an overview of your current work status
 
 - [Explain changes against main](cursor://anysphere.cursor-deeplink/prompt?text=Explain%20the%20changes%20that%20have%20been%20made%20%40Git%20%28Diff%20with%20Main%20Branch%29)
 
@@ -441,9 +496,44 @@ As conversations grow, the context window fills up. When it reaches capacity:
 
 ![Changes explained](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/b982a96a-1fb2-455d-a4e8-fc7d44d100b6/ascreenshot_6233e904aa604d668d076d274207808d_text_export.jpeg)
 
-#### Demo: Implement Dark Mode
+### 3.12 Context Window Management
 
-End with a complete feature implementation:
+> Monitor your agent's context usage to ensure optimal performance.
+
+**View context usage indicator:**
+
+![Context window indicator](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/45163e8f-520f-4c3b-9aab-4718fb1c421b/ascreenshot_05d0a5248eed4ecaa2704da84a1b3861_text_export.jpeg)
+
+As conversations grow, the context window fills up. When it reaches capacity:
+1. Cursor summarizes the conversation
+2. Resets with the summary as context
+3. Continues the task seamlessly
+
+**Best Practice:** Use atomic tasks—one focused task per agent session. Start new agents for new tasks to keep context clean.
+
+**Start a new agent:**
+
+![New agent button](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/a75bb952-ba21-41d0-b802-3b82a31cd4ee/ascreenshot_ba3d9f1fc8964fad943056efc7434309_text_export.jpeg)
+
+### 3.13 Chat History
+
+> Access previous conversations to continue work or reference past solutions.
+
+**Click Chat History:**
+
+![Chat history button](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/9fa45cd2-0418-4ede-87af-00d4bfb23737/ascreenshot_4df3322b96a645f887af3af88177c98d_text_export.jpeg)
+
+**Browse past conversations:**
+
+![Chat history list](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/6eb2b02f-c742-4da5-9d92-45f1acafb559/ascreenshot_9ad22f2ff06b4e019c11f20066f73c6d_text_export.jpeg)
+
+### 3.14 Demo: Implementing Dark Mode
+
+> Walk through implementing a complete feature using Agent Chat.
+
+This demo shows the full workflow: clicking a deep link, selecting a model, running the agent, and reviewing changes.
+
+#### Steps
 
 - [Implement Dark Mode](cursor://anysphere.cursor-deeplink/prompt?text=Implement%20dark%20mode%20for%20this%20blog%20app.%20Add%20a%20theme%20toggle%20button%20and%20persist%20the%20user%27s%20preference.)
 
@@ -475,6 +565,14 @@ End with a complete feature implementation:
 
 ![Review scope](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/ce091767-ab13-4eb3-b614-42117722373b/ascreenshot_2be9d139bb6a4bf1b06f1f857922ce74_text_export.jpeg)
 
+#### What to Highlight
+
+- Deep links pre-fill prompts for consistent demos
+- Model selection affects speed and quality
+- Agent reads existing code to understand patterns
+- Review mode shows all changes across files
+- Changes can be accepted or reverted individually
+
 ---
 
 ## Quick Reference
@@ -484,19 +582,21 @@ End with a complete feature implementation:
 | Open Agent Chat | `Cmd+L` |
 | Quick Edit | `Cmd+K` |
 | Accept Tab suggestion | `Tab` |
+| Reject Tab suggestion | `Escape` |
 | Chat History | `Opt+Cmd+'` |
+| New Chat | Click "New Chat" button |
+| Add Selection to Chat | Select text + `Cmd+L` |
+| Voice Input | Click microphone button |
 | Start demo server | [/start-demo](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-demo) |
 | Reset workspace | [/reset](cursor://anysphere.cursor-deeplink/prompt?text=%2Freset) |
-| Add to chat | Select + `Cmd+L` |
 
 ---
 
 ## Next Steps
 
-After Cursor 101, explore:
+After completing Cursor 101, explore:
 
-- **[Plan Mode](../Features/Agent-Chat/Plan-Mode.screenshots.md)** - Detailed implementation planning
-- **[Debug Mode](../Features/Agent-Chat/Debug-Mode.screenshots.md)** - Hypothesis-driven debugging
-- **[Browser](../Features/Browser/Browser.screenshots.md)** - Built-in browser testing
-- **[Worktrees](../Features/Worktrees/Worktrees.screenshots.md)** - Parallel agents and Best of N
-
+- **[Cursor 2.0 Demo](../Cursor-2.0/)** – Advanced features like Browser, Worktrees, Bugbot
+- **[Plan Mode](../Features/Agent-Chat/Plan-Mode.screenshots.md)** – Detailed implementation planning
+- **[Debug Mode](../Features/Agent-Chat/Debug-Mode.screenshots.md)** – Hypothesis-driven debugging
+- **[Browser](../Features/Browser/Browser.screenshots.md)** – Built-in browser testing
