@@ -37,4 +37,4 @@ Each feature has two versions:
 
 ## Prerequisites
 
-Before demoing any feature, run `/start-demo` to launch the development server and open the blog app.
+Before demoing any feature, run [/start-demo](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-demo) to launch the development server and open the blog app.

@@ -21,14 +21,14 @@ Follow the structured demo:
 
 ### Start the Demo Server
 
-Run the `/start-demo` slash command to:
+Run the [/start-demo](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-demo) slash command to:
 1. Launch the Next.js development server
 2. Open the blog app in the built-in browser
 3. Set up the workspace for demo
 
 ### Reset Between Sections
 
-Use `/reset` to restore the workspace to a clean state:
+Use [/reset](cursor://anysphere.cursor-deeplink/prompt?text=%2Freset) to restore the workspace to a clean state:
 - Reverts any code changes
 - Ensures deterministic demo output
 - Recommended before each major section
@@ -60,8 +60,9 @@ Deep links ensure:
 | Open Agent Chat | `Cmd+L` |
 | Quick Edit | `Cmd+K` |
 | Accept Tab suggestion | `Tab` |
-| Start demo server | `/start-demo` |
-| Reset workspace | `/reset` |
+| Chat History | `Opt+Cmd+'` |
+| Start demo server | [/start-demo](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-demo) |
+| Reset workspace | [/reset](cursor://anysphere.cursor-deeplink/prompt?text=%2Freset) |
 | Add selection to chat | Select + `Cmd+L` |
 
 ## Topics Covered
@@ -71,9 +72,11 @@ Deep links ensure:
    - Custom layouts and panel arrangement
 
 2. **Tab Autocomplete**
-   - Context-aware code suggestions
-   - Multi-line predictions
-   - Learning your patterns
+   - Full codebase indexing for understanding conventions
+   - Multi-line edits and auto-imports
+   - Cross-file jumps for coordinated edits
+   - Learns your preferences via accept/reject signals
+   - Suggestions based on recent changes and linter errors
 
 3. **Quick Edit (Cmd+K)**
    - Surgical code edits
@@ -81,12 +84,23 @@ Deep links ensure:
    - Diff preview before accepting
 
 4. **Agent Chat**
+   
+   **3.1 Agent Configuration**
    - Agent modes (Agent, Plan, Debug, Ask)
    - Model selection and settings
-   - Adding context (@files, @docs, @terminal)
-   - Terminal output → agent workflow
-   - Documentation integration
-   - Feature implementation demo
+   - Adding context (@files, @folders, @docs, @terminal, @past chats)
+   - Image upload for visual context
+   - Voice input for faster iteration
+   - Execution mode (Local, Cloud, Worktree)
+   - Context window management
+   
+   **3.2 Working with the Agent**
+   - Starting the server with terminal permissions
+   - Making code changes with review/undo
+   - Fixing bugs from terminal output
+   - Documentation integration (built-in + custom)
+   - Git diff context for code review
+   - Feature implementation demo (Dark Mode)
 
 ## Next Steps
 

@@ -125,7 +125,7 @@ After the agent makes changes:
 > Quickly fix bugs by piping terminal errors directly into the agent.
 
 **Step 1:** Introduce a bug (for demo purposes)
-- Use `/introduce-runtime-bug` slash command
+- Use [/introduce-runtime-bug](cursor://anysphere.cursor-deeplink/prompt?text=%2Fintroduce-runtime-bug) slash command
 
 **Step 2:** View the error
 1. Open the terminal panel (View > Terminal)

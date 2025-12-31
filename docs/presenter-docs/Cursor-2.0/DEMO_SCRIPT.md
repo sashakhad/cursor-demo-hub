@@ -54,7 +54,7 @@
 - Add a scroll to the top button at the bottom right of the page
 
 ### 3.5. Reset - Clean Workspace
-- Use custom slash command `/reset` to clean the workspace
+- Use custom slash command [/reset](cursor://anysphere.cursor-deeplink/prompt?text=%2Freset) to clean the workspace
 
 ### 4. Best of N (Worktrees) - Implement Dark Mode
 - Click on the toggle at the bottom left underneath chat window, select Worktree
@@ -97,7 +97,7 @@
 3. Click Apply
 
 #### Reset
-- Use custom slash command `/reset` to clean the workspace and revert changes
+- Use custom slash command [/reset](cursor://anysphere.cursor-deeplink/prompt?text=%2Freset) to clean the workspace and revert changes
 
 ### 6. Browser Screenshots & PR with Images
 - Open a new agent tab

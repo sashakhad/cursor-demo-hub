@@ -12,7 +12,7 @@
 >
 > We'll use it as a playground to demonstrate Cursor's features.
 
-Use `/start-demo` to launch the development server and open the app in browser.
+Use [/start-demo](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-demo) to launch the development server and open the app in browser.
 
 ![Start demo command](https://colony-recorder.s3.amazonaws.com/files/2025-12-30/ea20922f-a6c4-46ba-858e-99853af00c4f/ascreenshot_773ad3dcdc3a4fe282d48cec640e128b_text_export.jpeg)
 
