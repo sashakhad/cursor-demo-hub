@@ -273,6 +273,14 @@ For more control, configure models in **Cursor Settings > Models**:
 
 > Provide the agent with relevant context so it can make informed decisions.
 
+#### Why This Matters
+
+Context is everything when working with AI. Without the right context, even the best model will give generic or incorrect answers. The friction of adding context—switching between apps, copying documentation from ChatGPT or Claude's web interface, pasting error messages—creates constant context switching that slows you down more than you realize.
+
+Cursor makes adding context fast and seamless. Instead of juggling browser tabs and copy-pasting between applications, you simply type `@` and reference what you need. This eliminates the hidden productivity tax of context switching, letting you stay in flow while giving the agent exactly what it needs to help you.
+
+#### How to Add Context
+
 Use the **Add Context** button (or type `@`) to include:
 
 - **Files** – Specific files to reference or modify
