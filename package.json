@@ -20,7 +20,10 @@
     "tags:collect": "node scripts/posts/collectTags.mjs",
     "kill:ports": "for port in {3000..3009}; do lsof -ti:$port | xargs kill -9 2>/dev/null; done",
     "dev:all": "scripts/dev-all.sh 3000",
-    "setup": "scripts/setup.sh"
+    "setup": "scripts/setup.sh",
+    "docs:pdf": "node scripts/docs/generate-pdfs.mjs",
+    "docs:pdf:check": "node scripts/docs/generate-pdfs.mjs --check",
+    "docs:pdf:force": "node scripts/docs/generate-pdfs.mjs --force"
   },
   "dependencies": {
     "clsx": "2.1.1",
