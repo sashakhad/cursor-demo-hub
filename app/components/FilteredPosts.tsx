@@ -79,13 +79,13 @@ function FilteredPosts({ allPostsData }: FilteredPostsProps) {
   }
 
   return (
-    <div className="flex w-full flex-col items-center justify-start gap-5 overflow-auto bg-dev-surface p-4 pt-10 md:w-2/3">
+    <div className="flex w-full flex-col items-center justify-start gap-5 overflow-auto bg-dev-primary p-4 pt-10 md:w-2/3">
       {filteredPosts.length > 0 && !!filter.length && (
         <Container variant="content">
           <TextLink onClick={clearFilter}>
             ← Back to all posts
           </TextLink>
-          <div className="text-3xl text-white dark:text-dev-text">
+          <div className="text-3xl text-white">
             {isDateFilter ? (
               <>
                 {`${filteredPosts.length} ${
@@ -113,7 +113,7 @@ function FilteredPosts({ allPostsData }: FilteredPostsProps) {
         />
       ))}
       {filteredPosts.length === 0 && (
-        <div className="text-2xl text-white dark:text-dev-text">{`No posts found for "${filter}"`}</div>
+        <div className="text-2xl text-white">{`No posts found for "${filter}"`}</div>
       )}
 
       {!isDateFilter && !isTextFilter && (
@@ -139,7 +139,7 @@ function FilteredPosts({ allPostsData }: FilteredPostsProps) {
               );
             } else {
               return (
-                <span key={pageNumber} className="text-white dark:text-dev-text">
+                <span key={pageNumber} className="text-white">
                   {pageNumber}
                 </span>
               );

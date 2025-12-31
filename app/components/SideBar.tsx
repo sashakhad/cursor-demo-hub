@@ -115,9 +115,10 @@ const Sidebar = ({ groupedPosts }: SidebarProps) => {
                         key={month}
                         className={`block px-4 py-2 text-base ${
                           isSelected
-                            ? "rounded-md text-dev-text bg-dev-accent/20 dark:bg-dev-accent/30"
+                            ? "rounded-md text-dev-text"
                             : "text-dev-text hover:underline"
                         }`}
+                        style={isSelected ? { backgroundColor: 'rgba(6, 48, 43, 0.2)' } : undefined}
                         onClick={() => handleMonthClick(year, month)}
                       >
                         {month}

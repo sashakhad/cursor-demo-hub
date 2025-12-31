@@ -9,8 +9,8 @@ interface TextLinkProps {
 
 function TextLink({ onClick, children, variant = "default", className = "" }: TextLinkProps) {
   const variantStyles = {
-    default: "text-white dark:text-dev-text cursor-pointer transition-colors hover:opacity-70",
-    underline: "text-white dark:text-dev-text cursor-pointer underline hover:font-semibold",
+    default: "text-white cursor-pointer transition-colors hover:opacity-70",
+    underline: "text-white cursor-pointer underline hover:font-semibold",
     dev: "text-dev-text cursor-pointer hover:underline",
   };
 

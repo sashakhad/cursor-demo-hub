@@ -11,10 +11,10 @@ function Button({ onClick, children, variant = "primary", className = "" }: Butt
   const baseStyles = "rounded-lg px-4 py-2 transition-colors duration-100 ease-in";
   
   const variantStyles = {
-    primary: "bg-dev-primary text-white hover:opacity-90",
-    secondary: "bg-dev-card text-dev-primary hover:bg-opacity-90 shadow-md dark:bg-dev-card dark:text-dev-text",
-    pagination: "text-white dark:text-dev-text hover:bg-dev-card hover:text-dev-primary dark:hover:text-dev-text",
-    "pagination-active": "bg-dev-primary text-white border border-white dark:border-dev-text",
+    primary: "bg-dev-accent text-white hover:opacity-90",
+    secondary: "bg-white text-dev-primary hover:bg-opacity-90 shadow-md",
+    pagination: "text-white hover:bg-white hover:text-dev-primary",
+    "pagination-active": "bg-dev-primary text-white border border-white",
   };
 
   return (
