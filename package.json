@@ -21,9 +21,7 @@
     "kill:ports": "for port in {3000..3009}; do lsof -ti:$port | xargs kill -9 2>/dev/null; done",
     "dev:all": "scripts/dev-all.sh 3000",
     "setup": "scripts/setup.sh",
-    "docs:pdf": "node scripts/docs/generate-pdfs.mjs",
-    "docs:pdf:check": "node scripts/docs/generate-pdfs.mjs --check",
-    "docs:pdf:force": "node scripts/docs/generate-pdfs.mjs --force"
+    "docs:dev": "echo 'Run pnpm dev and visit http://localhost:3000/presenter-docs'"
   },
   "dependencies": {
     "clsx": "2.1.1",
@@ -33,6 +31,7 @@
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "remark": "^15.0.1",
+    "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.1",
     "tailwind-merge": "3.3.1",
     "valibot": "^1.2.0"
