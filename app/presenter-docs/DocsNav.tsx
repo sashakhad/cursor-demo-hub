@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { DocEntry } from "@/lib/presenter-docs";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 
 function DocLink({
   entry,
@@ -45,7 +45,7 @@ function DocLink({
           </span>
         </button>
         {isOpen && (
-          <div className="ml-5 border-l-2 border-dev-card-03 pl-4">
+          <div className="ml-5 border-l-2 border-dev-secondary pl-4">
             {entry.children.map((child) => (
               <DocLink
                 key={child.slug.join("/")}
@@ -69,7 +69,7 @@ function DocLink({
       <div className="py-2 mb-3">
         <Link
           href={href}
-          className="inline-flex items-center px-4 py-2.5 rounded-lg font-semibold text-dev-text bg-dev-card-02 border-2 border-dev-accent hover:bg-dev-card-03 transition-colors"
+          className="inline-flex items-center px-4 py-2.5 rounded-lg font-semibold text-dev-text bg-dev-card border-2 border-dev-accent hover:bg-dev-bg transition-colors"
         >
           {entry.title}
         </Link>
@@ -96,7 +96,10 @@ export function DocsNav({ entries }: { entries: DocEntry[] }) {
 
   // Parse open folders from URL param
   const openParam = searchParams.get("open") || "";
-  const openFolders = new Set(openParam ? openParam.split(",") : []);
+  const openFolders = useMemo(
+    () => new Set(openParam ? openParam.split(",") : []),
+    [openParam]
+  );
 
   const toggleFolder = useCallback(
     (slug: string) => {

@@ -58,7 +58,7 @@ export function getDocsTree(dir: string = docsDirectory, basePath: string[] = []
 
   for (const item of items) {
     // Skip hidden files and non-md files (except directories)
-    if (item.startsWith(".")) continue;
+    if (item.startsWith(".")) {continue;}
     
     const fullPath = path.join(dir, item);
     const stat = fs.statSync(fullPath);
@@ -88,12 +88,12 @@ export function getDocsTree(dir: string = docsDirectory, basePath: string[] = []
     // README/Start Here first
     const aIsReadme = a.slug[a.slug.length - 1]?.toLowerCase() === "readme";
     const bIsReadme = b.slug[b.slug.length - 1]?.toLowerCase() === "readme";
-    if (aIsReadme && !bIsReadme) return -1;
-    if (!aIsReadme && bIsReadme) return 1;
+    if (aIsReadme && !bIsReadme) {return -1;}
+    if (!aIsReadme && bIsReadme) {return 1;}
     
     // Directories first, then alphabetically
-    if (a.isDirectory && !b.isDirectory) return -1;
-    if (!a.isDirectory && b.isDirectory) return 1;
+    if (a.isDirectory && !b.isDirectory) {return -1;}
+    if (!a.isDirectory && b.isDirectory) {return 1;}
     return a.title.localeCompare(b.title);
   });
 }
@@ -122,7 +122,7 @@ export function getAllDocSlugs(): string[][] {
  * Get doc content by slug
  */
 export async function getDocData(slug: string[]): Promise<DocData | null> {
-  const filePath = path.join(docsDirectory, ...slug) + ".md";
+  const filePath = `${path.join(docsDirectory, ...slug)  }.md`;
 
   if (!fs.existsSync(filePath)) {
     return null;
@@ -157,7 +157,7 @@ export function getBreadcrumbs(slug: string[]): Array<{ title: string; href: str
   // Add intermediate folder paths as non-clickable (they don't have pages)
   let currentPath = "/presenter-docs";
   for (let i = 0; i < slug.length - 1; i++) {
-    currentPath += "/" + slug[i];
+    currentPath += `/${  slug[i]}`;
     breadcrumbs.push({
       title: slug[i]?.replace(/-/g, " ") || "",
       href: currentPath,

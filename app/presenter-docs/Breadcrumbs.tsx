@@ -18,7 +18,7 @@ export function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
   const openParam = searchParams.get("open");
 
   function getHrefWithOpen(href: string): string {
-    if (!openParam) return href;
+    if (!openParam) {return href;}
     const separator = href.includes("?") ? "&" : "?";
     return `${href}${separator}open=${openParam}`;
   }

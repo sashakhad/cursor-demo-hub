@@ -62,7 +62,7 @@ export default async function PresenterDoc({
       />
 
       {/* Back link */}
-      <div className="mt-12 pt-6 border-t border-dev-card-03">
+      <div className="mt-12 pt-6 border-t border-dev-secondary">
         <Suspense fallback={<span className="text-dev-secondary">Loading...</span>}>
           <BackLink />
         </Suspense>
