@@ -1,5 +1,6 @@
 import { getDocsTree } from "@/lib/presenter-docs";
 import { DocsNav } from "./DocsNav";
+import { Suspense } from "react";
 
 export default function PresenterDocsIndex() {
   const docsTree = getDocsTree();
@@ -12,7 +13,9 @@ export default function PresenterDocsIndex() {
         view.
       </p>
 
-      <DocsNav entries={docsTree} />
+      <Suspense fallback={<div className="text-dev-secondary">Loading...</div>}>
+        <DocsNav entries={docsTree} />
+      </Suspense>
     </div>
   );
 }

@@ -1,7 +1,9 @@
 import { getDocData, getAllDocSlugs, getBreadcrumbs } from "@/lib/presenter-docs";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { Suspense } from "react";
+import { BackLink } from "../BackLink";
+import { Breadcrumbs } from "../Breadcrumbs";
 
 export async function generateStaticParams() {
   const slugs = getAllDocSlugs();
@@ -38,21 +40,9 @@ export default async function PresenterDoc({
   return (
     <div className="px-6 py-8 md:px-16 md:py-12 lg:px-24 max-w-5xl mx-auto">
       {/* Breadcrumbs */}
-      <nav className="mb-6 text-sm">
-        {breadcrumbs.map((crumb, i) => (
-          <span key={crumb.href}>
-            <Link
-              href={crumb.href}
-              className="text-dev-accent hover:text-dev-text hover:underline"
-            >
-              {crumb.title}
-            </Link>
-            {i < breadcrumbs.length - 1 && (
-              <span className="text-dev-secondary mx-2">/</span>
-            )}
-          </span>
-        ))}
-      </nav>
+      <Suspense fallback={<nav className="mb-6 text-sm text-dev-secondary">Loading...</nav>}>
+        <Breadcrumbs breadcrumbs={breadcrumbs} />
+      </Suspense>
 
       {/* Content */}
       <article
@@ -73,12 +63,9 @@ export default async function PresenterDoc({
 
       {/* Back link */}
       <div className="mt-12 pt-6 border-t border-dev-card-03">
-        <Link
-          href="/presenter-docs"
-          className="text-dev-accent hover:text-dev-text"
-        >
-          ← Back to all docs
-        </Link>
+        <Suspense fallback={<span className="text-dev-secondary">Loading...</span>}>
+          <BackLink />
+        </Suspense>
       </div>
     </div>
   );
