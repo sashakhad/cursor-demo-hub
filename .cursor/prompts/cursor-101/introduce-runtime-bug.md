@@ -22,3 +22,4 @@ In `app/components/FilteredPosts.tsx`, change the PostLink map to cause a runtim
 
 This creates a `TypeError: Cannot read properties of undefined (reading 'name')` because `author` doesn't exist on the post object.
 
+
