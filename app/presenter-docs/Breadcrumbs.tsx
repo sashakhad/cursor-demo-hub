@@ -6,6 +6,7 @@ import { useSearchParams } from "next/navigation";
 type Breadcrumb = {
   title: string;
   href: string;
+  isClickable: boolean;
 };
 
 type BreadcrumbsProps = {
@@ -26,12 +27,16 @@ export function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
     <nav className="mb-6 text-sm">
       {breadcrumbs.map((crumb, i) => (
         <span key={crumb.href}>
-          <Link
-            href={getHrefWithOpen(crumb.href)}
-            className="text-dev-accent hover:text-dev-text hover:underline"
-          >
-            {crumb.title}
-          </Link>
+          {crumb.isClickable ? (
+            <Link
+              href={getHrefWithOpen(crumb.href)}
+              className="text-dev-accent hover:text-dev-text hover:underline"
+            >
+              {crumb.title}
+            </Link>
+          ) : (
+            <span className="text-dev-secondary">{crumb.title}</span>
+          )}
           {i < breadcrumbs.length - 1 && (
             <span className="text-dev-secondary mx-2">/</span>
           )}

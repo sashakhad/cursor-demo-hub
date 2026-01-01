@@ -142,17 +142,19 @@ export async function getDocData(slug: string[]): Promise<DocData | null> {
 /**
  * Get breadcrumb data for navigation
  */
-export function getBreadcrumbs(slug: string[]): Array<{ title: string; href: string }> {
-  const breadcrumbs: Array<{ title: string; href: string }> = [
-    { title: "Presenter Docs", href: "/presenter-docs" },
+export function getBreadcrumbs(slug: string[]): Array<{ title: string; href: string; isClickable: boolean }> {
+  const breadcrumbs: Array<{ title: string; href: string; isClickable: boolean }> = [
+    { title: "Presenter Docs", href: "/presenter-docs", isClickable: true },
   ];
 
+  // Add intermediate folder paths as non-clickable (they don't have pages)
   let currentPath = "/presenter-docs";
   for (let i = 0; i < slug.length - 1; i++) {
     currentPath += "/" + slug[i];
     breadcrumbs.push({
       title: slug[i]?.replace(/-/g, " ") || "",
       href: currentPath,
+      isClickable: false, // Folders don't have index pages, so don't link to them
     });
   }
 

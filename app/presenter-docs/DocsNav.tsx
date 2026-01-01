@@ -69,9 +69,8 @@ function DocLink({
       <div className="py-2 mb-3">
         <Link
           href={href}
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-semibold text-dev-text bg-dev-card-02 border-2 border-dev-accent hover:bg-dev-card-03 transition-colors"
+          className="inline-flex items-center px-4 py-2.5 rounded-lg font-semibold text-dev-text bg-dev-card-02 border-2 border-dev-accent hover:bg-dev-card-03 transition-colors"
         >
-          <span className="text-dev-accent">→</span>
           {entry.title}
         </Link>
       </div>
