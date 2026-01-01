@@ -11,8 +11,6 @@ Before starting the demo:
 1. **Start the server:** Run [/start-demo](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-demo) to launch the development server and open the blog app in the browser
 2. **Reset workspace:** Use [/reset](cursor://anysphere.cursor-deeplink/prompt?text=%2Freset) between sections to ensure a clean state for deterministic results
 
-> **📝 Deep Links:** Throughout this demo, clickable links like `[Example Link]` open a "Create chat with prompt" dialog. Click **"Create Chat"** to start the agent with the pre-filled prompt.
-
 ---
 
 ## 1. Layout Walkthrough
@@ -462,8 +460,10 @@ Popular libraries are pre-indexed. Type `@docs` and search:
 
 1. Click **Add Context** > **Docs**
 2. Scroll to bottom, click **Add new doc**
-3. Paste the documentation URL
+3. Paste a documentation URL (e.g., `https://docs.cursor.com/features/bugbot`)
 4. Cursor will index it for future use
+
+**Example URL to add:** `https://docs.cursor.com/features/bugbot`
 
 **Click Add new doc:**
 
