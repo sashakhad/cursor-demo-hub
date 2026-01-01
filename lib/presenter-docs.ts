@@ -1,8 +1,10 @@
 import fs from "fs";
 import path from "path";
 import { remark } from "remark";
-import html from "remark-html";
 import gfm from "remark-gfm";
+import remarkRehype from "remark-rehype";
+import rehypeRaw from "rehype-raw";
+import rehypeStringify from "rehype-stringify";
 
 export interface DocEntry {
   slug: string[];
@@ -129,7 +131,12 @@ export async function getDocData(slug: string[]): Promise<DocData | null> {
   const content = fs.readFileSync(filePath, "utf8");
   const title = extractTitle(content, slug[slug.length - 1] || "");
 
-  const processedContent = await remark().use(gfm).use(html, { sanitize: false }).process(content);
+  const processedContent = await remark()
+    .use(gfm)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypeStringify)
+    .process(content);
   const contentHtml = processedContent.toString();
 
   return {
