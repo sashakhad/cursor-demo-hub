@@ -83,6 +83,12 @@ export function getDocsTree(dir: string = docsDirectory, basePath: string[] = []
   }
 
   return entries.sort((a, b) => {
+    // README/Start Here first
+    const aIsReadme = a.slug[a.slug.length - 1]?.toLowerCase() === "readme";
+    const bIsReadme = b.slug[b.slug.length - 1]?.toLowerCase() === "readme";
+    if (aIsReadme && !bIsReadme) return -1;
+    if (!aIsReadme && bIsReadme) return 1;
+    
     // Directories first, then alphabetically
     if (a.isDirectory && !b.isDirectory) return -1;
     if (!a.isDirectory && b.isDirectory) return 1;
@@ -123,7 +129,7 @@ export async function getDocData(slug: string[]): Promise<DocData | null> {
   const content = fs.readFileSync(filePath, "utf8");
   const title = extractTitle(content, slug[slug.length - 1] || "");
 
-  const processedContent = await remark().use(gfm).use(html).process(content);
+  const processedContent = await remark().use(gfm).use(html, { sanitize: false }).process(content);
   const contentHtml = processedContent.toString();
 
   return {
