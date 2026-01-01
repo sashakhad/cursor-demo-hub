@@ -4,6 +4,41 @@ Welcome to the **Cursor Demo Repository**—a standardized, scalable resource fo
 
 ---
 
+## Getting Started
+
+### Prerequisites
+
+1. **Install Cursor** — Download from [cursor.com](https://cursor.com) if you haven't already
+
+### Clone and Open
+
+**Option 1: Clone via terminal**
+
+```bash
+git clone https://github.com/anysphere/cursor-demo-repo.git
+cd cursor-demo-repo
+cursor .
+```
+
+**Option 2: Clone from Cursor**
+
+1. Open Cursor
+2. Press `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows/Linux)
+3. Type "Git: Clone" and select it
+4. Paste: `https://github.com/anysphere/cursor-demo-repo.git`
+5. Choose a folder to clone into
+6. Click "Open" when prompted
+
+### First Run
+
+Once the repository is open in Cursor:
+
+1. Run [/start-demo](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-demo) to install dependencies, start the server, and open the app
+2. Wait for the blog app to appear in Cursor's built-in browser
+3. You're ready to demo!
+
+---
+
 ## Philosophy
 
 This repository is a **medium to demonstrate Cursor's features**, not a showcase of every possible use case.
