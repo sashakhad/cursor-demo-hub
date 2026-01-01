@@ -24,6 +24,25 @@ If someone says, *"This isn't applicable to us—we use Java and don't build web
 
 ---
 
+## Why This Structure Scales
+
+This repository is organized around **features**, not use cases. Each Cursor feature (Browser, Worktrees, Bugbot, etc.) has its own standalone guide in the `Features/` directory. These modular guides can then be composed into different demo flows (Cursor 101, Cursor 2.0, etc.).
+
+**The key insight:** A feature can apply to many use cases, and a use case may resonate more with certain audiences. But by documenting features independently, we can:
+
+- **Add new features once** and have them available for all demo flows
+- **Update a feature guide** without touching every demo that uses it
+- **Mix and match** features into custom sequences as needed
+- **Maintain consistency** across all presenters and demos
+
+This is not use-case specific by design. When a customer needs a demo tailored to their specific stack or workflow, that's a job for Field Engineering. This repository ensures that any feature we want to demo in a standardized way can be done scalably and consistently—without requiring deep technical expertise or custom preparation.
+
+**Handling ad-hoc requests:** Let's say you're giving a Cursor 101 demo and someone asks, *"Can you show me the Browser?"* or *"What about Parallel Agents?"* Instead of scrambling, you can navigate to that feature in the `Features/` directory and walk through its guide. Each feature has its own self-contained flow with prompts and screenshots, so you can demo it on the spot without needing to know all the technical details.
+
+The goal is that even with limited knowledge of Cursor's inner workings, you can still show people how to use it effectively. When deeper technical questions arise—advanced configurations, edge cases, or complex integrations—that's when you bring in Field Engineering or another technical resource.
+
+---
+
 ## The Demo App
 
 This repository contains a **blog application** built with Next.js, TypeScript, and Tailwind CSS. You don't need to understand the app deeply to demo—just follow the guides.
@@ -36,11 +55,9 @@ If you want to explore the codebase structure, [ask Cursor about the application
 
 This repository includes pre-configured slash commands accessible from Agent Chat. Type `/` in the chat to see available commands.
 
-### `/start-demo`
+### [/start-demo](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-demo)
 
 **Use this when beginning a demo session.**
-
-[Run /start-demo](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-demo)
 
 What it does:
 1. Fetches the latest from `main`
@@ -52,11 +69,9 @@ This ensures every demo starts from a clean, traceable state.
 
 ---
 
-### `/start-app`
+### [/start-app](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-app)
 
 **Use this when you just want to start the server** (without creating a new branch).
-
-[Run /start-app](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-app)
 
 What it does:
 1. Kills any processes running on ports 3000-3009
@@ -67,18 +82,16 @@ Use this for quick restarts or when continuing work on an existing branch.
 
 ---
 
-### `/reset`
+### [/reset](cursor://anysphere.cursor-deeplink/prompt?text=%2Freset)
 
 **Use this between demo sections to restore a clean state.**
-
-[Run /reset](cursor://anysphere.cursor-deeplink/prompt?text=%2Freset)
 
 What it does:
 1. Stashes any uncommitted changes (for safety)
 2. Resets the repository to HEAD (discards local modifications)
 3. Removes all untracked files and directories
 
-⚠️ **Recommendation:** Run `/reset` between features to ensure each demo step starts from a clean slate. This prevents artifacts from previous steps affecting the next demonstration.
+⚠️ **Recommendation:** Run [/reset](cursor://anysphere.cursor-deeplink/prompt?text=%2Freset) between features to ensure each demo step starts from a clean slate. This prevents artifacts from previous steps affecting the next demonstration.
 
 ---
 
@@ -129,8 +142,8 @@ The best way to learn these demos is to **run through them yourself using the sc
 ## Tips for a Great Demo
 
 1. **Practice with screenshots first** – Run through the `.screenshots.md` guides to learn the flow
-2. **Run `/start-demo` at the beginning** – Creates a clean, traceable branch
-3. **Run `/reset` between sections** – Ensures each feature demo starts fresh
+2. **Run [/start-demo](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-demo) at the beginning** – Creates a clean, traceable branch
+3. **Run [/reset](cursor://anysphere.cursor-deeplink/prompt?text=%2Freset) between sections** – Ensures each feature demo starts fresh
 4. **Use deep links** – Click, don't type, for consistent prompts
 5. **Use composer-1** – Fastest model for live demos
 6. **Check the browser** – Cursor's built-in browser shows your changes immediately
