@@ -5,6 +5,27 @@ Welcome to the **Cursor Demo Repository**—a standardized, scalable resource fo
 ---
 
 <details open>
+<summary>Philosophy</summary>
+
+This repository is a **medium to demonstrate Cursor's features**, not a showcase of every possible use case.
+
+The goal is to enable **anyone**—Account Executives, Technical Account Managers, AI Deployment Managers, or anyone else (technical or non-technical)—to confidently demo Cursor without having to create their own repository structure, demo scripts, or workflows from scratch. Across hundreds of employees, this eliminates massive duplication of effort.
+
+**What this repo is:**
+- A standardized way to show Cursor 101 and 201 demos
+- A systematic guide to Cursor's key features
+- A consistent, reproducible demo experience
+- A learning tool for mastering Cursor's capabilities
+
+**What this repo is not:**
+- A showcase for every industry or use case
+- A replacement for custom demos tailored to specific customer needs
+
+If someone says, *"This isn't applicable to us—we use Java and don't build web apps,"* that's the signal to bring in a **Field Engineer**. The Field Engineering team has created demos for different languages, frameworks, and use cases. This repository simply ensures everyone can demo Cursor's core features quickly and consistently.
+
+</details>
+
+<details open>
 <summary>Getting Started</summary>
 
 ### Prerequisites
@@ -61,8 +82,8 @@ The best way to learn these demos is to **run through them yourself using the sc
 
 | Demo | Description |
 |------|-------------|
-| **[Cursor 101](./Cursor-101/)** | Intro demo: Layout, Tab + Inline Edit, Agent Chat |
 | **[Cursor 2.0](./Cursor-2.0/)** | Advanced demo: Browser, Worktrees, Bugbot |
+| **[Cursor 101](./Cursor-101/)** | Intro demo: Layout, Tab + Inline Edit, Agent Chat |
 | **[Features](./Features/)** | Modular guides to pick and choose from |
 
 </details>
@@ -150,27 +171,6 @@ What it does:
 This repository contains a **blog application** built with Next.js, TypeScript, and Tailwind CSS. You don't need to understand the app deeply to demo—just follow the guides.
 
 If you want to explore the codebase structure, [ask Cursor about the application](cursor://anysphere.cursor-deeplink/prompt?text=Explain%20the%20structure%20of%20this%20application.%20What%20are%20the%20main%20components%2C%20how%20is%20the%20routing%20set%20up%2C%20and%20where%20does%20the%20content%20come%20from%3F).
-
-</details>
-
-<details>
-<summary>Philosophy</summary>
-
-This repository is a **medium to demonstrate Cursor's features**, not a showcase of every possible use case.
-
-The goal is to enable **anyone**—Account Executives, Technical Account Managers, AI Deployment Managers, or anyone else (technical or non-technical)—to confidently demo Cursor without having to create their own repository structure, demo scripts, or workflows from scratch. Across hundreds of employees, this eliminates massive duplication of effort.
-
-**What this repo is:**
-- A standardized way to show Cursor 101 and 201 demos
-- A systematic guide to Cursor's key features
-- A consistent, reproducible demo experience
-- A learning tool for mastering Cursor's capabilities
-
-**What this repo is not:**
-- A showcase for every industry or use case
-- A replacement for custom demos tailored to specific customer needs
-
-If someone says, *"This isn't applicable to us—we use Java and don't build web apps,"* that's the signal to bring in a **Field Engineer**. The Field Engineering team has created demos for different languages, frameworks, and use cases. This repository simply ensures everyone can demo Cursor's core features quickly and consistently.
 
 </details>
 

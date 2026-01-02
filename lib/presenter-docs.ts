@@ -90,6 +90,16 @@ export function getDocsTree(dir: string = docsDirectory, basePath: string[] = []
     }
   }
 
+  // Priority order for top-level directories (lower index = higher priority)
+  const directoryOrder = [
+    "cursor-2.0",
+    "cursor-101",
+    "cursor-201",
+    "cursor-301",
+    "features",
+    "best-practices",
+  ];
+
   return entries.sort((a, b) => {
     // README/Start Here first
     const aIsReadme = a.slug[a.slug.length - 1]?.toLowerCase() === "readme";
@@ -100,6 +110,21 @@ export function getDocsTree(dir: string = docsDirectory, basePath: string[] = []
     // Directories first, then alphabetically
     if (a.isDirectory && !b.isDirectory) {return -1;}
     if (!a.isDirectory && b.isDirectory) {return 1;}
+    
+    // Apply custom directory ordering for top-level items
+    const aName = a.slug[a.slug.length - 1]?.toLowerCase() || "";
+    const bName = b.slug[b.slug.length - 1]?.toLowerCase() || "";
+    const aOrderIndex = directoryOrder.indexOf(aName);
+    const bOrderIndex = directoryOrder.indexOf(bName);
+    
+    // If both are in the priority list, sort by priority
+    if (aOrderIndex !== -1 && bOrderIndex !== -1) {
+      return aOrderIndex - bOrderIndex;
+    }
+    // If only one is in the list, prioritize it
+    if (aOrderIndex !== -1) {return -1;}
+    if (bOrderIndex !== -1) {return 1;}
+    
     return a.title.localeCompare(b.title);
   });
 }

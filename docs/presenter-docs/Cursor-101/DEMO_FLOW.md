@@ -14,7 +14,7 @@ An introductory walkthrough of Cursor's core features for new users.
 >
 > Understanding the layout helps you navigate efficiently and customize your workspace for different tasks.
 
-<!-- @include: docs/presenter-docs/Features/Layout-Walkthrough/Layout-Walkthrough.md | after: ## Overview, collapsible: true, label: Layout Details -->
+<!-- @include: docs/presenter-docs/Features/Layout-Walkthrough/Layout-Walkthrough.md | after: ## Overview, collapsible: true, label: Details -->
 
 ---
 
@@ -24,7 +24,7 @@ An introductory walkthrough of Cursor's core features for new users.
 
 **Docs:** [Tab Overview](https://docs.cursor.com/tab/overview) | [Inline Edit](https://docs.cursor.com/en/inline-edit/overview)
 
-<!-- @include: docs/presenter-docs/Features/Tab-Inline-Edit/Tab-Inline-Edit.md | after: ## Tab Autocomplete, collapsible: true, label: Tab + Inline Edit Details -->
+<!-- @include: docs/presenter-docs/Features/Tab-Inline-Edit/Tab-Inline-Edit.md | after: ## Tab Autocomplete, collapsible: true, label: Details -->
 
 ---
 
@@ -34,7 +34,7 @@ An introductory walkthrough of Cursor's core features for new users.
 
 **Docs:** [Agent Chat](https://docs.cursor.com/chat/overview)
 
-<!-- @include: docs/presenter-docs/Features/Agent/Agent-Chat/Agent-Chat.md | after: ## Overview, collapsible: true, label: Agent Chat Details -->
+<!-- @include: docs/presenter-docs/Features/Agent/Agent-Chat/Agent-Chat.md | after: ## Overview, collapsible: true, label: Details -->
 
 ---
 

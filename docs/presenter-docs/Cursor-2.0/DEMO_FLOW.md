@@ -1,6 +1,6 @@
 # Cursor 2.0 Demo Flow
 
-## 1. [Introducing Composer](https://cursor.com/blog/composer)
+## 1. [Introduce Composer](https://cursor.com/blog/composer)
 
 > Composer is our new agent model designed for software engineering intelligence and speed.
 >
@@ -24,7 +24,7 @@ Show the current blog application and explain what we'll be building
 
 > Browser can navigate through the app, click on links, type into inputs, take screenshots and even monitor network traffic.
 
-<!-- @include: docs/presenter-docs/Features/Browser/Browser.md | after: ## Demo, collapsible: true, label: Browser Details -->
+<!-- @include: docs/presenter-docs/Features/Browser/Browser.md | after: ## Demo, collapsible: true, label: Details -->
 
 ---
 
@@ -38,7 +38,7 @@ Show the current blog application and explain what we'll be building
 
 - [Implement Bookmarks Feature](cursor://anysphere.cursor-deeplink/prompt?text=Product%20wants%20us%20to%20add%20a%20bookmarks%20feature%20so%20users%20can%20save%20posts%20for%20later.%20Review%20the%20requirements%20in%20%40BOOKMARKS_PRD%20and%20create%20an%20implementation%20plan.)
 
-<!-- @include: docs/presenter-docs/Features/Agent/Plan-Mode/Plan-Mode.md | after: ## Demo, collapsible: true, label: Plan Mode Details -->
+<!-- @include: docs/presenter-docs/Features/Agent/Plan-Mode/Plan-Mode.md | after: ## Demo, collapsible: true, label: Details -->
 
 ---
 
@@ -48,7 +48,7 @@ Show the current blog application and explain what we'll be building
 >
 > Parallel agents run in their own worktree, allowing them to make edits, or build and test code without interfering with each other.
 
-<!-- @include: docs/presenter-docs/Features/Worktrees/Worktrees.md | after: ## Parallel Agents, lines: 1-80, collapsible: true, label: Parallel Agents Details -->
+<!-- @include: docs/presenter-docs/Features/Worktrees/Worktrees.md | after: ## Parallel Agents, lines: 1-80, collapsible: true, label: Details -->
 
 ### 4.5. Reset
 Use custom slash command [/reset](cursor://anysphere.cursor-deeplink/prompt?text=%2Freset) to clean workspace
@@ -61,7 +61,7 @@ Use custom slash command [/reset](cursor://anysphere.cursor-deeplink/prompt?text
 >
 > Use cases: learning each model's strengths, tackling high-priority bugs where you want multiple perspectives, or comparing architectural approaches.
 
-<!-- @include: docs/presenter-docs/Features/Worktrees/Worktrees.md | after: ## Best of N, collapsible: true, label: Best of N Details -->
+<!-- @include: docs/presenter-docs/Features/Worktrees/Worktrees.md | after: ## Best of N, collapsible: true, label: Details -->
 
 ---
 
@@ -84,7 +84,7 @@ Click "Review Changes" at top right, then `/commit`
 
 > Debug Mode helps you find root causes and fix tricky bugs that are hard to reproduce or understand.
 
-<!-- @include: docs/presenter-docs/Features/Agent/Debug-Mode/Debug-Mode.md | after: ## Setup, collapsible: true, label: Debug Mode Details -->
+<!-- @include: docs/presenter-docs/Features/Agent/Debug-Mode/Debug-Mode.md | after: ## Setup, collapsible: true, label: Details -->
 
 ### [Best of N Judge](https://forum.cursor.com/t/cursor-2-2-multi-agent-judging/145826)
 
@@ -106,10 +106,10 @@ Click "Review Changes" at top right, then `/commit`
 
 > Bugbot reviews pull requests and identifies bugs, security issues, and code quality problems.
 
-<!-- @include: docs/presenter-docs/Features/Bugbot/Bugbot.md | after: ## Demo, collapsible: true, label: Bugbot Details -->
+<!-- @include: docs/presenter-docs/Features/Bugbot/Bugbot.md | after: ## Demo, collapsible: true, label: Details -->
 
 ### Voice Mode
 
 > Use voice to iterate quickly. Turn speech into prompts instantly and watch your ideas come to life.
 
-<!-- @include: docs/presenter-docs/Features/Agent/Voice-Mode/Voice-Mode.md | after: ## Demo, collapsible: true, label: Voice Mode Details -->
+<!-- @include: docs/presenter-docs/Features/Agent/Voice-Mode/Voice-Mode.md | after: ## Demo, collapsible: true, label: Details -->

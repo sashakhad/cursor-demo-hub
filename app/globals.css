@@ -116,13 +116,13 @@
     @apply text-xs opacity-70;
   }
 
-  /* Collapsible sections - details/summary elements styled as headers */
+  /* Collapsible sections - styled like H3 (subordinate to H2) */
   .prose details {
-    @apply my-6;
+    @apply my-4;
   }
 
   .prose details summary {
-    @apply text-2xl lg:text-3xl font-bold text-dev-text cursor-pointer list-none mb-4 mt-8;
+    @apply text-lg font-medium text-dev-text cursor-pointer list-none;
   }
 
   .prose details summary::-webkit-details-marker {
@@ -130,25 +130,16 @@
   }
 
   .prose details summary::before {
-    content: "▶";
-    @apply text-lg mr-2 inline-block;
-    transition: transform 0.2s ease;
+    content: "▸";
+    @apply mr-2 inline-block;
+    transition: transform 0.15s ease;
   }
 
   .prose details[open] > summary::before {
-    transform: rotate(90deg);
-  }
-
-  /* Nested details get smaller styling */
-  .prose details details {
-    @apply my-4;
-  }
-
-  .prose details details summary {
-    @apply text-xl lg:text-2xl mt-4;
+    content: "▾";
   }
 
   .prose details > *:not(summary) {
-    @apply ml-6;
+    @apply ml-5 mt-3;
   }
 }
