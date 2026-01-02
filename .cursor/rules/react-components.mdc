@@ -1,0 +1,10 @@
+---
+globs: app/components/{*.tsx}
+alwaysApply: false
+---
+- Use functional components only.
+- Always define explicit props interfaces or types.
+- Do not use `any` or implicit `unknown`.
+- Prefer named function declarations over anonymous arrow exports.
+- Keep components small and focused on a single responsibility.
+- Avoid complex logic in JSX. Extract it into helper functions.

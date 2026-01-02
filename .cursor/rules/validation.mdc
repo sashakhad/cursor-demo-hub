@@ -1,0 +1,12 @@
+---
+alwaysApply: false
+description: Best practices when handling client side and server side validation
+---
+# Validation Standards
+
+- Inputs must be validated before running any business logic.
+- Validation must happen on both client and server.
+- Use a schema validation library such as Zod.
+- Do not assume inputs are well-formed.
+- Validation must happen at the top of the route handler.
+- If validation fails, return early with an error.

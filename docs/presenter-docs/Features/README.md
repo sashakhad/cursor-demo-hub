@@ -31,7 +31,17 @@ AI-powered features integrated directly into the code editor.
 | Feature | Description |
 |---------|-------------|
 | [Layout Walkthrough](/presenter-docs/Features/Layout-Walkthrough/Layout-Walkthrough) | Navigate the IDE and customize your workspace |
-| [Tab + Quick Edit](/presenter-docs/Features/Tab-Quick-Edit/Tab-Quick-Edit) | AI autocomplete and inline edits with Cmd+K |
+| [Tab + Inline Edit](/presenter-docs/Features/Tab-Inline-Edit/Tab-Inline-Edit) | AI autocomplete and inline edits with Cmd+K |
+
+---
+
+## Configuration
+
+Customize Cursor behavior with rules and commands.
+
+| Feature | Description |
+|---------|-------------|
+| [Rules](/presenter-docs/Features/Rules/Rules) | Define consistent AI behavior and enforce style guides |
 
 ---
 

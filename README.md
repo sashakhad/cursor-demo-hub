@@ -1,81 +1,61 @@
-# TAM Cursor Demos
+# Cursor Demos
 
-This repository contains demonstration examples showcasing Cursor's AI-powered coding capabilities.
+A standardized demo repository for showcasing Cursor's AI-powered coding capabilities. Built for Account Executives, Technical Account Managers, and anyone demoing Cursor to customers.
 
-## What's Inside
-
-This is a Next.js blog application built with:
-- **Next.js 15** - React framework with App Router
-- **TypeScript** - Type-safe development
-- **Tailwind CSS** - Utility-first styling
-- **Markdown** - Content management via markdown files
-
-## Tech Stack
-
-- Framework: Next.js
-- Language: TypeScript
-- Styling: Tailwind CSS
-- Content: Markdown files
-
-## Getting Started
+## Quick Start
 
 ```bash
-# Install dependencies
-pnpm install
+# Clone the repository
+git clone https://github.com/fieldsphere/cursor-demos.git
+cd cursor-demos
 
-# Run development server
-pnpm run dev
-
-# Build for production
-pnpm run build
+# Open in Cursor
+cursor .
 ```
+
+Once open in Cursor, run [/start-demo](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-demo) to install dependencies, start the server, and begin demoing.
+
+## 📖 Start Here
+
+**→ [Presenter Documentation](./docs/presenter-docs/README.md)**
+
+The presenter docs contain everything you need:
+- Step-by-step demo flows (Cursor 101, Cursor 2.0)
+- Individual feature guides with screenshots
+- Slash commands for demo setup and reset
+- Tips for delivering great demos
+
+## Quick Reference
+
+| Action | Shortcut / Command |
+|--------|-------------------|
+| Open Agent Chat | `Cmd+L` |
+| Inline Edit | `Cmd+K` |
+| Accept Tab suggestion | `Tab` |
+| Start demo session | [/start-demo](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-demo) |
+| Start app only | [/start-app](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-app) |
+| Reset workspace | [/reset](cursor://anysphere.cursor-deeplink/prompt?text=%2Freset) |
+
+## The Demo App
+
+This repository includes a Next.js blog application used as the demo target:
+
+- **Next.js 15** with App Router
+- **TypeScript** for type-safe development
+- **Tailwind CSS** for styling
+- **Markdown** for blog content
+
+You don't need to understand the app deeply—just follow the presenter guides.
 
 ## GitHub CLI Setup
 
-### Install GitHub CLI
-
-**macOS:**
 ```bash
+# Install (macOS)
 brew install gh
-```
 
-### Authenticate
-
-```bash
+# Authenticate
 gh auth login
-```
 
-### Clone This Repository
-
-```bash
+# Clone
 gh repo clone fieldsphere/cursor-demos
-cd cursor-demos
 ```
-
-### Alternative: Clone via Git
-
-```bash
-git clone https://github.com/fieldsphere/cursor-demos.git
-cd cursor-demos
-```
-
-## Project Structure
-
-```
-├── app/                    # Next.js app directory
-│   ├── components/         # React components
-│   ├── context/           # React context providers
-│   └── posts/             # Dynamic routes for posts
-├── lib/                   # Utility libraries
-├── posts/                 # Markdown blog posts
-└── scripts/               # Utility scripts
-```
-
-## Purpose
-
-This repository serves as a demonstration of Cursor's AI capabilities for building modern web applications. It showcases features like:
-
-- Semantic code search
-- AI-powered code generation
-- Context-aware suggestions
-- Multi-file refactoring

@@ -63,7 +63,7 @@ When you first open Cursor, you'll see an empty editor. Use the layout controls 
 
 ---
 
-## 2. Tab + Quick Edit (Cmd+K)
+## 2. Tab + Inline Edit (Cmd+K)
 
 > Cursor Tab provides context-aware, multi-line code suggestions as you type. It can modify multiple lines at once, add import statements when missing, and predict your next editing location within or across files.
 >
@@ -121,7 +121,7 @@ Open an empty file (like `Footer.tsx`) and start typing:
 - **Uses your existing patterns:** Suggestions incorporate your components and utilities
 - **Feels like mind-reading:** Power users report Tab predicting exactly what they want
 
-### Quick Edit (Cmd+K)
+### Inline Edit (Cmd+K)
 
 #### Overview
 
@@ -146,8 +146,8 @@ Select code and press `Cmd+K` to make targeted edits using natural language. Onl
 
 - **Tab:** Start with hints in comments or partial code to guide suggestions
 - **Accept/Reject signals:** Each `Tab` accept or `Escape` reject teaches the model your preferences
-- **Quick Edit:** Be specific about what you want changed
-- **Combine them:** Use Tab for building, Quick Edit for refining
+- **Inline Edit:** Be specific about what you want changed
+- **Combine them:** Use Tab for building, Inline Edit for refining
 
 ---
 
@@ -352,7 +352,7 @@ This demo shows the full workflow: clicking a deep link, selecting a model, runn
 | Action | Shortcut/Command |
 |--------|------------------|
 | Open Agent Chat | `Cmd+L` |
-| Quick Edit | `Cmd+K` |
+| Inline Edit | `Cmd+K` |
 | Accept Tab suggestion | `Tab` |
 | Reject Tab suggestion | `Escape` |
 | Chat History | `Opt+Cmd+'` |

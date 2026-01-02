@@ -61,7 +61,7 @@ The best way to learn these demos is to **run through them yourself using the sc
 
 | Demo | Description |
 |------|-------------|
-| **[Cursor 101](./Cursor-101/)** | Intro demo: Layout, Tab + Quick Edit, Agent Chat |
+| **[Cursor 101](./Cursor-101/)** | Intro demo: Layout, Tab + Inline Edit, Agent Chat |
 | **[Cursor 2.0](./Cursor-2.0/)** | Advanced demo: Browser, Worktrees, Bugbot |
 | **[Features](./Features/)** | Modular guides to pick and choose from |
 
@@ -73,7 +73,7 @@ The best way to learn these demos is to **run through them yourself using the sc
 | Action | Shortcut / Command |
 |--------|-------------------|
 | Open Agent Chat | `Cmd+L` |
-| Quick Edit | `Cmd+K` |
+| Inline Edit | `Cmd+K` |
 | Accept Tab suggestion | `Tab` |
 | Chat History | `Opt+Cmd+'` |
 | Add selection to chat | Select + `Cmd+L` |

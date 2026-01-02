@@ -1,4 +1,4 @@
-# Tab + Quick Edit (Cmd+K)
+# Tab + Inline Edit (Cmd+K)
 
 > Cursor Tab provides context-aware, multi-line code suggestions as you type. It can modify multiple lines at once, add import statements when missing, and predict your next editing location within or across files.
 >
@@ -63,7 +63,7 @@ Tab predicts what you want to write next and suggests complete code blocks. The 
 
 ---
 
-## Quick Edit (Cmd+K)
+## Inline Edit (Cmd+K)
 
 ### Overview
 
@@ -71,9 +71,9 @@ Select code and press `Cmd+K` to make targeted edits using natural language. Onl
 
 ### Demo
 
-**Select a section of code you want to edit and press Cmd+K to open the quick edit panel:**
+**Select a section of code you want to edit and press Cmd+K to open the inline edit panel:**
 
-![Quick edit prompt](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/825f8951-69cb-4831-9b85-ab60c8653ed3/ascreenshot_62c96380a4014cefb6e90ec6067bb135_text_export.jpeg)
+![Inline edit prompt](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/825f8951-69cb-4831-9b85-ab60c8653ed3/ascreenshot_62c96380a4014cefb6e90ec6067bb135_text_export.jpeg)
 
 **Type your instruction—"make this more colorful":**
 
@@ -95,7 +95,7 @@ Select code and press `Cmd+K` to make targeted edits using natural language. Onl
 ## Best Practices
 
 - **Tab:** Start with hints in comments or partial code to guide suggestions
-- **Quick Edit:** Be specific about what you want changed
-- **Combine them:** Use Tab for building, Quick Edit for refining
+- **Inline Edit:** Be specific about what you want changed
+- **Combine them:** Use Tab for building, Inline Edit for refining
 
 
