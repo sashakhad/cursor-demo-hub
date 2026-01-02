@@ -18,7 +18,17 @@ An introductory walkthrough of Cursor's core features for new users.
 
 ---
 
-## 2. Tab + Inline Edit (Cmd+K)
+## 2. Codebase Indexing
+
+> Cursor indexes your codebase to enable semantic search—finding code by meaning, not just exact text. This gives the AI a full understanding of how your project works.
+
+**Docs:** [Codebase Indexing](https://cursor.com/docs/context/codebase-indexing)
+
+<!-- @include: docs/presenter-docs/Concepts/Codebase-Indexing.md | after: ## How It Works, collapsible: true, label: Details -->
+
+---
+
+## 3. Tab + Inline Edit (Cmd+K)
 
 > Cursor Tab provides context-aware, multi-line code suggestions as you type. Inline Edit (Cmd+K) lets you edit code directly using natural language.
 
@@ -28,7 +38,7 @@ An introductory walkthrough of Cursor's core features for new users.
 
 ---
 
-## 3. Agent Chat
+## 4. Agent Chat
 
 > Agent Chat is the command center for agentic workflows within Cursor. An agent is a large language model (LLM) with access to tool calls—in this case, the ability to make changes directly to your codebase.
 

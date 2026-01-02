@@ -7,6 +7,7 @@
 - [ ] Hooks
 - [ ] MCPs
 - [ ] Cloud Agents
+- [ ] Cursor CLI
 - [x] Worktrees
 
 ---

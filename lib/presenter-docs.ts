@@ -98,6 +98,7 @@ export function getDocsTree(dir: string = docsDirectory, basePath: string[] = []
     "cursor-301",
     "features",
     "best-practices",
+    "concepts",
   ];
 
   return entries.sort((a, b) => {
