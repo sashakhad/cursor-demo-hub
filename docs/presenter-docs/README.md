@@ -9,7 +9,7 @@ Welcome to the **Cursor Demo Repository**—a standardized, scalable resource fo
 
 This repository is a **medium to demonstrate Cursor's features**, not a showcase of every possible use case.
 
-The goal is to enable **anyone**—Account Executives, Technical Account Managers, AI Deployment Managers, or anyone else (technical or non-technical)—to confidently demo Cursor without having to create their own repository structure, demo scripts, or workflows from scratch. Across hundreds of employees, this eliminates massive duplication of effort.
+The goal is to enable **anyone**—technical or non-technical—to confidently demo Cursor without having to create their own repository structure, demo scripts, or workflows from scratch.
 
 **What this repo is:**
 - A standardized way to show Cursor 101 and 201 demos
@@ -19,9 +19,9 @@ The goal is to enable **anyone**—Account Executives, Technical Account Manager
 
 **What this repo is not:**
 - A showcase for every industry or use case
-- A replacement for custom demos tailored to specific customer needs
+- A replacement for custom demos tailored to specific needs
 
-If someone says, *"This isn't applicable to us—we use Java and don't build web apps,"* that's the signal to bring in a **Field Engineer**. The Field Engineering team has created demos for different languages, frameworks, and use cases. This repository simply ensures everyone can demo Cursor's core features quickly and consistently.
+This repository ensures everyone can demo Cursor's core features quickly and consistently.
 
 </details>
 
@@ -37,12 +37,12 @@ If someone says, *"This isn't applicable to us—we use Java and don't build web
 **Option 1: Clone via terminal**
 
 ```bash
-git clone https://github.com/fieldsphere/cursor-demos.git
-cd cursor-demos
+git clone https://github.com/sashakhad/cursor-demo-hub.git
+cd cursor-demo-hub
 cursor .
 ```
 
-**Option 2:** [Clone from Cursor](cursor://anysphere.cursor-deeplink/prompt?text=Clone%20the%20repository%20https%3A%2F%2Fgithub.com%2Ffieldsphere%2Fcursor-demos.git)
+**Option 2:** [Clone from Cursor](cursor://anysphere.cursor-deeplink/prompt?text=Clone%20the%20repository%20https%3A%2F%2Fgithub.com%2Fsashakhad%2Fcursor-demo-hub.git)
 
 <details>
 <summary>Screenshots for cloning from Cursor</summary>
@@ -186,11 +186,11 @@ This repository is organized around **features**, not use cases. Each Cursor fea
 - **Mix and match** features into custom sequences as needed
 - **Maintain consistency** across all presenters and demos
 
-This is not use-case specific by design. When a customer needs a demo tailored to their specific stack or workflow, that's a job for Field Engineering. This repository ensures that any feature we want to demo in a standardized way can be done scalably and consistently—without requiring deep technical expertise or custom preparation.
+This is not use-case specific by design. This repository ensures that any feature we want to demo in a standardized way can be done scalably and consistently—without requiring deep technical expertise or custom preparation.
 
 **Handling ad-hoc requests:** Let's say you're giving a Cursor 101 demo and someone asks, *"Can you show me the Browser?"* or *"What about Parallel Agents?"* Instead of scrambling, you can navigate to that feature in the `Features/` directory and walk through its guide. Each feature has its own self-contained flow with prompts and screenshots, so you can demo it on the spot without needing to know all the technical details.
 
-The goal is that even with limited knowledge of Cursor's inner workings, you can still show people how to use it effectively. When deeper technical questions arise—advanced configurations, edge cases, or complex integrations—that's when you bring in Field Engineering or another technical resource.
+The goal is that even with limited knowledge of Cursor's inner workings, you can still show people how to use it effectively.
 
 </details>
 
@@ -203,6 +203,6 @@ The goal is that even with limited knowledge of Cursor's inner workings, you can
 4. **Use deep links** – Click, don't type, for consistent prompts
 5. **Use composer-1** – Fastest model for live demos
 6. **Check the browser** – Cursor's built-in browser shows your changes immediately
-7. **Know when to escalate** – If the customer needs a use-case-specific demo, bring in Field Engineering
+7. **Know your limits** – For use-case-specific demos, consider creating a custom branch or repo
 
 </details>
