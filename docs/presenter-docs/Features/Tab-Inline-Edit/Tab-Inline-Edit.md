@@ -14,6 +14,15 @@ Tab predicts what you want to write next and suggests complete code blocks. The 
 
 ### Demo
 
+> **Note:** Tab is adaptive—it learns from your coding style and patterns. What you see on your screen may differ from these screenshots, and that's expected. If pressing "F" doesn't immediately trigger a suggestion, try these alternatives:
+>
+> - Type `function Footer` or `export function Footer`
+> - Start with `<footer>` or `<Footer />`
+> - Add a comment first: `// Footer component` then press Enter
+> - Type `Footer` and wait a moment
+>
+> The key is demonstrating how Tab responds to intent—exact reproduction of screenshots isn't necessary.
+
 **Open an empty component file like `Footer.tsx`:**
 
 ![Open Footer.tsx](https://colony-recorder.s3.amazonaws.com/files/2025-12-31/ac8031b5-214a-4eec-bc5e-4bc8940253f3/ascreenshot_383cf1fcd2bd4ae68b7d027b647f584b_text_export.jpeg)

@@ -1,13 +1,13 @@
-# Cursor Demos
+# Cursor Demo Hub
 
-A standardized demo repository for showcasing Cursor's AI-powered coding capabilities. Built for Account Executives, Technical Account Managers, and anyone demoing Cursor to customers.
+A standardized demo repository for showcasing Cursor's AI-powered coding capabilities. Built for anyone wanting to demo Cursor.
 
 ## Quick Start
 
 ```bash
 # Clone the repository
-git clone https://github.com/fieldsphere/cursor-demos.git
-cd cursor-demos
+git clone https://github.com/sashakhad/cursor-demo-hub.git
+cd cursor-demo-hub
 
 # Open in Cursor
 cursor .
@@ -57,5 +57,5 @@ brew install gh
 gh auth login
 
 # Clone
-gh repo clone fieldsphere/cursor-demos
+gh repo clone sashakhad/cursor-demo-hub
 ```

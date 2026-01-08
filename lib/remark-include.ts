@@ -148,7 +148,7 @@ export function processIncludes(
         : fileName.replace(/-/g, " ");
       
       return `<details>
-<summary>📎 ${label}</summary>
+<summary>${label}</summary>
 
 ${nested.content.trim()}
 

@@ -62,3 +62,6 @@ storybook-static
 # os
 Thumbs.db
 .tmp/
+
+# CI build directory (pre-push checks)
+.next-ci

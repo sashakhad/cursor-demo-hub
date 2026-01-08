@@ -113,7 +113,9 @@ export function CollapsibleContent({ contentHtml }: CollapsibleContentProps) {
         [&_table]:w-full [&_table]:border-collapse [&_table]:my-6
         [&_th]:border [&_th]:border-dev-text/20 [&_th]:bg-dev-card [&_th]:px-4 [&_th]:py-2 [&_th]:text-left [&_th]:font-semibold
         [&_td]:border [&_td]:border-dev-text/20 [&_td]:px-4 [&_td]:py-2
-        [&_tr:nth-child(even)]:bg-dev-card/50"
+        [&_tr:nth-child(even)]:bg-dev-card/50
+        [&_details]:my-2
+        [&_summary]:cursor-pointer [&_summary]:text-sm [&_summary]:font-normal [&_summary]:text-dev-text/50 [&_summary]:select-none [&_summary]:py-1 hover:[&_summary]:text-dev-text/70"
       dangerouslySetInnerHTML={{ __html: contentHtml }}
     />
   );

@@ -14,27 +14,37 @@ An introductory walkthrough of Cursor's core features for new users.
 >
 > Understanding the layout helps you navigate efficiently and customize your workspace for different tasks.
 
-<!-- @include: docs/presenter-docs/Features/Layout-Walkthrough/Layout-Walkthrough.md | after: ## Overview, collapsible: true, label: Layout Details -->
+<!-- @include: docs/presenter-docs/Features/Layout-Walkthrough/Layout-Walkthrough.md | after: ## Overview, collapsible: true, label: Details -->
 
 ---
 
-## 2. Tab + Inline Edit (Cmd+K)
+## 2. Codebase Indexing
+
+> Cursor indexes your codebase to enable semantic search—finding code by meaning, not just exact text. This gives the AI a full understanding of how your project works.
+
+**Docs:** [Codebase Indexing](https://cursor.com/docs/context/codebase-indexing)
+
+<!-- @include: docs/presenter-docs/Concepts/Codebase-Indexing.md | after: ## How It Works, collapsible: true, label: Details -->
+
+---
+
+## 3. Tab + Inline Edit (Cmd+K)
 
 > Cursor Tab provides context-aware, multi-line code suggestions as you type. Inline Edit (Cmd+K) lets you edit code directly using natural language.
 
 **Docs:** [Tab Overview](https://docs.cursor.com/tab/overview) | [Inline Edit](https://docs.cursor.com/en/inline-edit/overview)
 
-<!-- @include: docs/presenter-docs/Features/Tab-Inline-Edit/Tab-Inline-Edit.md | after: ## Tab Autocomplete, collapsible: true, label: Tab + Inline Edit Details -->
+<!-- @include: docs/presenter-docs/Features/Tab-Inline-Edit/Tab-Inline-Edit.md | after: ## Tab Autocomplete, collapsible: true, label: Details -->
 
 ---
 
-## 3. Agent Chat
+## 4. Agent Chat
 
 > Agent Chat is the command center for agentic workflows within Cursor. An agent is a large language model (LLM) with access to tool calls—in this case, the ability to make changes directly to your codebase.
 
 **Docs:** [Agent Chat](https://docs.cursor.com/chat/overview)
 
-<!-- @include: docs/presenter-docs/Features/Agent/Agent-Chat/Agent-Chat.md | after: ## Overview, collapsible: true, label: Agent Chat Details -->
+<!-- @include: docs/presenter-docs/Features/Agent/Agent-Chat/Agent-Chat.md | after: ## Overview, collapsible: true, label: Details -->
 
 ---
 
