@@ -1,0 +1,135 @@
+# Cursor Notes Reference
+
+## Rules
+
+### What rules are for
+- Define consistent behavior across the codebase and model interactions.
+- Enforce style guides and engineering standards.
+- Scope behavior to specific parts of the project using glob patterns.
+
+### Best practices
+- Go through configs and glob patterns deliberately.
+- Follow style guides strictly.
+  - Avoid typing things as `any`.
+  - Prefer function declarations.
+- Keep rules small and focused.
+  - Do not create rules for everything.
+  - Each rule should have a clear purpose.
+- Apply glob patterns to target specific areas of the codebase.
+  - Examples include frontend, backend, or infra directories.
+- Rules can govern how models communicate with you.
+  - Example: Our engineering team has a rule that's always applied: "Never tell me that I'm absolutely right" to avoid the model placating.
+
+### Caution
+- Rules, if misapplied, can cause model performance degradation because they fill the context window.
+- A very large rule file explaining every single little detail will hurt performance.
+- Use rules judiciously, both at the team and project level.
+
+### Scope and location
+- Rules live in the `.cursor` directory.
+- Rules can be applied at:
+  - Project level
+  - User level
+  - Team level
+
+---
+
+## Commands
+
+### What commands are for
+- Automate repeatable workflows.
+- Provide abstractions for developers and non-developers.
+
+### Examples
+- Developer workflows:
+  - `/commit`
+  - `/create-pr`
+- Non-developer abstractions:
+  - `/start-server`
+- Onboarding automation:
+  - Custom `/onboarding` command for new engineers:
+    - Warm welcome
+    - Overview of the tech stack
+
+### Scope and location
+- Commands live in the `.cursor` directory.
+- Commands are available at:
+  - User level
+  - Team level
+
+---
+
+## Context Management
+
+### What is a token?
+- A token is the basic unit a language model reads and writes.
+- A token can be:
+  - A whole word
+  - Part of a word
+  - Punctuation
+  - Whitespace
+
+### What is the context window?
+- The context window is the model's working memory, measured in tokens.
+- The context window is the maximum number of tokens a model can hold in working memory at one time.
+- It includes:
+  - Your input
+  - The model's internal reasoning
+  - The model's output
+- Once the window is full, the model must forget or ignore earlier tokens.
+
+### Token intuition
+- 200k tokens ≈ one long novel.
+- Code is token-dense.
+  - 1,000 lines of code ≈ 10k–20k tokens.
+
+### Context window monitor
+- Cursor monitors context window usage automatically.
+- When the context window gets full, Cursor will summarize the chat so that the model can continue.
+
+### Practical limits
+- Results appear to degrade around 70–80% of the context window.
+  - This is an observed pattern, not a hard rule.
+- Think of context like the model's attention span.
+  - The more you have to keep in mind at once, the harder it is for the model to execute on tasks well.
+  - It's juggling many things at once.
+
+### Best practices
+- Open a new chat for each atomic piece of work.
+- Very similar to engineering best practices in general around atomicity.
+
+---
+
+## Model Selection Strategies
+
+### Thinking vs executing models
+- Models are distinguished by the brain icon.
+- Thinking model:
+  - Uses extra internal reasoning tokens to improve correctness.
+  - Better for architectural questions and decisions.
+  - Better for asking about the codebase.
+- Executing model:
+  - Minimizes internal reasoning to use more tokens on your input.
+  - Better for implementation.
+
+### Recommendations
+- We strongly recommend getting to know different models, switching between them, and seeing how they perform.
+- Auto mode:
+  - Cursor has an auto feature if you don't want to think about model selection.
+  - Think of it like driving: for most people, automatic transmission is just fine.
+  - For those who want precise control and maneuverability, manually switching between models will give the best performance.
+- Avoid using a single heavyweight model for everything.
+  - What developers often miss is that these models tend to be more expensive, and you don't need such heavy horsepower.
+  - It's like using a mode that consumes more gas when you could have the same performance with a cheaper model consuming less gas.
+- Use lighter-weight models for daily work.
+- For coding specifically:
+  - Composer One is recommended.
+  - Benchmarks 4x as fast as other models.
+  - Performs similarly to Frontier models in terms of code quality.
+
+### Context window considerations
+- For long-running tasks or analyzing large bodies of work:
+  - Large codebases
+  - Large text files
+  - Large datasets
+- Consider using models with very large context windows, up to 1 million tokens.

@@ -1,0 +1,15 @@
+---
+alwaysApply: false
+---
+Apply this rule only when explicitly refactoring code.
+
+- Do not change behavior unless explicitly requested.
+- Preserve public APIs and function signatures.
+- Prefer small, mechanical transformations.
+- Improve naming, structure, and readability.
+- Remove dead code and obvious duplication.
+- Do not introduce new abstractions unless necessary.
+
+Before making changes:
+- Identify the intent of the existing code.
+- Call out any ambiguous behavior before modifying it.

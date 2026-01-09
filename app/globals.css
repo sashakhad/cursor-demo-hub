@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-dev-accent: #06302B;
+  --color-dev-primary: #06302B;
+  --color-dev-peach: #FFE5B4;
+}
+
+@layer base {
+  body {
+    @apply bg-dev-bg text-dev-text;
+  }
+  
+  p {
+    @apply text-lg leading-relaxed;
+  }
+  
+  a {
+    @apply font-medium no-underline text-dev-accent hover:underline;
+  }
+  
+  ul {
+    @apply ml-5 list-outside list-disc;
+  }
+  
+  ol {
+    @apply ml-5 list-outside list-decimal;
+  }
+  
+  li {
+    @apply text-lg leading-relaxed;
+  }
+}
+
+@layer components {
+  .prose {
+    @apply max-w-none;
+  }
+  
+  .prose p {
+    @apply mb-4 leading-relaxed;
+  }
+  
+  .prose a {
+    @apply text-dev-accent hover:underline;
+  }
+  
+  .prose ul, .prose ol {
+    @apply mb-4 pl-6;
+  }
+  
+  .prose li {
+    @apply mb-2;
+  }
+  
+  .prose li > a {
+    display: inline-block;
+    vertical-align: baseline;
+  }
+  
+  .prose blockquote {
+    @apply border-l-4 border-dev-accent pl-4 italic text-dev-secondary rounded-r-lg my-4;
+    border-left-color: color-mix(in srgb, var(--color-dev-accent) 60%, transparent);
+    background-color: color-mix(in srgb, var(--color-dev-accent) 5%, transparent);
+  }
+  
+  .prose code {
+    @apply px-2 py-1 rounded text-sm font-mono text-dev-text;
+    background-color: color-mix(in srgb, var(--color-dev-accent) 10%, transparent);
+  }
+  
+  .prose pre {
+    @apply p-4 rounded-lg overflow-x-auto my-4;
+    background-color: color-mix(in srgb, var(--color-dev-accent) 5%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-dev-accent) 20%, transparent);
+  }
+  
+  .prose pre code {
+    @apply bg-transparent p-0 text-dev-text;
+  }
+  
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    @apply font-bold text-dev-text mb-4 mt-8;
+  }
+  
+  .prose h1 {
+    @apply text-3xl lg:text-4xl;
+  }
+  
+  .prose h2 {
+    @apply text-2xl lg:text-3xl;
+  }
+  
+  .prose h3 {
+    @apply text-xl lg:text-2xl;
+  }
+  
+  /* Deep links - cursor:// protocol links get distinctive styling */
+  .prose a[href^="cursor://"] {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md font-medium no-underline;
+    background-color: color-mix(in srgb, var(--color-dev-accent) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-dev-accent) 25%, transparent);
+    transition: all 0.15s ease;
+  }
+  
+  .prose a[href^="cursor://"]:hover {
+    @apply no-underline;
+    background-color: color-mix(in srgb, var(--color-dev-accent) 20%, transparent);
+    border-color: color-mix(in srgb, var(--color-dev-accent) 40%, transparent);
+  }
+  
+  .prose a[href^="cursor://"]::before {
+    content: "▶";
+    @apply text-xs opacity-70;
+  }
+
+  /* Collapsible sections - styled like H3 (subordinate to H2) */
+  .prose details {
+    @apply my-4;
+  }
+
+  .prose details summary {
+    @apply text-lg font-medium text-dev-text cursor-pointer list-none;
+  }
+
+  .prose details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .prose details summary::before {
+    content: "▸";
+    @apply mr-2 inline-block;
+    transition: transform 0.15s ease;
+  }
+
+  .prose details[open] > summary::before {
+    content: "▾";
+  }
+
+  .prose details > *:not(summary) {
+    @apply ml-5 mt-3;
+  }
+}
