@@ -162,7 +162,7 @@ Clickable links like [Implement Dark Mode](cursor://anysphere.cursor-deeplink/pr
 **How to use:**
 1. Click the deep link
 2. Click "Create Chat" in the dialog
-3. Select your model (recommend **composer-1** for speed)
+3. Select your model (recommend **Composer** for speed)
 4. Submit to run the agent
 
 **Why deep links matter:**
@@ -179,7 +179,7 @@ Clickable links like [Implement Dark Mode](cursor://anysphere.cursor-deeplink/pr
 2. **Run /start-demo** – Creates a clean, traceable branch
 3. **Run /reset between sections** – Fresh state for each feature
 4. **Use deep links** – Click, don't type
-5. **Use composer-1** – Fastest model for live demos
+5. **Use Composer** – Cursor's agent model optimized for speed
 6. **Check the browser** – Changes appear immediately
 
 </details>
