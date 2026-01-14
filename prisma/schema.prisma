@@ -1,0 +1,61 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Individual tracking events (page views, clicks, etc.)
+model AnalyticsEvent {
+  id        String   @id @default(cuid())
+  type      String   // "page_view", "link_click", "doc_view", "scroll_depth", "time_on_page"
+  visitorId String   // Anonymous session ID (stored in localStorage)
+  path      String?  // Page path where event occurred
+  metadata  Json?    // JSON for additional context
+  createdAt DateTime @default(now())
+
+  @@index([type])
+  @@index([createdAt])
+  @@index([visitorId])
+  @@index([path])
+}
+
+// Daily aggregated metrics
+model AnalyticsSummary {
+  id             String   @id @default(cuid())
+  date           DateTime @unique @db.Date
+  pageViews      Int      @default(0)
+  uniqueVisitors Int      @default(0)
+  linkClicks     Int      @default(0)
+  docViews       Int      @default(0)
+  avgTimeSeconds Int      @default(0)
+  updatedAt      DateTime @updatedAt
+}
+
+// Per-page view counts and engagement metrics
+model PageStats {
+  id               String   @id @default(cuid())
+  path             String   @unique
+  pageViews        Int      @default(0)
+  uniqueVisitors   Int      @default(0)
+  totalTimeSeconds Int      @default(0)
+  avgTimeSeconds   Int      @default(0)
+  maxScrollDepth   Int      @default(0) // Average max scroll depth (0-100)
+  updatedAt        DateTime @updatedAt
+}
+
+// Per-visitor cumulative metrics
+model VisitorStats {
+  id               String   @id @default(cuid())
+  visitorId        String   @unique // The localStorage ID
+  totalTimeSeconds Int      @default(0) // Cumulative time on site
+  totalPageViews   Int      @default(0) // Total pages viewed
+  totalSessions    Int      @default(0) // Number of visits/sessions
+  firstSeenAt      DateTime @default(now())
+  lastSeenAt       DateTime @updatedAt
+}
