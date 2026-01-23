@@ -16,7 +16,7 @@ export function ViewToggle() {
           href={pathname}
           className={`px-3 py-1.5 transition-colors no-underline ${
             !isTextOnly
-              ? "bg-dev-accent text-white"
+              ? "bg-dev-accent text-white dark:text-white"
               : "bg-dev-card text-dev-text hover:bg-dev-card-02"
           }`}
         >
@@ -26,7 +26,7 @@ export function ViewToggle() {
           href={`${pathname}?text=true`}
           className={`px-3 py-1.5 transition-colors no-underline ${
             isTextOnly
-              ? "bg-dev-accent text-white"
+              ? "bg-dev-accent text-white dark:text-white"
               : "bg-dev-card text-dev-text hover:bg-dev-card-02"
           }`}
         >

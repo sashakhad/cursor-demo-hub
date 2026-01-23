@@ -118,7 +118,7 @@ const Sidebar = ({ groupedPosts }: SidebarProps) => {
                             ? "rounded-md text-dev-text"
                             : "text-dev-text hover:underline"
                         }`}
-                        style={isSelected ? { backgroundColor: 'rgba(6, 48, 43, 0.2)' } : undefined}
+                        style={isSelected ? { backgroundColor: 'var(--color-dev-selected-bg)' } : undefined}
                         onClick={() => handleMonthClick(year, month)}
                       >
                         {month}
