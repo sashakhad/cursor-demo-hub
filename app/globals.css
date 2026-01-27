@@ -97,21 +97,89 @@
     @apply text-xl lg:text-2xl;
   }
   
-  /* Deep links - cursor:// protocol links get distinctive styling */
-  .prose a[href^="cursor://"] {
+  /* Deep link wrapper - contains both the button and copyable prompt */
+  .prose .deep-link-wrapper {
+    @apply my-4;
+  }
+
+  /* Deep link button styling */
+  .prose .deep-link-button {
     @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md font-medium no-underline;
     background-color: color-mix(in srgb, var(--color-dev-accent) 12%, transparent);
     border: 1px solid color-mix(in srgb, var(--color-dev-accent) 25%, transparent);
     transition: all 0.15s ease;
   }
   
-  .prose a[href^="cursor://"]:hover {
+  .prose .deep-link-button:hover {
     @apply no-underline;
     background-color: color-mix(in srgb, var(--color-dev-accent) 20%, transparent);
     border-color: color-mix(in srgb, var(--color-dev-accent) 40%, transparent);
   }
   
-  .prose a[href^="cursor://"]::before {
+  .prose .deep-link-button::before {
+    content: "▶";
+    @apply text-xs opacity-70;
+  }
+
+  /* Deep link prompt block - the copyable text area */
+  .prose .deep-link-prompt {
+    @apply mt-2 relative rounded-lg overflow-hidden;
+    background-color: color-mix(in srgb, var(--color-dev-accent) 5%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-dev-accent) 15%, transparent);
+  }
+
+  .prose .deep-link-copy {
+    @apply absolute top-2 right-2 flex items-center gap-1.5 px-2 py-1 text-xs rounded;
+    @apply bg-dev-bg/80 hover:bg-dev-bg text-dev-text/70 hover:text-dev-text;
+    @apply border border-dev-text/10 hover:border-dev-text/20;
+    @apply cursor-pointer transition-all duration-150;
+    backdrop-filter: blur(4px);
+  }
+
+  .prose .deep-link-copy:active {
+    transform: scale(0.95);
+  }
+
+  .prose .deep-link-copy.copied {
+    @apply text-green-600 border-green-500/30;
+  }
+
+  .prose .deep-link-copy.copied .copy-text {
+    @apply hidden;
+  }
+
+  .prose .deep-link-copy.copied::after {
+    content: "Copied!";
+  }
+
+  .prose .deep-link-code {
+    @apply p-4 pr-24 m-0 text-sm overflow-x-auto;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .prose .deep-link-code code {
+    @apply whitespace-pre-wrap break-words text-dev-text/80;
+    background: transparent !important;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  /* Legacy support: direct cursor:// links (not wrapped) */
+  .prose a[href^="cursor://"]:not(.deep-link-button) {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md font-medium no-underline;
+    background-color: color-mix(in srgb, var(--color-dev-accent) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-dev-accent) 25%, transparent);
+    transition: all 0.15s ease;
+  }
+  
+  .prose a[href^="cursor://"]:not(.deep-link-button):hover {
+    @apply no-underline;
+    background-color: color-mix(in srgb, var(--color-dev-accent) 20%, transparent);
+    border-color: color-mix(in srgb, var(--color-dev-accent) 40%, transparent);
+  }
+  
+  .prose a[href^="cursor://"]:not(.deep-link-button)::before {
     content: "▶";
     @apply text-xs opacity-70;
   }

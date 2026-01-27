@@ -6,6 +6,7 @@ import remarkRehype from "remark-rehype";
 import rehypeRaw from "rehype-raw";
 import rehypeStringify from "rehype-stringify";
 import { processIncludes } from "./remark-include";
+import { rehypeDeepLink } from "./rehype-deep-link";
 
 export interface DocEntry {
   slug: string[];
@@ -186,6 +187,7 @@ export async function getDocData(
     .use(gfm)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
+    .use(rehypeDeepLink)
     .use(rehypeStringify)
     .process(content);
   const contentHtml = processedContent.toString();

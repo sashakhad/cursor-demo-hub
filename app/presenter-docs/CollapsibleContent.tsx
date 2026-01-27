@@ -7,8 +7,8 @@ interface CollapsibleContentProps {
 }
 
 /**
- * Client component that renders doc content with URL-synced collapsible sections.
- * Tracks which <details> elements are open via the `sections` URL search param.
+ * Client component that renders doc content with URL-synced collapsible sections
+ * and handles deep link copy functionality.
  * 
  * Uses only native browser APIs to avoid React re-renders on URL changes.
  */
@@ -98,6 +98,57 @@ export function CollapsibleContent({ contentHtml }: CollapsibleContentProps) {
       });
     };
   }, [contentHtml, getOpenSectionsFromDom, updateUrl]);
+
+  // Handle deep link copy button clicks
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) {return;}
+
+    const handleCopyClick = async (event: Event) => {
+      const button = event.currentTarget as HTMLButtonElement;
+      const prompt = button.getAttribute("data-prompt");
+      
+      if (!prompt) {return;}
+
+      try {
+        await navigator.clipboard.writeText(prompt);
+        
+        // Visual feedback
+        button.classList.add("copied");
+        
+        // Reset after 2 seconds
+        setTimeout(() => {
+          button.classList.remove("copied");
+        }, 2000);
+      } catch {
+        // Fallback for older browsers
+        const textArea = document.createElement("textarea");
+        textArea.value = prompt;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-9999px";
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+        
+        button.classList.add("copied");
+        setTimeout(() => {
+          button.classList.remove("copied");
+        }, 2000);
+      }
+    };
+
+    const copyButtons = container.querySelectorAll(".deep-link-copy");
+    copyButtons.forEach((button) => {
+      button.addEventListener("click", handleCopyClick);
+    });
+
+    return () => {
+      copyButtons.forEach((button) => {
+        button.removeEventListener("click", handleCopyClick);
+      });
+    };
+  }, [contentHtml]);
 
   return (
     <article

@@ -24,6 +24,7 @@
     "docs:dev": "echo 'Run pnpm dev and visit http://localhost:3000/presenter-docs'"
   },
   "dependencies": {
+    "@types/hast": "^3.0.4",
     "@vercel/analytics": "^1.6.1",
     "@vercel/kv": "^3.0.0",
     "clsx": "2.1.1",
@@ -39,6 +40,7 @@
     "remark-html": "^16.0.1",
     "remark-rehype": "^11.1.2",
     "tailwind-merge": "3.3.1",
+    "unist-util-visit": "^5.1.0",
     "valibot": "^1.2.0"
   },
   "devDependencies": {
