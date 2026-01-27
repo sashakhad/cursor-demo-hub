@@ -34,7 +34,7 @@ Enable Plan Mode in the agent settings
 
 **Click Save to workspace to demonstrate that you can save the plan file:**
 
-> **Pro tip:** Select Composer 1 for faster results.
+> **Pro tip:** Select Composer for faster results.
 
 ![Click Build button](https://colony-recorder.s3.amazonaws.com/files/2025-12-30/6c02f2a5-d42a-4cc2-8435-ea826e94a566/ascreenshot_1b41d1a2b2bd4456ad3947617be66b69_text_export.jpeg)
 

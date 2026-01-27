@@ -53,10 +53,7 @@ It's like using a mode that consumes more gas when you could have the same perfo
 
 ### For Coding Specifically
 
-**Composer One** is recommended:
-- Benchmarks **4x as fast** as other models
-- Performs similarly to Frontier models in terms of code quality
-- Optimized specifically for software engineering tasks
+**Composer** is Cursor's agent model designed for software engineering intelligence and speed. On our benchmarks, the model achieves frontier coding results with generation speed four times faster than similar models.
 
 ---
 

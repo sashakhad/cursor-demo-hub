@@ -1,51 +1,67 @@
 # Start Here
 
-Welcome to the **Cursor Demo Repository**—a standardized, scalable resource for demonstrating Cursor's features.
+Welcome to the **Cursor Demo Hub**—everything you need to demo Cursor's features.
 
 ---
 
-<details open>
-<summary>Philosophy</summary>
+## Choose Your Setup Path
 
-This repository is a **medium to demonstrate Cursor's features**, not a showcase of every possible use case.
+### 🟢 Easy Setup (Non-Developers)
 
-The goal is to enable **anyone**—technical or non-technical—to confidently demo Cursor without having to create their own repository structure, demo scripts, or workflows from scratch.
+Don't have developer tools installed? No problem—Cursor will set everything up for you.
 
-**What this repo is:**
-- A standardized way to show Cursor 101 and 201 demos
-- A systematic guide to Cursor's key features
-- A consistent, reproducible demo experience
-- A learning tool for mastering Cursor's capabilities
+1. [Download Cursor](https://cursor.com/download)
+2. Open Cursor (you can skip any project setup—just open the app)
+3. Click: [**Set Up My Mac**](cursor://anysphere.cursor-deeplink/prompt?text=Help%20me%20set%20up%20my%20Mac%20to%20run%20the%20Cursor%20Demo%20Hub.%0A%0APlease%20do%20the%20following%3A%0A%0A1.%20Check%20if%20Homebrew%20is%20installed%20%28brew%20--version%29.%20If%20not%2C%20install%20it%20with%3A%0A%20%20%20%2Fbin%2Fbash%20-c%20%22%24%28curl%20-fsSL%20https%3A%2F%2Fraw.githubusercontent.com%2FHomebrew%2Finstall%2FHEAD%2Finstall.sh%29%22%0A%20%20%20Then%20add%20to%20PATH%20%28Apple%20Silicon%3A%20eval%20%22%24%28%2Fopt%2Fhomebrew%2Fbin%2Fbrew%20shellenv%29%22%29%0A%0A2.%20Check%20if%20Git%20is%20installed%20%28git%20--version%29.%20If%20not%3A%20brew%20install%20git%0A%0A3.%20Check%20if%20Node.js%2020%2B%20is%20installed%20%28node%20--version%29.%20If%20not%3A%20brew%20install%20node%4020%0A%0A4.%20Check%20if%20pnpm%20is%20installed%20%28pnpm%20--version%29.%20If%20not%3A%20npm%20install%20-g%20pnpm%0A%0A5.%20Create%20the%20directory%20and%20clone%20the%20repo%3A%0A%20%20%20mkdir%20-p%20~%2FDocuments%2FCode%0A%20%20%20cd%20~%2FDocuments%2FCode%0A%20%20%20git%20clone%20https%3A%2F%2Fgithub.com%2Fsashakhad%2Fcursor-demo-hub.git%0A%20%20%20cd%20cursor-demo-hub%0A%0A6.%20Install%20dependencies%3A%20pnpm%20install%0A%0A7.%20Tell%20me%20to%20open%20the%20folder%20in%20Cursor%3A%20File%20%E2%86%92%20Open%20Folder%20%E2%86%92%20Documents%2FCode%2Fcursor-demo-hub%0A%0AIf%20any%20step%20fails%2C%20help%20me%20troubleshoot.%20Be%20friendly%20and%20explain%20what%20each%20step%20does.)
+4. Follow the instructions—Cursor will install Homebrew, Node.js, and clone the repo
+5. When done, open the folder: **File → Open Folder → Documents/Code/cursor-demo-hub**
+6. Run `/start-demo` in Agent Chat to begin
 
-**What this repo is not:**
-- A showcase for every industry or use case
-- A replacement for custom demos tailored to specific needs
+<details>
+<summary><strong>If something goes wrong</strong></summary>
 
-This repository ensures everyone can demo Cursor's core features quickly and consistently.
+See the [full setup guide](../feature-docs/MACOS_SETUP_GUIDE.md) for detailed troubleshooting.
+
+Common issues:
+- **Homebrew not in PATH**: Run `eval "$(/opt/homebrew/bin/brew shellenv)"` (Apple Silicon) or `eval "$(/usr/local/bin/brew shellenv)"` (Intel)
+- **Permission denied**: You may need to enter your Mac password during Homebrew installation
+- **Network errors**: Check your internet connection and try again
 
 </details>
 
-<details open>
-<summary>Getting Started</summary>
+---
 
-### Prerequisites
+### 🔵 Developer Setup (Terminal)
 
-1. **Install Cursor** — Download from [cursor.com](https://cursor.com) if you haven't already
-
-### Clone and Open
-
-**Option 1: Clone via terminal**
+If you're comfortable with the terminal and already have Node.js installed:
 
 ```bash
 git clone https://github.com/sashakhad/cursor-demo-hub.git
 cd cursor-demo-hub
+pnpm install
 cursor .
 ```
 
-**Option 2:** [Clone from Cursor](cursor://anysphere.cursor-deeplink/prompt?text=Clone%20the%20repository%20https%3A%2F%2Fgithub.com%2Fsashakhad%2Fcursor-demo-hub.git)
+Then run `/start-demo` in Agent Chat.
 
 <details>
-<summary>Screenshots for cloning from Cursor</summary>
+<summary><strong>System requirements</strong></summary>
+
+| Requirement | Version | Check |
+|-------------|---------|-------|
+| macOS | 12+ | `sw_vers` |
+| Git | Any | `git --version` |
+| Node.js | 20+ | `node --version` |
+| pnpm | 10+ | `pnpm --version` |
+
+**Missing something?** See the [full setup guide](../feature-docs/MACOS_SETUP_GUIDE.md).
+
+</details>
+
+<details>
+<summary><strong>Alternative: Clone from Cursor</strong></summary>
+
+[Clone from Cursor](cursor://anysphere.cursor-deeplink/prompt?text=Clone%20the%20repository%20https%3A%2F%2Fgithub.com%2Fsashakhad%2Fcursor-demo-hub.git)
 
 1\. Click here
 
@@ -65,20 +81,21 @@ cursor .
 
 </details>
 
-### First Run
+---
+
+## First Run
 
 Once the repository is open in Cursor:
 
-1. Run [/start-demo](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-demo) to install dependencies, start the server, and open the app
-2. Wait for the blog app to appear in Cursor's built-in browser
-3. You're ready to demo!
+1. Open Agent Chat: `Cmd+L`
+2. Type `/start-demo`
+3. Press Enter
+4. Wait for the blog app to appear in Cursor's browser
+5. You're ready to demo!
 
-</details>
+---
 
-<details open>
-<summary>Where to Start</summary>
-
-The best way to learn these demos is to **run through them yourself using the screenshot versions**. Each demo guide has a `.md` version with step-by-step visuals—follow along and practice before presenting live.
+## Demo Guides
 
 | Demo | Description |
 |------|-------------|
@@ -86,10 +103,11 @@ The best way to learn these demos is to **run through them yourself using the sc
 | **[Cursor 101](/presenter-docs/Cursor-101/DEMO_FLOW)** | Intro demo: Layout, Tab + Inline Edit, Agent Chat |
 | **[Features](/presenter-docs/Features/README)** | Modular guides to pick and choose from |
 
-</details>
+**Tip:** Practice the demos yourself using the screenshot guides before presenting live.
 
-<details open>
-<summary>Quick Reference</summary>
+---
+
+## Quick Reference
 
 | Action | Shortcut / Command |
 |--------|-------------------|
@@ -98,111 +116,113 @@ The best way to learn these demos is to **run through them yourself using the sc
 | Accept Tab suggestion | `Tab` |
 | Chat History | `Opt+Cmd+'` |
 | Add selection to chat | Select + `Cmd+L` |
-| Start demo session | [/start-demo](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-demo) |
-| Start app only | [/start-app](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-app) |
-| Reset workspace | [/reset](cursor://anysphere.cursor-deeplink/prompt?text=%2Freset) |
+| Start demo session | `/start-demo` |
+| Start app only | `/start-app` |
+| Reset workspace | `/reset` |
+
+---
+
+<details>
+<summary><strong>Slash Commands</strong></summary>
+
+Type `/` in Agent Chat to see available commands.
+
+### /start-demo
+
+Prepares a clean demo environment:
+1. Fetches latest from `main`
+2. Creates a timestamped branch (`demo-run-YYYYMMDD-HHMMSS`)
+3. Installs dependencies
+4. Starts the dev server
+5. Opens the app in Cursor's browser
+
+### /start-app
+
+Starts the server without creating a new branch:
+1. Kills processes on ports 3000-3009
+2. Starts the dev server
+3. Opens `http://localhost:3000`
+
+### /reset
+
+Restores a clean state between demo sections:
+1. Stashes uncommitted changes
+2. Resets to HEAD
+3. Removes untracked files
+
+⚠️ Run `/reset` between features to ensure each demo starts fresh.
 
 </details>
 
 <details>
-<summary>Deep Links</summary>
+<summary><strong>Deep Links</strong></summary>
 
-Throughout the documentation, you'll see clickable links like [Implement Dark Mode](cursor://anysphere.cursor-deeplink/prompt?text=Implement%20dark%20mode%20for%20this%20blog%20application.%20Add%20a%20toggle%20in%20the%20header%20and%20persist%20the%20preference.). These are **deep links** that open a "Create chat with prompt" dialog with the prompt pre-filled.
+Clickable links like [Implement Dark Mode](cursor://anysphere.cursor-deeplink/prompt?text=Implement%20dark%20mode%20for%20this%20blog%20application.%20Add%20a%20toggle%20in%20the%20header%20and%20persist%20the%20preference.) open a chat dialog with a pre-filled prompt.
 
-**How to use them:**
-1. Click the deep link in the documentation
-2. Click **"Create Chat"** in the dialog that appears
-3. Select your model (recommend **composer-1** for speed)
+**How to use:**
+1. Click the deep link
+2. Click "Create Chat" in the dialog
+3. Select your model (recommend **Composer** for speed)
 4. Submit to run the agent
 
 **Why deep links matter:**
-- **Consistency** – Every presenter uses the exact same prompts
-- **Reproducibility** – Results are predictable across demos
-- **Speed** – No typing required, just click and go
-
-[Deep Links Documentation](https://cursor.com/docs/integrations/deeplinks)
+- Consistency – Same prompts for every presenter
+- Reproducibility – Predictable results
+- Speed – No typing required
 
 </details>
 
 <details>
-<summary>Slash Commands</summary>
+<summary><strong>Tips for a Great Demo</strong></summary>
 
-This repository includes pre-configured slash commands accessible from Agent Chat. Type `/` in the chat to see available commands.
-
-### [/start-demo](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-demo)
-
-**Use this when beginning a demo session.**
-
-What it does:
-1. Fetches the latest from `main`
-2. Creates a uniquely timestamped branch (`demo-run-YYYYMMDD-HHMMSS`)
-3. Starts the Next.js development server
-4. Opens the app in Cursor's built-in browser
-
-This ensures every demo starts from a clean, traceable state.
-
-### [/start-app](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-app)
-
-**Use this when you just want to start the server** (without creating a new branch).
-
-What it does:
-1. Kills any processes running on ports 3000-3009
-2. Starts the dev server in the background
-3. Opens `http://localhost:3000` in Cursor's built-in browser
-
-Use this for quick restarts or when continuing work on an existing branch.
-
-### [/reset](cursor://anysphere.cursor-deeplink/prompt?text=%2Freset)
-
-**Use this between demo sections to restore a clean state.**
-
-What it does:
-1. Stashes any uncommitted changes (for safety)
-2. Resets the repository to HEAD (discards local modifications)
-3. Removes all untracked files and directories
-
-⚠️ **Recommendation:** Run [/reset](cursor://anysphere.cursor-deeplink/prompt?text=%2Freset) between features to ensure each demo step starts from a clean slate.
+1. **Practice first** – Run through the guides yourself
+2. **Run /start-demo** – Creates a clean, traceable branch
+3. **Run /reset between sections** – Fresh state for each feature
+4. **Use deep links** – Click, don't type
+5. **Use Composer** – Cursor's agent model optimized for speed
+6. **Check the browser** – Changes appear immediately
 
 </details>
 
 <details>
-<summary>The Demo App</summary>
+<summary><strong>Troubleshooting</strong></summary>
 
-This repository contains a **blog application** built with Next.js, TypeScript, and Tailwind CSS. You don't need to understand the app deeply to demo—just follow the guides.
+### "command not found: cursor"
 
-If you want to explore the codebase structure, [ask Cursor about the application](cursor://anysphere.cursor-deeplink/prompt?text=Explain%20the%20structure%20of%20this%20application.%20What%20are%20the%20main%20components%2C%20how%20is%20the%20routing%20set%20up%2C%20and%20where%20does%20the%20content%20come%20from%3F).
+Install the CLI:
+1. Open Cursor
+2. `Cmd+Shift+P` → "Install 'cursor' command"
+
+### "command not found: pnpm"
+
+```bash
+npm install -g pnpm
+```
+
+### Port 3000 already in use
+
+```bash
+lsof -ti:3000 | xargs kill -9
+```
+
+Or run `/start-app` which handles this automatically.
+
+### Dependencies fail to install
+
+Check Node version:
+```bash
+node --version  # Should be 20+
+```
+
+See the [full setup guide](../feature-docs/MACOS_SETUP_GUIDE.md) for help.
 
 </details>
 
 <details>
-<summary>Why This Structure Scales</summary>
+<summary><strong>About the Demo App</strong></summary>
 
-This repository is organized around **features**, not use cases. Each Cursor feature (Browser, Worktrees, Bugbot, etc.) has its own standalone guide in the `Features/` directory. These modular guides can then be composed into different demo flows (Cursor 101, Cursor 2.0, etc.).
+This repository contains a **blog application** built with Next.js, TypeScript, and Tailwind CSS. You don't need to understand the app to demo—just follow the guides.
 
-**The key insight:** A feature can apply to many use cases, and a use case may resonate more with certain audiences. But by documenting features independently, we can:
-
-- **Add new features once** and have them available for all demo flows
-- **Update a feature guide** without touching every demo that uses it
-- **Mix and match** features into custom sequences as needed
-- **Maintain consistency** across all presenters and demos
-
-This is not use-case specific by design. This repository ensures that any feature we want to demo in a standardized way can be done scalably and consistently—without requiring deep technical expertise or custom preparation.
-
-**Handling ad-hoc requests:** Let's say you're giving a Cursor 101 demo and someone asks, *"Can you show me the Browser?"* or *"What about Parallel Agents?"* Instead of scrambling, you can navigate to that feature in the `Features/` directory and walk through its guide. Each feature has its own self-contained flow with prompts and screenshots, so you can demo it on the spot without needing to know all the technical details.
-
-The goal is that even with limited knowledge of Cursor's inner workings, you can still show people how to use it effectively.
-
-</details>
-
-<details>
-<summary>Tips for a Great Demo</summary>
-
-1. **Practice with screenshots first** – Run through the `.md` guides to learn the flow
-2. **Run [/start-demo](cursor://anysphere.cursor-deeplink/prompt?text=%2Fstart-demo) at the beginning** – Creates a clean, traceable branch
-3. **Run [/reset](cursor://anysphere.cursor-deeplink/prompt?text=%2Freset) between sections** – Ensures each feature demo starts fresh
-4. **Use deep links** – Click, don't type, for consistent prompts
-5. **Use composer-1** – Fastest model for live demos
-6. **Check the browser** – Cursor's built-in browser shows your changes immediately
-7. **Know your limits** – For use-case-specific demos, consider creating a custom branch or repo
+Curious? [Ask Cursor about the codebase](cursor://anysphere.cursor-deeplink/prompt?text=Explain%20the%20structure%20of%20this%20application.%20What%20are%20the%20main%20components%2C%20how%20is%20the%20routing%20set%20up%2C%20and%20where%20does%20the%20content%20come%20from%3F).
 
 </details>
