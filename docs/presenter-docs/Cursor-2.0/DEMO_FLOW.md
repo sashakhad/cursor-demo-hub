@@ -113,3 +113,13 @@ Click "Review Changes" at top right, then `/commit`
 > Use voice to iterate quickly. Turn speech into prompts instantly and watch your ideas come to life.
 
 <!-- @include: docs/presenter-docs/Features/Agent/Voice-Mode/Voice-Mode.md | after: ## Demo, collapsible: true, label: Details -->
+
+### [Skills](https://cursor.com/docs/context/skills)
+
+> Skills are portable, version-controlled packages that teach agents domain-specific tasks. They include instructions, scripts, and references that agents invoke to complete complex workflows.
+
+**Demo Prompt:**
+
+- [Add a Badge component](cursor://anysphere.cursor-deeplink/prompt?text=Add%20a%20Badge%20component%20for%20showing%20status%20labels)
+
+<!-- @include: docs/presenter-docs/Features/Skills/Skills.md | after: ## 4. Demo: Add Component Skill, lines: 1-60, collapsible: true, label: Details -->
