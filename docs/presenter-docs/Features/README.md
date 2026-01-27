@@ -37,12 +37,13 @@ AI-powered features integrated directly into the code editor.
 
 ## Configuration
 
-Customize Cursor behavior with rules and commands.
+Customize Cursor behavior with rules, commands, and skills.
 
 | Feature | Description |
 |---------|-------------|
 | [Rules](/presenter-docs/Features/Rules/Rules) | Define consistent AI behavior and enforce style guides |
 | [Commands](/presenter-docs/Features/Commands/Commands) | Automate workflows with slash commands |
+| [Skills (WIP)](/presenter-docs/Features/Skills/Skills) | Extend agents with domain-specific knowledge and scripts |
 
 ---
 
